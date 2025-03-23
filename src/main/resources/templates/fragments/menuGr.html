@@ -1,10 +1,18 @@
 <div th:fragment="menuGr">
-    <nav>
-        <a th:href="@{/proseggisi}">Προσέγγιση</a> |
-        <a th:href="@{/traumatotherapeia}">Τραυματοθεραπεία</a> |
-        <a th:href="@{/biografiko}">Βιογραφικό</a> |
-        <a th:href="@{/epikoinonia}">Επικοινωνία</a> ||
-        <a th:href="@{/en}">English</a>
+    <nav class="hor">
+        <div class="section">
+            <div class="fontBig">Κώστας Μαυρακάκης</div>
+            <div class="fontSmall">Ψυχολόγος - EMDR Practicioner - IFS Informed</div>
+        </div>
+        <div class="section">
+            <a th:href="@{/}" class="item fontNormal">Αρχική</a>
+            <a th:href="@{/proseggisi}" class="item fontNormal">Προσέγγιση</a>
+            <a th:href="@{/traumatotherapeia}" class="item fontNormal">Τραυματοθεραπεία</a>
+            <a th:href="@{/biografiko}" class="item fontNormal">Βιογραφικό</a>
+            <a th:href="@{/epikoinonia}" class="btn fontNormal">Επικοινωνία</a>
+        </div>
+        <!-- <div>
+            <a th:href="@{/en}">En</a>
+        </div> -->
     </nav>
-    <hr>
 </div>

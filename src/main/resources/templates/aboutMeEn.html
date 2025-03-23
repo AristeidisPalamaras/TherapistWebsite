@@ -3,10 +3,12 @@
 <head>
     <title>About Me | Kostas Mavrakakis</title>
     <link rel="stylesheet" th:href="@{/css/styles.css}" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope" />
 </head>
 <body>
-<div th:insert="fragments/menuEn :: menuEn"></div>
+    <div th:insert="fragments/menuEn :: menuEn"></div>
 
-<h1>About me.</h1>
+    <img th:src="@{/img/bg1.jpg}" alt="background image">
+    <h1>About me.</h1>
 </body>
 </html>
