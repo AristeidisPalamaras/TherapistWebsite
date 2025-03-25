@@ -1,5 +1,6 @@
 package gr.kostasmavrakakis.website.controller;
 
+import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,67 +10,67 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AppController {
 
-    @GetMapping("/")
-    public String homeGr(Model model) {
-        model.addAttribute("currentPage", "homeGr");
+    @GetMapping("/home")
+    public String homeGr(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "homeGr";
     }
 
-    @GetMapping("/en")
-    public String homeEn(Model model) {
-        model.addAttribute("currentPage", "homeEn");
+    @GetMapping("/en/home")
+    public String homeEn(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "homeEn";
     }
 
-    @GetMapping("/proseggisi")
-    public String approachGr(Model model) {
-        model.addAttribute("currentPage", "approachGr");
+    @GetMapping("/approach")
+    public String approachGr(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "approachGr";
     }
 
-    @GetMapping("/en/my-approach")
-    public String approachEn(Model model) {
-        model.addAttribute("currentPage", "approachEn");
+    @GetMapping("/en/approach")
+    public String approachEn(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "approachEn";
     }
 
-    @GetMapping("/traumatotherapeia")
-    public String traumaTherapyGr(Model model) {
-        model.addAttribute("currentPage", "traumaTherapyGr");
+    @GetMapping("/trauma_therapy")
+    public String traumaTherapyGr(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "traumaTherapyGr";
     }
 
-    @GetMapping("/en/trauma-therapy")
-    public String traumaTherapyEn(Model model) {
-        model.addAttribute("currentPage", "traumaTherapyEn");
+    @GetMapping("/en/trauma_therapy")
+    public String traumaTherapyEn(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "traumaTherapyEn";
     }
 
-    @GetMapping("/biografiko")
-    public String aboutMeGr(Model model) {
-        model.addAttribute("currentPage", "aboutMeGr");
+    @GetMapping("/cv")
+    public String aboutMeGr(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "aboutMeGr";
     }
 
-    @GetMapping("/en/about-me")
-    public String aboutMeEn(Model model) {
-        model.addAttribute("currentPage", "aboutMeEn");
+    @GetMapping("/en/cv")
+    public String aboutMeEn(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "aboutMeEn";
     }
 
-    @GetMapping("/epikoinonia")
-    public String contactGr(Model model) {
-        model.addAttribute("currentPage", "contactGr");
+    @GetMapping("/contact")
+    public String contactGr(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "contactGr";
     }
 
     @GetMapping("/en/contact")
-    public String contactEn(Model model) {
-        model.addAttribute("currentPage", "contactEn");
+    public String contactEn(HttpServletRequest request, Model model) {
+        model.addAttribute("currentUrl", request.getRequestURI());
         return "contactEn";
     }
 
-    @PostMapping("/epikoinonia")
+    @PostMapping("/contact")
     public String contactGr(@RequestParam Object message) {
         return "contactGr";
     }

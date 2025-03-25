@@ -84,8 +84,12 @@ a.btn:hover {
     transition: transform 0.3s ease-in-out;
 }
 
-/* move main to visble area */
-main {
+/* move header or main to visble area */
+header {
     padding-top: 6em;
 }
+
+/* main {
+    padding-top: 6em;
+} */
 

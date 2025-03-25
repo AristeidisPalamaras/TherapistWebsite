@@ -5,11 +5,7 @@
     <title>About Me</title>
 </head>
 <body>
-    <nav layout:fragment="menu">
-        <div th:insert="fragments/menuEn :: menuEn"></div>
-    </nav>
     <main layout:fragment="content">
-        <div th:insert="fragments/ribbonEn :: ribbonEn"></div>
         <img th:src="@{/img/bg1.jpg}" alt="background image">
         <h1>About Me.</h1>
     </main>

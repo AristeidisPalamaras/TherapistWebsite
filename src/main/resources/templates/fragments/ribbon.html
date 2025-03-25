@@ -1,0 +1,7 @@
+<div th:fragment="ribbon">
+    <!-- <div class="ribbon" id="ribbon"> -->
+        <a th:href="@{ ${currentUrl.startsWith('/en') ? currentUrl.substring(3) : '/en' + currentUrl} }"
+           th:text="${currentUrl.startsWith('/en') ? 'Gr' : 'En'}"></a>
+    <!-- </div> -->
+
+</div>
