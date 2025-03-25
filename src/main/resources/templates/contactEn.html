@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
 <head>
-    <title>Contact | Kostas Mavrakakis</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope" />
+    <title>Contact</title>
 </head>
 <body>
-<div th:insert="fragments/menuEn :: menuEn"></div>
-
-<h1>Contact.</h1>
+    <nav layout:fragment="menu">
+        <div th:insert="fragments/menuEn :: menuEn"></div>
+    </nav>
+    <main layout:fragment="content">
+        <div th:insert="fragments/ribbonEn :: ribbonEn"></div>
+        <h1>Contact.</h1>
+    </main>
 </body>
 </html>

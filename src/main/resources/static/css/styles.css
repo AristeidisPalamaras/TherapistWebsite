@@ -3,7 +3,7 @@
     color: #111111;
 }
 
-nav {
+.menuContainer {
     background-color: #D0C9C0;
     height: 6em;
     width: 100%;
@@ -18,11 +18,11 @@ nav {
     z-index: 1000;
 }
 
-nav a {
+.menuContainer a {
     text-decoration: none;
 }
 
-nav a:hover {
+.menuContainer a:hover {
 
     /* EITHER underline on hover: */
     text-decoration: underline #111111;
@@ -39,11 +39,11 @@ nav a:hover {
     justify-content: space-between;
 }
 
-.section {
+.menuSection {
     padding: 0 120px;
 }
 
-.item {
+.menuItem {
     padding: 0 10px;
 }
 
@@ -54,12 +54,18 @@ nav a:hover {
     border-radius: 32px;
 }
 
-.btn:hover {
-
+a.btn:hover {
+    
     /* color change on hover: */
-    text-decoration: none;
+    text-decoration: dotted;
     background-color: #9f9977;
     color: #EEEEEE;
+}
+
+.active {
+    font-weight: bold;
+    /* text-decoration: underline #111111; */
+    /* text-underline-offset: 8px; */
 }
 
 .fontBig {
@@ -74,13 +80,12 @@ nav a:hover {
     font-size: 16px;
 }
 
-.active {
-    font-weight: bold;
-    /* text-decoration: underline #111111; */
-    /* text-underline-offset: 8px; */
-}
-
 .ribbon {
     transition: transform 0.3s ease-in-out;
+}
+
+/* move main to visble area */
+main {
+    padding-top: 6em;
 }
 

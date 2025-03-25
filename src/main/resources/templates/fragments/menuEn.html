@@ -1,12 +1,16 @@
-<div th:fragment="menuEn">
-    <nav>
-        <span>Kostas Mavrakakis</span>
-        <span>Therapist - EMDR Practicioner - IFS Informed</span>
-        <a th:href="@{/en}">Home</a> |
-        <a th:href="@{/en/my-approach}">My Approach</a> |
-        <a th:href="@{/en/trauma-therapy}">Trauma Therapy</a> |
-        <a th:href="@{/en/about-me}">About Me</a> |
-        <a th:href="@{/en/contact}">Contact</a> ||
-        <a th:href="@{/}">Gr</a>
-    </nav>
+<div th:fragment="menuEn" class="menuContainer hor">
+    <!-- <div class="navi hor"> -->
+        <div class="menuSection">
+            <div class="fontBig">Kostas Mavrakakis</div>
+            <div class="fontSmall">Therapist - EMDR Practicioner - IFS Informed</div>
+        </div>
+        <div class="menuSection">
+            <a th:href="@{/en}" class="menuItem fontNormal" th:classappend="${currentPage == 'homeEn' ? 'active' : ''}">Home</a>
+            <a th:href="@{/en/my-approach}" class="menuItem fontNormal" th:classappend="${currentPage == 'approachEn' ? 'active' : ''}">My Approach</a>
+            <a th:href="@{/en/trauma-therapy}" class="menuItem fontNormal" th:classappend="${currentPage == 'traumaTherapyEn' ? 'active' : ''}">Trauma Therapy</a>
+            <a th:href="@{/en/about-me}" class="menuItem fontNormal" th:classappend="${currentPage == 'aboutMeEn' ? 'active' : ''}">About Me</a>
+            <a th:href="@{/en/contact}" class="btn fontNormal" th:classappend="${currentPage == 'contactEn' ? 'active' : ''}">Contact</a>
+        </div>
+    <!-- </div> -->
+
 </div>

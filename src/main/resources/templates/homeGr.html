@@ -1,13 +1,16 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="el">
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
 <head>
-    <title>Αρχική | Κώστας Μαυρακάκης</title>
-    <link rel="stylesheet" th:href="@{/css/styles.css}" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope" />
+    <title>Αρχική</title>
 </head>
 <body>
-    <div th:insert="fragments/menuGr :: menuGr"></div>
-
-    <h1>Αρχική.</h1>
+    <nav layout:fragment="menu">
+        <div th:insert="fragments/menuGr :: menuGr"></div>
+    </nav>
+    <main layout:fragment="content">
+        <div th:insert="fragments/ribbonGr :: ribbonGr"></div>
+        <h1>Αρχική.</h1>
+    </main>
 </body>
 </html>

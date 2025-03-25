@@ -1,18 +1,16 @@
-<div th:fragment="menuGr">
-    <div class="ribbon" id="ribbon">
-        <a th:href="@{/en}">En</a>
-    </div>
-    <nav class="hor">
-        <div class="section">
+<div th:fragment="menuGr" class="menuContainer hor">
+    <!-- <div class="navi hor"> -->
+        <div class="menuSection">
             <div class="fontBig">Κώστας Μαυρακάκης</div>
             <div class="fontSmall">Ψυχολόγος - EMDR Practicioner - IFS Informed</div>
         </div>
-        <div class="section">
-            <a th:href="@{/}" class="item fontNormal" th:classappend="${currentPage == 'homeGr' ? 'active' : ''}">Αρχική</a>
-            <a th:href="@{/proseggisi}" class="item fontNormal" th:classappend="${currentPage == 'approachGr' ? 'active' : ''}">Προσέγγιση</a>
-            <a th:href="@{/traumatotherapeia}" class="item fontNormal" th:classappend="${currentPage == 'traumaTherapyGr' ? 'active' : ''}">Τραυματοθεραπεία</a>
-            <a th:href="@{/biografiko}" class="item fontNormal" th:classappend="${currentPage == 'aboutMeGr' ? 'active' : ''}">Βιογραφικό</a>
+        <div class="menuSection">
+            <a th:href="@{/}" class="menuItem fontNormal" th:classappend="${currentPage == 'homeGr' ? 'active' : ''}">Αρχική</a>
+            <a th:href="@{/proseggisi}" class="menuItem fontNormal" th:classappend="${currentPage == 'approachGr' ? 'active' : ''}">Προσέγγιση</a>
+            <a th:href="@{/traumatotherapeia}" class="menuItem fontNormal" th:classappend="${currentPage == 'traumaTherapyGr' ? 'active' : ''}">Τραυματοθεραπεία</a>
+            <a th:href="@{/biografiko}" class="menuItem fontNormal" th:classappend="${currentPage == 'aboutMeGr' ? 'active' : ''}">Βιογραφικό</a>
             <a th:href="@{/epikoinonia}" class="btn fontNormal" th:classappend="${currentPage == 'contactGr' ? 'active' : ''}">Επικοινωνία</a>
         </div>
-    </nav>
+     <!-- </div> -->
+
 </div>
