@@ -3,19 +3,20 @@
     color: #111111;
 }
 
+body {
+    margin: 0;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
 .menuContainer {
     background-color: #D0C9C0;
     height: 6em;
     width: 100%;
-    /* width: 95%; */
-    /* border-radius: 8px; */
-    position: fixed;
-    top: 0;
-    left: 0;
-    /* top: 30px; */
-    /* right: 30px; */
-
-    z-index: 1000;
 }
 
 .menuContainer a {
@@ -30,6 +31,15 @@
 
     /* OR color change on hover: */
     /* color: #817C5F; */
+}
+
+.menuContainer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menuContainer li {
+    padding: 0;
 }
 
 .hor {
@@ -54,6 +64,10 @@
     border-radius: 32px;
 }
 
+.menuContainer .btn {
+    margin-left: 10px;
+}
+
 a.btn:hover {
     
     /* color change on hover: */
@@ -68,6 +82,19 @@ a.btn:hover {
     /* text-underline-offset: 8px; */
 }
 
+.ribbonContainer {
+    height: 2em;
+    width: 100%;
+}
+
+.ribbonContainer a {
+    text-decoration: none;
+}
+
+.ribbonContainer a:hover {
+    font-weight: bold;
+}
+
 .fontBig {
     font-size: 24px;
 }
@@ -79,17 +106,3 @@ a.btn:hover {
 .fontSmall {
     font-size: 16px;
 }
-
-.ribbon {
-    transition: transform 0.3s ease-in-out;
-}
-
-/* move header or main to visble area */
-header {
-    padding-top: 6em;
-}
-
-/* main {
-    padding-top: 6em;
-} */
-

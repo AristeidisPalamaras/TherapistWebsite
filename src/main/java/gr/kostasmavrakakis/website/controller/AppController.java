@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AppController {
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String homeGr(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
         return "homeGr";
     }
 
-    @GetMapping("/en/home")
+    @GetMapping("/en")
     public String homeEn(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
         return "homeEn";
