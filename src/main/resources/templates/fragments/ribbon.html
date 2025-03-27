@@ -1,10 +1,11 @@
-<div th:fragment="ribbon" class="ribbonContainer hor">
-<!-- <div class="ribbon" id="ribbon"> -->
-    <div th:text="${currentUrl.startsWith('/en') ? 'Contant the therapist +30 1234567890' : 'Επικοινωνήστε με τον θεραπευτή +30 1234567890'}"
-        class="menuSection fontSmall" >
+<div th:fragment="ribbon" class="ribbon-container hor">
+    <div class="column-left">
+        <div th:text="${currentUrl.startsWith('/en') ? 'Contant the therapist +30 1234567890' : 'Επικοινωνήστε με τον θεραπευτή +30 1234567890'}"
+        class="font-small"></div>
     </div>
-    <div class="menuSection fontSmall">
-        <a th:href="@{ ${
+    <div class="column-right">
+        <a class="font-small"
+            th:href="@{ ${
             currentUrl == '/' ? '/en' : (
                 currentUrl == '/en' ? '/' : (
                     currentUrl.startsWith('/en') ? currentUrl.substring(3) : '/en' + currentUrl ))} }"

@@ -1,0 +1,12 @@
+:root {
+    --font-dark-primary: #111111;
+    /* --font-dark-secondary: #817C5F; */
+    --font-light-primary: #eeeeee;
+    --bg-menu-primary: #D0C9C0;
+    --bg-btn-primary: #817C5F;
+    --bg-btn-secondary: #9f9977;
+
+    --font-large: 24px;
+    --font-medium: 18px;
+    --font-small: 16px;
+}

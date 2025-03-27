@@ -1,0 +1,12 @@
+.ribbon-container {
+    height: 2em;
+    width: 100%;
+}
+
+.ribbon-container a {
+    text-decoration: none;
+}
+
+.ribbon-container a:hover {
+    font-weight: bold;
+}

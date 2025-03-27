@@ -1,0 +1,25 @@
+.hor {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+}
+
+/* Why does this not work? */
+/* .pad-sides {
+    padding: 0 120px; 
+} */
+
+.column-left {
+    padding-left: 120px;
+}
+
+.column-right {
+    padding-right: 120px;
+}

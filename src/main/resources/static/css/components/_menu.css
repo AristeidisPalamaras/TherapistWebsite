@@ -1,0 +1,45 @@
+@import url("../base/_variables.css");
+
+.menu-container {
+    background-color: var(--bg-menu-primary);
+    height: 6em;
+    width: 100%;
+}
+
+.menu-container a {
+    text-decoration: none;
+}
+
+.menu-container a:hover {
+
+    /* EITHER underline on hover: */
+    text-decoration: underline;
+    text-decoration-color: var(--font-dark-primary);
+    text-underline-offset: 8px;
+
+    /* OR color change on hover: */
+    /* color: var(--font-dark-secondary); */
+}
+
+.menu-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-container li {
+    padding: 0;
+}
+
+.menu-container .btn {
+    margin-left: 10px;
+}
+
+.menu-item {
+    padding: 0 10px;
+}
+
+.active {
+    font-weight: bold;
+    /* text-decoration: underline #111111; */
+    /* text-underline-offset: 8px; */
+}

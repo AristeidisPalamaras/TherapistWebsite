@@ -1,0 +1,13 @@
+@import url("_variables.css");
+
+.font-large {
+    font-size: var(--font-large);
+}
+
+.font-medium {
+    font-size: var(--font-medium);
+}
+
+.font-small {
+    font-size: var(--font-small);
+}
