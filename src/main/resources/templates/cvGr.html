@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      layout:decorate="~{base}">
+<head>
+    <title>Βιογραφικό</title>
+</head>
+<body>
+    <main layout:fragment="content">
+        <div class="banner">
+            <div class="head">Βιογραφικό Σημείωμα</div>
+            <div class="sub-head">Κώστας Μαυρακάκης</div>
+        </div>
+        <div class="hor-up stuff">
+            <div class="column-left">
+                <img th:src="@{/img/KostasMavrakakis1.jpg}" alt="Κώστας Μαυρακάκης" class="pic">
+            </div>
+            <div class="column-right">
+                <h1>Σύντομο Σημείωμα</h1>
+                <p>Είμαι ψυχολόγος, προσωποκεντρικός σύμβουλος καθώς και τραυματοθεραπευτής.</p>
+                <p>Έχοντας τόσο πτυχίο όσο και μεταπτυχιακό στα ναυτιλιακά, εργάστηκα για αρκετά χρόνια ως στέλεχος σε ναυτιλιακή επιχείρηση.</p>
+                <p>Το 2009, ωστόσο, οι προσωπικές μου αναζητήσεις και ανησυχίες με οδήγησαν σε ένα νέο μονοπάτι. Έτσι, απέκτησα πτυχίο Ψυχολογίας (BSc in Psychology, Open University) και μεταπτυχιακό στην Προσωποκεντρική Συμβουλευτική (MSc in Person-Centred Counselling, University of Strathclyde).</p>
+                <p>Έχω επίσης εκπαιδευτεί στην Τραυματοθεραπεία με τις μεθόδους EMDR από το Ινστιτούτο Τραυματοθεραπείας και IFS (Pre-Level One Training) από την Dr. Alexia Rothman και το Trauma2therapy.</p>
+                <p>Πραγματοποιώ ατομικές συνεδρίες και συντονίζω ομάδες προσωπικής ανάπτυξης, καθώς και ομάδες που συνδυάζουν τη δημιουργική γραφή με τη θεραπευτική διαδικασία.</p>
+                <p>Έχω συγγράψει τρία βιβλία μυθοπλασίας που κυκλοφορούν από τις εκδόσεις Κέδρος.</p>
+                
+                <div class="space">
+                    <a th:href="@{'/contact'}" class="btn-big font-large"> Κλείσε συνεδρία</a>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

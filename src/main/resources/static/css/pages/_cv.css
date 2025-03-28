@@ -1,0 +1,72 @@
+@import url("../base/_variables.css");
+
+.banner {
+    top: calc(var(--menu-height) + var(--ribbon-height));
+    left: 0;
+
+    width: 100%;
+    height: calc(100vh - var(--menu-height) - var(--ribbon-height));
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../../img/bg1.jpg");
+    background-size: cover;
+    background-position: right;
+}
+
+.head {
+    font-size: 48px;
+}
+
+.sub-head {
+    font-size: 32px;
+}
+
+.hor-up {
+    display: flex;
+    flex-direction: row;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+.stuff {
+    margin-top: 120px;
+    margin-bottom: 120px;
+}
+
+.stuff h1 {
+    margin-top: 0;
+}
+
+.stuff p {
+    font-size: var(--font-medium);
+}
+
+.btn-big {
+    text-decoration: none;
+    background-color: var(--bg-btn-primary);
+    color: var(--font-light-primary);
+    padding: 10px 50px;
+    border-radius: 32px;
+}
+
+.btn-big:hover {
+    text-decoration: none;
+    background-color: var(--bg-btn-secondary);
+    color: var(--font-light-primary);
+}
+
+.space {
+    margin-top: 3em;
+    display: flex;
+    justify-content: center;
+}
+
+.pic {
+    height: 80vh;
+    padding-right: 60px;
+}
+

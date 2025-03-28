@@ -49,13 +49,13 @@ public class AppController {
     @GetMapping("/cv")
     public String aboutMeGr(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
-        return "aboutMeGr";
+        return "cvGr";
     }
 
     @GetMapping("/en/cv")
     public String aboutMeEn(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
-        return "aboutMeEn";
+        return "cvEn";
     }
 
     @GetMapping("/contact")

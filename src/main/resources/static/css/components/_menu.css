@@ -2,7 +2,7 @@
 
 .menu-container {
     background-color: var(--bg-menu-primary);
-    height: 6em;
+    height: var(--menu-height);
     width: 100%;
 }
 

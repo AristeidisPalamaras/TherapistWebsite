@@ -10,7 +10,7 @@
 a.btn:hover {
     
     /* color change on hover: */
-    text-decoration: dotted;
+    text-decoration: none;
     background-color: var(--bg-btn-secondary);
     color: var(--font-light-primary);
 }

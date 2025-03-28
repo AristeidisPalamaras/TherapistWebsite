@@ -5,5 +5,7 @@
 
 @import url("components/_menu.css");
 @import url("components/_button.css");
-@import url("components/_ribbon.css")
+@import url("components/_ribbon.css");
+
+@import url("pages/_cv.css");
 
