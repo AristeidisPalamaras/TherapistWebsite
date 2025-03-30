@@ -1,6 +1,6 @@
 @import url("../base/_variables.css");
 
-.banner {
+.banner3 {
     top: calc(var(--menu-height) + var(--ribbon-height));
     left: 0;
 
@@ -12,7 +12,7 @@
     align-items: center;
     justify-content: center;
 
-    background-image: url("../../img/bg1.jpg");
+    background-image: url("../../img/bg3.jpg");
     background-size: cover;
     background-position: right;
 }

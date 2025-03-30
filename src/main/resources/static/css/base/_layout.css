@@ -26,8 +26,8 @@
 
 /* DEV ONLY - DELETE ME */
 .placeholder {
-    height: 100vh;
+    height: 50vh;
     text-align: center;
-    padding-top: 80px;
+    /* padding-top: 80px; */
     font-size: 18px;
 }
