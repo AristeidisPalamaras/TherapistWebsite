@@ -33,7 +33,7 @@
 }
 
 .stuff {
-    margin-top: 120px;
+    margin-top: 90px;
     margin-bottom: 120px;
 }
 
@@ -60,13 +60,18 @@
 }
 
 .space {
-    margin-top: 3em;
+    margin-top: 3.75em;
     display: flex;
     justify-content: center;
 }
 
 .pic {
-    height: 80vh;
-    padding-right: 60px;
+    height: 70vh;
+    padding-right: 90px;
+}
+
+.stuff hr {
+    color: #555;
+    border-style: solid;
 }
 

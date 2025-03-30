@@ -12,7 +12,7 @@
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
-               th:text="${currentUrl.startsWith('/en') ? 'Approach' : 'Προσέγγιση'}"
+               th:text="${currentUrl.startsWith('/en') ? 'My approach' : 'Η προσέγγιση μου'}"
                class="menu-item font-medium" th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
          </li>
          <li>
