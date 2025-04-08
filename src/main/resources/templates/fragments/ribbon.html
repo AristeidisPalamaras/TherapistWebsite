@@ -4,11 +4,18 @@
         class="font-small"></div>
     </div>
     <div class="column-right">
-        <a class="font-small"
+        <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
+            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="flag-icon">
+        </a>
+        <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
+            <img th:src="@{/img/en.png}" alt="English" class="flag-icon">
+        </a>
+
+        <!-- <a class="font-small"
             th:href="@{ ${
             currentUrl == '/' ? '/en' : (
                 currentUrl == '/en' ? '/' : (
                     currentUrl.startsWith('/en') ? currentUrl.substring(3) : '/en' + currentUrl ))} }"
-                    th:text="${currentUrl.startsWith('/en') ? 'Gr' : 'En'}"></a>
+                    th:text="${currentUrl.startsWith('/en') ? 'Gr' : 'En'}"></a> -->
     </div>
 </div>

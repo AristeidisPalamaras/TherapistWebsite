@@ -12,3 +12,14 @@
 .ribbon-container a:hover {
     font-weight: bold;
 }
+
+.flag-icon {
+    width: 16px;
+    height: 16px;
+    padding-left: 6px;
+    padding-top: 6px;
+}
+
+.flag-icon:hover {
+    opacity: 70%;
+}
