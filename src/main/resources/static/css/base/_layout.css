@@ -1,13 +1,15 @@
 .hor {
     display: flex;
     flex-direction: row;
+}
+
+.center-y {
     align-items: center;
     justify-content: space-between;
 }
 
-.hor-alt {
-    display: flex;
-    flex-direction: row;
+.center-x {
+    justify-content: center;
 }
 
 .sticky {
@@ -21,28 +23,36 @@
     padding: 0 120px; 
 } */
 
+.pad-x {
+    padding: 0 120px;
+}
+
+.pad-y {
+    padding-top: 90px;
+    padding-bottom: 120px;
+
+    /* margin-top: 90px; */
+    /* margin-bottom: 120px; */
+}
+
 .column-left {
-    padding-left: 120px;
-}
-
-.column-right {
-    padding-right: 120px;
-}
-
-.column-left-alt {
-    padding-left: 120px;
     flex: 1;
 }
 
-.column-right-alt {
-    padding-right: 120px;
+.column-right {
     flex: 2;
 }
+
+.space {
+    margin-top: 3.75em;
+}
+
+
 
 /* DEV ONLY - DELETE ME */
 .placeholder {
     height: 50vh;
+    padding-top: 90px;
     text-align: center;
-    /* padding-top: 80px; */
     font-size: 18px;
 }

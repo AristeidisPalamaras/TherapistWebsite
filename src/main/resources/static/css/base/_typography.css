@@ -11,3 +11,15 @@
 .font-small {
     font-size: var(--font-small);
 }
+
+.header-font-large {
+    font-size: var(--header-font-large);
+}
+
+.header-font-medium {
+    font-size: var(--header-font-medium);
+}
+
+.paragraph {
+    margin-bottom: var(--font-medium);
+}

@@ -1,9 +1,9 @@
-<div th:fragment="menu" class="menu-container hor">
-   <div class="column-left">
+<div th:fragment="menu" class="menu-container hor center-y pad-x">
+   <div>
       <div class="font-large" th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></div>
       <div class="font-small" th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></div>
    </div>
-   <div class="column-right">
+   <div>
       <ul class="hor">
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 

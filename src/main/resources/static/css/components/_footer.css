@@ -3,11 +3,6 @@
 .footer-container {
     background-color: var(--bg-btn-primary);
     height: 5em;
-    width: 100%;
-    
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .footer-container * {

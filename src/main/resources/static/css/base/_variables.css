@@ -10,6 +10,9 @@
     --font-medium: 18px;
     --font-small: 16px;
 
+    --header-font-large: 48px;
+    --header-font-medium: 32px;
+
     --menu-height: 7em;
     --ribbon-height: 2em;
 }
