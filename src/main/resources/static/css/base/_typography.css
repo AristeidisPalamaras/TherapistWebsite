@@ -20,6 +20,10 @@
     font-size: var(--header-font-medium);
 }
 
+.header-font-small {
+    font-size: var(--header-font-small);
+}
+
 .paragraph {
     margin-bottom: var(--font-medium);
 }

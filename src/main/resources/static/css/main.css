@@ -8,8 +8,10 @@
 @import url("components/_ribbon.css");
 @import url("components/_footer.css");
 
+@import url("pages/_home.css");
 @import url("pages/_approach.css");
 @import url("pages/_traumaTherapy.css");
 @import url("pages/_cv.css");
+@import url("pages/_contact.css");
 
 
