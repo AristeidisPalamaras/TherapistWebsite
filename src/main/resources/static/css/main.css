@@ -2,6 +2,7 @@
 @import url("base/_global.css");
 @import url("base/_typography.css");
 @import url("base/_layout.css");
+@import url("base/_reset.css");
 
 @import url("components/_menu.css");
 @import url("components/_button.css");

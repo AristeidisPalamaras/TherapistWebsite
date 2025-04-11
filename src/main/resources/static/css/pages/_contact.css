@@ -61,6 +61,7 @@
 input, textarea {
     flex-grow: 1;
     padding: 6px 12px;
+    border: solid 1px #999999;
 }
 
 input:focus {
@@ -77,4 +78,10 @@ textarea:focus {
 
 button {
     border: none;
+}
+
+i {
+    width: 18px;
+    text-align: center;
+    margin-right: 4px;
 }
