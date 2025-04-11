@@ -43,10 +43,17 @@
     flex: 2;
 }
 
+.column-even {
+    flex: 1;
+}
+
 .space {
     margin-top: 3.75em;
 }
 
+.space-small {
+    margin-top: 2em;
+}
 
 
 /* DEV ONLY - DELETE ME */
