@@ -7,7 +7,6 @@
 
 .menu-item {
     padding: 0 10px;
-    text-decoration: none;
 }
 
 .menu-item:hover {
@@ -24,15 +23,6 @@
     font-weight: bold;
     /* text-decoration: underline #111111; */
     /* text-underline-offset: 8px; */
-}
-
-.menu-container ul {
-    list-style: none;
-    padding: 0;
-}
-
-.menu-container li {
-    padding: 0;
 }
 
 .menu-container .btn {

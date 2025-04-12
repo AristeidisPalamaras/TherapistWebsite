@@ -18,11 +18,6 @@
     overflow: hidden;
 }
 
-/* Why does this not work? */
-/* .pad-sides {
-    padding: 0 120px; 
-} */
-
 .pad-x {
     padding: 0 120px;
 }
@@ -40,17 +35,28 @@
     flex: 2;
 }
 
-.column-even {
+.column-even-left {
     flex: 1;
+    padding-right: 120px;
 }
 
-.space {
-    margin-top: 3.75em;
+.column-even-right {
+    flex: 1;
+    padding-left: 120px;
 }
 
-.space-small {
-    margin-top: 2em;
+p {
+    margin-bottom: var(--font-medium);
 }
+
+.space-y {
+    margin-bottom: 60px;
+}
+
+.space-y-small {
+    margin-bottom: 30px;
+}
+
 
 
 /* DEV ONLY - DELETE ME */

@@ -1,3 +1,5 @@
+@import url("_variables.css");
+
 /* Base reset */
 *,
 *::before,
@@ -10,12 +12,12 @@
 /* Set base font family, size, and weight */
 html, body {
   font-family: "Manrope", sans-serif;
-  font-size: 16px;
-  font-weight: var(--font-medium);
+  font-size: var(--font-medium);
+  font-weight: normal;
   line-height: 1.5;
-  background: #fff;
   color: var(--font-dark-primary);
-  height: 100%;
+  background: var(--bg-primary);
+  /* height: 100%; */
 }
 
 /* Remove link styling */
@@ -56,14 +58,9 @@ table {
   border-spacing: 0;
 }
 
-/* Optional: Smooth scrolling */
+/* Smooth scrolling */
 html {
   scroll-behavior: smooth;
-}
-
-/* Optional: Cursor defaults */
-button {
-  cursor: pointer;
 }
 
 /* Prevent overflow */

@@ -1,34 +1,34 @@
 <div th:fragment="menu" class="menu-container hor center-y pad-x">
    <div>
-      <div class="font-large" th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></div>
-      <div class="font-small" th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></div>
+      <h1 class="font-large" th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></h1>
+      <h1 class="font-small" th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h1>
    </div>
    <div>
       <ul class="hor">
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Home' : 'Αρχική'}"
-               class="menu-item font-medium" th:classappend="${ currentUrl == '/' ? 'active' : (currentUrl == '/en' ? 'active' : '')}"></a>
+               class="menu-item" th:classappend="${ currentUrl == '/' ? 'active' : (currentUrl == '/en' ? 'active' : '')}"></a>
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'My approach' : 'Η προσέγγιση μου'}"
-               class="menu-item font-medium" th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
+               class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
-               class="menu-item font-medium" th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'active' : ''}"></a>
+               class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'active' : ''}"></a>
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'CV' : 'Βιογραφικό'}"
-               class="menu-item font-medium" th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
+               class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Contact' : 'Επικοινωνία'}"
-               class="btn font-medium" th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'active' : ''}"></a>
+               class="btn" th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'active' : ''}"></a>
          </li>
       </ul>
    </div>

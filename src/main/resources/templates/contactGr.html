@@ -7,37 +7,37 @@
 <body>
     <main layout:fragment="content">
         <div class="banner4">
-            <div class="header-font-large">Επικοινωνία</div>
+            <h1 class="header-font-large">Επικοινωνία</h1>
         </div>
         <div class="hor pad-x pad-y">
-            <div class="column-even pad-left-col">
-                <div class="font-large form-space-medium">Στοιχεία Επικοινωνίας</div>
-                <div class="font-medium form-space-large">Για περισσότερες πληροφορίες ή για να κλείσετε ραντεβού, συμπληρώστε την φόρμα δεξιά ή 
-                    επικοινωνήστε απευθείας μαζί μου.</div>
-                <div class="form-space-large">
-                    <div class="font-medium form-space-tiny"><i class="fa fa-map-marker" aria-hidden="true"></i> Διεύθυνση: <span class="font-alt">TBC</span></div>
-                    <div class="font-medium form-space-tiny"><i class="fa fa-phone" aria-hidden="true"></i> Τηλέφωνο: <span class="font-alt">+30 1234567890</span></div>
-                    <div class="font-medium"><i class="fa fa-envelope" aria-hidden="true"></i> E-mail: <span class="font-alt">abcdefg@gmail.com</span></div>
-                </div>
-                <div class="font-medium"><i class="fa fa-clock-o" aria-hidden="true"></i> Ωράριο: <span class="font-alt">TBC</span></div>
+            <div class="column-even-left">
+                <h2 class="font-large space-y-small">Στοιχεία Επικοινωνίας</h2>
+                <p class="space-y-small">Για περισσότερες πληροφορίες ή για να κλείσετε ραντεβού, συμπληρώστε την φόρμα 
+                    δεξιά ή επικοινωνήστε απευθείας μαζί μου.</p>
+                <ul class="contact-details space-y-small">
+                    <li><i class="fa fa-map-marker" aria-hidden="true"></i> Διεύθυνση: <span class="font-alt">TBC</span></li>
+                    <li><i class="fa fa-phone" aria-hidden="true"></i> Τηλέφωνο: <span class="font-alt">+30 1234567890</span></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i> E-mail: <span class="font-alt">abcdefg@gmail.com</span></li>
+                </ul>
+                <p><i class="fa fa-clock-o" aria-hidden="true"></i> Ωράριο: <span class="font-alt">TBC</span></p>
             </div>
             <div class="vl"></div>
-            <div class="column-even pad-right-col">
+            <div class="column-even-right">
                 <form>
-                    <div class="stretch">
-                        <div class="font-large form-space-medium">Φόρμα Επικοινωνίας</div>
-                        <div class="font-medium form-space-smaller"><label for="name">Όνομα*</label></div>
-                        <input type="text" id="name" class="font-medium form-space-small">
-                        <div class="font-medium form-space-smaller"><label for="email">E-mail*</label></div>
-                        <input type="text" id="email" class="font-medium form-space-small">
-                        <div class="font-medium form-space-smaller"><label for="telephone">Τηλέφωνο</label></div>
-                        <input type="text" id="telephone" class="font-medium form-space-small">
-                        <div class="font-medium form-space-smaller"><label for="message">Το μήνυμα σας*</label></div>
-                        <textarea id="message" class="font-medium form-space-large"></textarea>
+                    <div class="stretch space-y-small">
+                        <h2 class="font-large space-y-small">Φόρμα Επικοινωνίας</h2>
+                        <label for="name">Όνομα*</label>
+                        <input type="text" id="name">
+                        <label for="email">E-mail*</label>
+                        <input type="text" id="email">
+                        <label for="telephone">Τηλέφωνο</label>
+                        <input type="text" id="telephone">
+                        <label for="message">Το μήνυμα σας*</label>
+                        <textarea id="message"></textarea>
                     </div>
-                    <!-- <input type="submit" class="btn"> -->
-                     <div class="hor center-x">
-                         <button type="submit" class="btn font-medium">Αποστολή</button>
+                    <div class="hor center-x">
+                        <!-- <input type="submit" class="btn"> -->
+                        <button type="submit" class="btn">Αποστολή</button>
                      </div>
                 </form>
             </div>

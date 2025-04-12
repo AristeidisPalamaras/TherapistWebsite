@@ -4,10 +4,10 @@
     </div>
     <div class="hor">
         <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
-            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="flag-icon">
+            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="ribbon-item">
         </a>
         <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
-            <img th:src="@{/img/en.png}" alt="English" class="flag-icon">
+            <img th:src="@{/img/en.png}" alt="English" class="ribbon-item">
         </a>
 
         <!-- <a class="font-small"

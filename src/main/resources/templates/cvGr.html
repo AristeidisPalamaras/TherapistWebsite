@@ -7,36 +7,36 @@
 <body>
     <main layout:fragment="content">
         <div class="banner3">
-            <div class="header-font-large">Βιογραφικό Σημείωμα</div>
-            <div class="header-font-medium">Κώστας Μαυρακάκης</div>
+            <h1 class="header-font-large">Βιογραφικό Σημείωμα</h1>
+            <h1 class="header-font-medium">Κώστας Μαυρακάκης</h1>
         </div>
         <div class="hor pad-x pad-y">
             <div class="column-left">
-                <div class="header-font-medium">Σύντομο Σημείωμα</div>
+                <h2 class="header-font-medium">Σύντομο Σημείωμα</h2>
             </div>
             <div class="column-right">
                 <!-- <div class="hor"> -->
                     <div>
                         <img th:src="@{/img/KostasMavrakakis1.jpg}" alt="Κώστας Μαυρακάκης" class="pic">
                     </div>
-                    <div>
-                        <div class="paragraph font-medium">Είμαι ψυχολόγος, προσωποκεντρικός σύμβουλος καθώς και τραυματοθεραπευτής.</div>
-                        <div class="paragraph font-medium">Έχοντας τόσο πτυχίο όσο και μεταπτυχιακό στα ναυτιλιακά, εργάστηκα 
-                            για αρκετά χρόνια ως στέλεχος σε ναυτιλιακή επιχείρηση.</div>
-                        <div class="paragraph font-medium">Το 2009, ωστόσο, οι προσωπικές μου αναζητήσεις και ανησυχίες με οδήγησαν 
+                    <div class="space-y">
+                        <p>Είμαι ψυχολόγος, προσωποκεντρικός σύμβουλος καθώς και τραυματοθεραπευτής.</p>
+                        <p>Έχοντας τόσο πτυχίο όσο και μεταπτυχιακό στα ναυτιλιακά, εργάστηκα 
+                            για αρκετά χρόνια ως στέλεχος σε ναυτιλιακή επιχείρηση.</p>
+                        <p>Το 2009, ωστόσο, οι προσωπικές μου αναζητήσεις και ανησυχίες με οδήγησαν 
                             σε ένα νέο μονοπάτι. Έτσι, απέκτησα πτυχίο Ψυχολογίας (BSc in Psychology, Open University) και μεταπτυχιακό 
-                            στην Προσωποκεντρική Συμβουλευτική (MSc in Person-Centred Counselling, University of Strathclyde).</div>
-                        <div class="paragraph font-medium">Έχω επίσης εκπαιδευτεί στην Τραυματοθεραπεία με τις μεθόδους EMDR από το 
+                            στην Προσωποκεντρική Συμβουλευτική (MSc in Person-Centred Counselling, University of Strathclyde).</p>
+                        <p>Έχω επίσης εκπαιδευτεί στην Τραυματοθεραπεία με τις μεθόδους EMDR από το 
                             Ινστιτούτο Τραυματοθεραπείας και IFS (Pre-Level One Training) από την Dr. Alexia Rothman και το 
-                            Trauma2therapy.</div>
-                        <div class="paragraph font-medium">Πραγματοποιώ ατομικές συνεδρίες και συντονίζω ομάδες προσωπικής ανάπτυξης, 
-                            καθώς και ομάδες που συνδυάζουν τη δημιουργική γραφή με τη θεραπευτική διαδικασία.</div>
-                        <div class="paragraph font-medium">Έχω συγγράψει τρία βιβλία μυθοπλασίας που κυκλοφορούν από τις εκδόσεις 
-                            Κέδρος.</div>
+                            Trauma2therapy.</p>
+                        <p>Πραγματοποιώ ατομικές συνεδρίες και συντονίζω ομάδες προσωπικής ανάπτυξης, 
+                            καθώς και ομάδες που συνδυάζουν τη δημιουργική γραφή με τη θεραπευτική διαδικασία.</p>
+                        <p>Έχω συγγράψει τρία βιβλία μυθοπλασίας που κυκλοφορούν από τις εκδόσεις 
+                            Κέδρος.</p>
                     </div>
                 <!-- </div> -->
                     
-                <div class="space hor center-x">
+                <div class="hor center-x">
                     <a th:href="@{'/contact'}" class="btn-big font-large"> Κλείσε συνεδρία</a>
                 </div>
             </div>

@@ -4,20 +4,12 @@
     height: var(--ribbon-height);
 }
 
-.ribbon-container a {
-    text-decoration: none;
-}
-
-.ribbon-container a:hover {
-    font-weight: bold;
-}
-
-.flag-icon {
+.ribbon-item {
     width: 20px;
     height: 20px;
     margin-left: 8px;
 }
 
-.flag-icon:hover {
+.ribbon-item:hover {
     opacity: 70%;
 }
