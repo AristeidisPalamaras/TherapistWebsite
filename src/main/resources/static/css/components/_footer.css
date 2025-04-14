@@ -1,11 +1,17 @@
 @import url("../base/_variables.css");
 
 .footer-container {
-    background-color: var(--bg-btn-primary);
-    height: 5em;
+    background-color: var(--bg-menu-primary);
+    text-align: center;
+    padding: 25px 0;
 }
 
-.footer-container * {
-    color: var(--font-light-primary);
+.footer-container p {
+    margin: 0;
+    font-size: var(--font-small);
+}
 
+.hl-footer {
+    border-bottom: 3px solid var(--font-light-primary);
+    margin: 25px 0;
 }
