@@ -24,6 +24,14 @@
     font-size: var(--header-font-small);
 }
 
+.footer-font-large {
+    font-size: var(--footer-font-large);
+}
+
+.footer-font-medium {
+    font-size: var(--footer-font-medium);
+}
+
 i {
     width: 18px;
     text-align: center;

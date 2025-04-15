@@ -18,6 +18,9 @@
     --header-font-medium: 32px;
     --header-font-small: 22px;
 
+    --footer-font-large: 20px;
+    --footer-font-medium: 15px;
+
     --menu-height: 7em;
     --ribbon-height: 2em;
 }

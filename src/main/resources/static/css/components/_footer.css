@@ -6,9 +6,14 @@
     padding: 25px 0;
 }
 
+.footer-container h2 {
+    font-size: var(--footer-font-medium);
+    padding-bottom: 10px;
+}
+
 .footer-container p {
+    font-size: var(--footer-font-medium);
     margin: 0;
-    font-size: var(--font-small);
 }
 
 .hl-footer {
