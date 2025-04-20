@@ -1,10 +1,7 @@
 <div th:fragment="footer" class="footer-container">
-    <h1 class="footer-font-large" th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></h1>
-    <h2 th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h2>
-    <p th:text="${currentUrl.startsWith('/en') ? 'Address: TBC' : 'Διεύθυνση: TBC'}"></p>
-    <p th:text="${currentUrl.startsWith('/en') ? 'Telephone: +30 1234567890 | E-mail: abcdefg@gmail.com' : 'Τηλέφωνο: +30 1234567890 | E-mail: abcdefg@gmail.com'}"></p>
     
-    <div class="hl-footer"></div>
-
+    <h1 class="footer-font-large" th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis • Therapist - EMDR Practicioner - IFS Informed' : 'Κώστας Μαυρακάκης • Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h1>
+    <p th:text="${currentUrl.startsWith('/en') ? 'Telephone: +30 1234567890 • E-mail: abcdefg@gmail.com' : 'Τηλέφωνο: +30 1234567890 • E-mail: abcdefg@gmail.com'}"></p>
+    
     <p th:text="${currentUrl.startsWith('/en') ? '© Copyright 2025 Kostas Mavrakakis' : '© Copyright 2025 Κώστας Μαυρακάκης'}"></p>
 </div>

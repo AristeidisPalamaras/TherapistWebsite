@@ -1,14 +1,13 @@
 :root {
     --font-dark-primary: #111111;
-    /* --font-dark-secondary: #817C5F; */
     --font-light-primary: #eeeeee;
     --font-alt: #F1A05A;
-    --lines: #999999;
     --bg-primary: #ffffff;
     --bg-menu-primary: #D0C9C0;
-    --bg-menu-alt: #e0d9d1;
+    --bg-footer-primary: #beb4a7;
     --bg-btn-primary: #817C5F;
     --bg-btn-secondary: #9f9977;
+    --lines: #999999;
 
     --font-large: 24px;
     --font-medium: 18px;
@@ -18,7 +17,6 @@
     --header-font-medium: 32px;
     --header-font-small: 22px;
 
-    --footer-font-large: 20px;
     --footer-font-medium: 15px;
 
     --menu-height: 7em;
