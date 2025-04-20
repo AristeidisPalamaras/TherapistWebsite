@@ -11,6 +11,11 @@
                class="menu-item" th:classappend="${ currentUrl == '/' ? 'active' : (currentUrl == '/en' ? 'active' : '')}"></a>
          </li>
          <li>
+            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
+               th:text="${currentUrl.startsWith('/en') ? 'CV' : 'Βιογραφικό'}"
+               class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
+         </li>
+         <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'My approach' : 'Η προσέγγιση μου'}"
                class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
@@ -19,11 +24,6 @@
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
                class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'active' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
-               th:text="${currentUrl.startsWith('/en') ? 'CV' : 'Βιογραφικό'}"
-               class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
