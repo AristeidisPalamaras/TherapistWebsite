@@ -21,5 +21,8 @@
 
     --menu-height: 7em;
     --ribbon-height: 2em;
-    --banner-height: 67vh;
+
+    /* --banner-height: 67vh; */
+    --banner-full: calc(100vh - var(--ribbon-height) - var(--menu-height));
+    --banner-small: calc(67vh - var(--ribbon-height) - var(--menu-height));
 }
