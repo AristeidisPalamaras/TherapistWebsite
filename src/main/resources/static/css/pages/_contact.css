@@ -28,3 +28,7 @@
 .font-alt {
     color: var(--font-alt);
 }
+
+#map {
+    height: 300px;
+}
