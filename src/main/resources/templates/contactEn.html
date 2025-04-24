@@ -3,14 +3,50 @@
       layout:decorate="~{base}">
 <head>
     <title>Contact</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="/js/map.js"></script>
 </head>
 <body>
     <main layout:fragment="content">
         <div class="banner4">
             <h1 class="header-font-large">Contact</h1>
         </div>
-        <div>
-            <p class="placeholder">Contact (placeholder)</p>
+        <div class="hor pad-x pad-y">
+            <div class="column-even-left">
+                <h2 class="font-large space-y-small">Contact Information</h2>
+                <p class="space-y-small">
+                    For more information or to book a session, fill in the contact form on the right or contact me 
+                    directly</p>
+                <p class="space-y-small">
+                    <i class="fa fa-info" aria-hidden="true"></i>Individual sessions in person or online.</p> 
+                <ul class="contact-details space-y-small">
+                    <li><i class="fa fa-phone" aria-hidden="true"></i>Telephone: <span class="font-alt">+30 1234567890</span></li>
+                    <li><i class="fa fa-envelope" aria-hidden="true"></i>E-mail: <span class="font-alt">abcdefg@gmail.com</span></li>
+                </ul>
+                <div id="map"></div>
+            </div>
+            <div class="vl"></div>
+            <div class="column-even-right">
+                <form>
+                    <div class="stretch space-y-small">
+                        <h2 class="font-large space-y-small">Contact Form</h2>
+                        <label for="name">Name*</label>
+                        <input type="text" id="name">
+                        <label for="email">E-mail*</label>
+                        <input type="text" id="email">
+                        <label for="telephone">Telephone</label>
+                        <input type="text" id="telephone">
+                        <label for="message">Your message*</label>
+                        <textarea id="message"></textarea>
+                    </div>
+                    <div class="hor center-x">
+                        <!-- <input type="submit" class="btn"> -->
+                        <button type="submit" class="btn">Submit</button>
+                     </div>
+                </form>
+            </div>
         </div>
     </main>
 </body>

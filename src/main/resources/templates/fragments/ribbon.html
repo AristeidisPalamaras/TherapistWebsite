@@ -1,6 +1,6 @@
 <div th:fragment="ribbon" class="ribbon-container hor center-y pad-x">
     <div>
-        <div><i class="fa fa-phone" aria-hidden="true"></i> +30 1234567890</div>
+        <div><i class="fa fa-phone" aria-hidden="true"></i>+30 1234567890</div>
     </div>
     <div class="hor">
         <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">

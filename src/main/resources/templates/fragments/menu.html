@@ -12,12 +12,12 @@
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
-               th:text="${currentUrl.startsWith('/en') ? 'CV' : 'Βιογραφικό'}"
+               th:text="${currentUrl.startsWith('/en') ? 'About Me' : 'Βιογραφικό'}"
                class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
          </li>
          <li>
             <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
-               th:text="${currentUrl.startsWith('/en') ? 'My approach' : 'Η προσέγγιση μου'}"
+               th:text="${currentUrl.startsWith('/en') ? 'My Approach' : 'Η Προσέγγιση Μου'}"
                class="menu-item" th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
          </li>
          <li>

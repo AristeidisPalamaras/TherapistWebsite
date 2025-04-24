@@ -56,13 +56,3 @@ p {
 .space-y-small {
     margin-bottom: 30px;
 }
-
-
-
-/* DEV ONLY - DELETE ME */
-.placeholder {
-    height: 50vh;
-    padding-top: 90px;
-    text-align: center;
-    font-size: 18px;
-}
