@@ -19,10 +19,11 @@
 
 .link {
     width: 255px;
-    /* height: 450px; */
+    /* height: 435px; */
     display: flex;
     flex-direction: column;
     align-items: center;
+    /* justify-content: space-between; */
 }
 
 .link-head {
@@ -38,8 +39,8 @@
 }
 
 .link-body {
-    height: 105px;
-    margin-bottom: 30px;
+    height: 135px;
+    /* margin-bottom: 30px; */
     align-content: center;
     text-align: center;
 }
