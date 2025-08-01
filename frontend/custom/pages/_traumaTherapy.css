@@ -1,18 +1,18 @@
-@import url("../base/_variables.css");
-
-.banner2 {
-    top: calc(var(--menu-height) + var(--ribbon-height));
-    left: 0;
-
-    width: 100%;
-    height: var(--banner-full);
-    
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-image: url("../../img/bg2.jpg");
-    background-size: cover;
-    background-position: right;
+@layer utilities {
+    .banner2 {
+        top: calc(var(--menu-height) + var(--ribbon-height));
+        left: 0;
+        
+        width: 100%;
+        height: var(--banner-full);
+        
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        
+        background-image: url("../../img/bg2.jpg");
+        background-size: cover;
+        background-position: right;
+    }
 }

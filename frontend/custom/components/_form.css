@@ -1,25 +1,27 @@
-@import url("../base/_variables.css");
-
-label {
-    margin-bottom: 10px;
+@layer base {
+    label {
+        margin-bottom: 10px;
+    }
+    
+    input, textarea {
+        flex-grow: 1;
+        padding: 6px 12px;
+        border: solid 1px var(--lines);
+        margin-bottom: 20px;
+    }
+    
+    textarea {
+        height: 8em;
+    }
+    
+    button {
+        cursor: pointer;
+    }
 }
 
-input, textarea {
-    flex-grow: 1;
-    padding: 6px 12px;
-    border: solid 1px var(--lines);
-    margin-bottom: 20px;
-}
-
-textarea {
-    height: 8em;
-}
-
-button {
-    cursor: pointer;
-  }
-
-.stretch {
-    display: flex;
-    flex-direction: column;
+@layer utilities {
+    .stretch {
+        display: flex;
+        flex-direction: column;
+    }
 }

@@ -1,35 +1,37 @@
-@import url("_variables.css");
+@layer utilities {
+    .font-large {
+        font-size: var(--font-large);
+    }
 
-.font-large {
-    font-size: var(--font-large);
+    .font-medium {
+        font-size: var(--font-medium);
+    }
+
+    .font-small {
+        font-size: var(--font-small);
+    }
+
+    .header-font-large {
+        font-size: var(--header-font-large);
+    }
+
+    .header-font-medium {
+        font-size: var(--header-font-medium);
+    }
+
+    .header-font-small {
+        font-size: var(--header-font-small);
+    }
+
+    .footer-font-medium {
+        font-size: var(--footer-font-medium);
+    }
 }
 
-.font-medium {
-    font-size: var(--font-medium);
-}
-
-.font-small {
-    font-size: var(--font-small);
-}
-
-.header-font-large {
-    font-size: var(--header-font-large);
-}
-
-.header-font-medium {
-    font-size: var(--header-font-medium);
-}
-
-.header-font-small {
-    font-size: var(--header-font-small);
-}
-
-.footer-font-medium {
-    font-size: var(--footer-font-medium);
-}
-
-i {
-    width: 18px;
-    text-align: center;
-    margin-right: 5px;
+@layer base {
+    i {
+        width: 18px;
+        text-align: center;
+        margin-right: 5px;
+    }
 }
