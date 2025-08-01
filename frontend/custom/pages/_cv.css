@@ -1,0 +1,28 @@
+@import url("../base/_variables.css");
+
+.banner3 {
+    top: calc(var(--menu-height) + var(--ribbon-height));
+    left: 0;
+
+    width: 100%;
+    height: var(--banner-full);
+        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    background-image: url("../../img/bg3.jpg");
+    background-size: cover;
+    background-position: right;
+}
+
+.pic {
+    height: 70vh;
+}
+
+.hl {
+    margin-top: 15px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--font-dark-primary);
+}
