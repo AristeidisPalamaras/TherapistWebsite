@@ -7,14 +7,14 @@
 <body>
     <main layout:fragment="content">
         <div class="banner0">
-            <h1 class="header-font-large">Welcome</h1>
+            <h1 class="text-5xl">Welcome</h1>
         </div>
-        <div class="pad-x pad-y">
-            <div class="hor space-y">
-                <div class="column-left">
-                    <h2 class="header-font-medium">Kostas Mavrakakis</h2>
+        <div class="px-32 pt-24 pb-32">
+            <div class="flex mb-16">
+                <div class="flex-1">
+                    <h2 class="text-3.5xl">Kostas Mavrakakis</h2>
                 </div>
-                <div class="column-right">
+                <div class="flex-2">
                     <p>My name is Kostas Mavrakakis and I am a psychologist, person-centred counsellor, and trauma 
                         therapist trained in EMDR and IFS (Pre-Level One).</p>
                     <p>My office is located in the center of Athens (near the Acropolis metro station), and I offer 
@@ -29,9 +29,9 @@
                 </div>
             </div>
             <div>
-                <ul class="hor center-y">
+                <ul class="flex items-center justify-between">
                     <li class="link">
-                        <h2 class="link-head header-font-small">About Me</h2>
+                        <h2 class="link-head text-1.5xl">About Me</h2>
                         <img th:src="@{/img/bg3.jpg}" alt="about me" class="link-pic">
                         <p class="link-body">
                             Psychologist and trauma therapist grounded in the person-centred approach.
@@ -39,7 +39,7 @@
                         <a th:href="@{'/cv'}" class="btn">Read More</a>
                     </li>
                     <li class="link">
-                        <h2 class="link-head header-font-small">My Approch</h2>
+                        <h2 class="link-head text-1.5xl">My Approch</h2>
                         <img th:src="@{/img/bg1.jpg}" alt="my approach" class="link-pic">
                         <p class="link-body">
                             Supportive, trauma-informed therapy rooted in the belief that growth begins with being heard.
@@ -47,7 +47,7 @@
                         <a th:href="@{'/approach'}" class="btn">Read More</a>
                     </li>
                     <li class="link">
-                        <h2 class="link-head header-font-small">About Trauma Therapy</h2>
+                        <h2 class="link-head text-1.5xl">About Trauma Therapy</h2>
                         <img th:src="@{/img/bg2.jpg}" alt="about trauma therapy" class="link-pic">
                         <p class="link-body">
                             How stress and adversity shape us — and how therapy can support resilience and growth.
@@ -55,7 +55,7 @@
                         <a th:href="@{'/trauma_therapy'}" class="btn">Read More </a>
                     </li>
                     <li class="link">
-                        <h2 class="link-head header-font-small">Contact</h2>
+                        <h2 class="link-head text-1.5xl">Contact</h2>
                         <img th:src="@{/img/bg4.jpg}" alt="contact" class="link-pic">
                         <p class="link-body">
                             Have questions or want to book a session? Use the form or contact me directly.

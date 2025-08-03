@@ -45,7 +45,6 @@
         flex: 1;
         padding-left: 120px;
     }
-
     
     .space-y {
         margin-bottom: 60px;
@@ -55,6 +54,7 @@
         margin-bottom: 30px;
     }
 }
+
 @layer base {
     p {
         margin-bottom: var(--font-medium);

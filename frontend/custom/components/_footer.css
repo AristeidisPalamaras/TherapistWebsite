@@ -1,6 +1,6 @@
 @layer utilities {
     .footer-container {
-        /* background-color: var(--bg-footer-primary); */
+        background-color: var(--bg-footer-primary);
         text-align: center;
         padding: 25px 0;
     }

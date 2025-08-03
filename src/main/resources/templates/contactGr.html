@@ -11,37 +11,46 @@
 <body>
     <main layout:fragment="content">
         <div class="banner4">
-            <h1 class="header-font-large">Επικοινωνία</h1>
+            <h1 class="text-5xl">Επικοινωνία</h1>
         </div>
-        <div class="hor pad-x pad-y">
-            <div class="column-even-left">
-                <h2 class="font-large space-y-small">Στοιχεία Επικοινωνίας</h2>
-                <p class="space-y-small">
+        <div class="flex px-32 pt-24 pb-32">
+            <div class="flex-1 pr-32">
+                <h2 class="text-2xl mb-8">Στοιχεία Επικοινωνίας</h2>
+                <p class="mb-8">
                     Για περισσότερες πληροφορίες ή για να κλείσετε ραντεβού, συμπληρώστε την φόρμα δεξιά ή επικοινωνήστε 
                     απευθείας μαζί μου.</p>
-                <p class="space-y-small">
-                    <i class="fa fa-info" aria-hidden="true"></i>Ατομικές συνεδρίες δια ζώσης ή διαδικτυακά.</p> 
-                <ul class="contact-details space-y-small">
-                    <li><i class="fa fa-phone" aria-hidden="true"></i>Τηλέφωνο: <span class="font-alt">+30 1234567890</span></li>
-                    <li><i class="fa fa-envelope" aria-hidden="true"></i>E-mail: <span class="font-alt">abcdefg@gmail.com</span></li>
+                <p class="mb-8">
+                    <i class="fa fa-info" aria-hidden="true"></i>
+                    Ατομικές συνεδρίες δια ζώσης ή διαδικτυακά.</p> 
+                <ul class="contact-details mb-8">
+                    <li class="mb-1">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        Τηλέφωνο: <span class="text-orange-400">+30 1234567890</span></li>
+                    <li class="mb-1">
+                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        E-mail: <span class="text-orange-400">abcdefg@gmail.com</span></li>
                 </ul>
-                <div id="map"></div>
+                <div id="map" class="h-80"></div>
             </div>
-            <div class="vl"></div>
-            <div class="column-even-right">
+            <div class="border-l border-neutral-500"></div>
+            <div class="flex-1 pl-32">
                 <form>
-                    <div class="stretch space-y-small">
-                        <h2 class="font-large space-y-small">Φόρμα Επικοινωνίας</h2>
-                        <label for="name">Όνομα*</label>
-                        <input type="text" id="name">
-                        <label for="email">E-mail*</label>
-                        <input type="text" id="email">
-                        <label for="telephone">Τηλέφωνο</label>
-                        <input type="text" id="telephone">
-                        <label for="message">Το μήνυμα σας*</label>
-                        <textarea id="message"></textarea>
+                    <div class="flex flex-col mb-8">
+                        <h2 class="text-2xl mb-8">Φόρμα Επικοινωνίας</h2>
+                        <label class="mb-2.5" for="name">Όνομα*</label>
+                        <input class="mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                            type="text" id="name">
+                        <label class="mb-2.5" for="email">E-mail*</label>
+                        <input class="mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                            type="text" id="email">
+                        <label class="mb-2.5" for="telephone">Τηλέφωνο</label>
+                        <input class="mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                            type="text" id="telephone">
+                        <label class="mb-2.5" for="message">Το μήνυμα σας*</label>
+                        <textarea class="h-36 mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                            id="message"></textarea>
                     </div>
-                    <div class="hor center-x">
+                    <div class="flex justify-center">
                         <!-- <input type="submit" class="btn"> -->
                         <button type="submit" class="btn">Αποστολή</button>
                      </div>

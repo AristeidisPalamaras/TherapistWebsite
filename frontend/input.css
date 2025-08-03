@@ -1,20 +1,22 @@
 @import "./custom/base/_variables.css";
 /* @import "./custom/base/_reset.css"; */
 /* @import "./custom/base/_global.css"; */
-@import "./custom/base/_typography.css";
-@import "./custom/base/_layout.css";
+/* @import "./custom/base/_typography.css"; */
+/* @import "./custom/base/_layout.css"; */
 
-@import "./custom/components/_menu.css";
-@import "./custom/components/_ribbon.css";
-@import "./custom/components/_footer.css";
-@import "./custom/components/_button.css";
-@import "./custom/components/_form.css";
+/* @import "./custom/components/_ribbon.css"; */
+/* @import "./custom/components/_menu.css"; */
+/* @import "./custom/components/_footer.css"; */
+/* @import "./custom/components/_button.css"; */
+/* @import "./custom/components/_form.css"; */
 
 @import "./custom/pages/_home.css";
 @import "./custom/pages/_approach.css";
 @import "./custom/pages/_traumaTherapy.css";
 @import "./custom/pages/_cv.css";
-@import "./custom/pages/_contact.css"; /* todo */
+@import "./custom/pages/_contact.css";
+
+@import "./custom/custom.css";
 
 @tailwind base;
 @tailwind components;

@@ -16,13 +16,13 @@
         background-position: right;
     }
     
-    .pic {
+    /* .pic {
         height: 70vh;
-    }
+    } */
     
-    .hl {
+    /* .hl {
         margin-top: 15px;
         margin-bottom: 20px;
         border-bottom: 1px solid var(--font-dark-primary);
-    }
+    } */
 }

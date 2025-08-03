@@ -1,13 +1,13 @@
-<div th:fragment="ribbon" class="ribbon-container hor center-y pad-x">
+<div th:fragment="ribbon" class="ribbon-container flex items-center justify-between px-32">
     <div>
         <div><i class="fa fa-phone" aria-hidden="true"></i>+30 1234567890</div>
     </div>
-    <div class="hor">
+    <div class="flex">
         <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
-            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="ribbon-item">
+            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="w-5 h-5 ml-2 hover:opacity-70">
         </a>
         <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
-            <img th:src="@{/img/en.png}" alt="English" class="ribbon-item">
+            <img th:src="@{/img/en.png}" alt="English" class="w-5 h-5 ml-2 hover:opacity-70">
         </a>
 
         <!-- <a class="font-small"

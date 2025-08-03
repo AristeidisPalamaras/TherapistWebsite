@@ -10,15 +10,15 @@
         --bg-btn-secondary: #9f9977;
         --lines: #999999;
 
-        --font-large: 24px;
-        --font-medium: 18px;
-        --font-small: 16px;
+        --font-large: 24px; /* -> text-2xl (line-height 32px) */
+        --font-medium: 18px; /* -> text-lg (line-height 28px) */
+        --font-small: 16px; /* -> text-base (line-height 24px) */
 
-        --header-font-large: 48px;
-        --header-font-medium: 32px;
-        --header-font-small: 22px;
+        --header-font-large: 48px; /* -> text-5xl */
+        --header-font-medium: 32px; /* text-3.5xl -> 30px (line-height 40px) */
+        --header-font-small: 22px; /* text-1.5xl -> 22px (line-height 32px) */
 
-        --footer-font-medium: 15px;
+        --footer-font-medium: 15px; /* text-1.5sm -> 15px (line-height 22px) */
 
         --menu-height: 7em;
         --ribbon-height: 2em;

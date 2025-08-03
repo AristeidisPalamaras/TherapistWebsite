@@ -7,14 +7,14 @@
 <body>
     <main layout:fragment="content">
         <div class="banner1">
-            <h1 class="header-font-large">My approach</h1>
+            <h1 class="text-5xl">My approach</h1>
         </div>
-        <div class="hor pad-x pad-y">
-            <div class="column-left">
-                <h2 class="header-font-medium">My approach</h2>
+        <div class="flex px-32 pt-24 pb-32">
+            <div class="flex-1">
+                <h2 class="text-3.5xl">My approach</h2>
             </div>
-            <div class="column-right">
-                <div class="space-y">
+            <div class="flex-2">
+                <div class="mb-16">
                     <p>My approach is rooted in Person-Centered Counseling, as I believe in the innate tendency of 
                         humans toward growth and adaptation. In other words, I believe that, under the right conditions, 
                         every person has the inherent ability to realize their potential. Furthermore, through my 
@@ -33,8 +33,8 @@
                         deserves to be heard. I am here to listen to your story, to help you process your thoughts and 
                         emotions, and to support you in discovering your own path toward a more fulfilling life.</p>
                 </div>
-                <div class="hor center-x">
-                    <a th:href="@{'/contact'}" class="btn-big font-large">Book A Session</a>
+                <div class="flex justify-center">
+                    <a th:href="@{'/contact'}" class="btn-big text-2xl">Book A Session</a>
                 </div>
             </div>
         </div>

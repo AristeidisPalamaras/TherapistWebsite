@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Manrope" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body class="font-sans text-lg text-neutral-900">
     <header>
         <div th:insert="~{fragments/ribbon :: ribbon}"></div>
     </header>
-    <nav class="sticky">
+    <nav class="sticky top-0 overflow-hidden">
         <div th:insert="~{fragments/menu :: menu}"></div>
     </nav>
     <main layout:fragment="content"></main>
