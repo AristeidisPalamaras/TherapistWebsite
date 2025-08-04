@@ -26,6 +26,12 @@ module.exports = {
         "btn-primary": "#817C5F",
         "btn-secondary": "#9f9977",
       },
+      height: {
+        "ribbon": "2.25rem",
+        "menu": "8rem",
+        "banner": "20rem",
+        "banner-full": "calc(100vh - 2.25rem - 8rem)", // viewport height - ribbon height - menu height 
+      }
     },
   },
   plugins: [],

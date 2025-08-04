@@ -10,8 +10,10 @@
 </head>
 <body>
     <main layout:fragment="content">
-        <div class="banner4">
-            <h1 class="text-5xl">Contact</h1>
+        <div class="relative w-full h-banner flex flex-col items-center justify-center overflow-hidden">
+            <img src="/img/bg4.jpg" alt=""
+                class="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none z-0"/>
+            <h1 class="relative z-10 text-5xl">Contact</h1>
         </div>
         <div class="flex px-32 pt-24 pb-32">
             <div class="flex-1 pr-32">
@@ -20,14 +22,14 @@
                     For more information or to book a session, you can fill in the contact form on the right or contact me 
                     directly</p>
                 <p class="mb-8">
-                    <i class="fa fa-info" aria-hidden="true"></i>
+                    <i class="fa fa-info text-center w-4 mr-2" aria-hidden="true"></i>
                     Individual sessions in person or online.</p> 
                 <ul class="contact-details mb-8">
                     <li class="mb-1">
-                        <i class="fa fa-phone" aria-hidden="true"></i>
+                        <i class="fa fa-phone text-center w-4 mr-2" aria-hidden="true"></i>
                         Telephone: <span class="text-orange-400">+30 1234567890</span></li>
                     <li class="mb-1">
-                        <i class="fa fa-envelope" aria-hidden="true"></i>
+                        <i class="fa fa-envelope text-center w-4 mr-2" aria-hidden="true"></i>
                         E-mail: <span class="text-orange-400">abcdefg@gmail.com</span></li>
                 </ul>
                 <div id="map" class="h-80"></div>

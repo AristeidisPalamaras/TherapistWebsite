@@ -1,6 +1,6 @@
-<div th:fragment="ribbon" class="ribbon-container flex items-center justify-between px-32">
+<div th:fragment="ribbon" class="flex items-center justify-between h-ribbon px-32">
     <div>
-        <div><i class="fa fa-phone" aria-hidden="true"></i>+30 1234567890</div>
+        <div><i class="fa fa-phone text-center w-4 mr-2" aria-hidden="true"></i>+30 1234567890</div>
     </div>
     <div class="flex">
         <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">

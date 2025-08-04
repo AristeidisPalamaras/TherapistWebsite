@@ -1,0 +1,7 @@
+@layer utilities {
+    .flex-2 {
+        flex-grow: 2;
+        flex-shrink: 1;
+        @apply basis-0;
+    }
+}

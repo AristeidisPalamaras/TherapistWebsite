@@ -3,11 +3,15 @@
       layout:decorate="~{base}">
 <head>
     <title>Αρχική</title>
+
+    <script src="/js/normalizeCards.js"></script>
 </head>
 <body>
     <main layout:fragment="content">
-        <div class="banner0">
-            <h1 class="text-5xl">Καλώς Oρίσατε</h1>
+        <div class="relative w-full h-banner flex flex-col items-center justify-center overflow-hidden">
+            <img src="/img/bg0.jpg" alt=""
+                class="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none z-0"/>
+            <h1 class="relative z-10 text-5xl">Καλώς Oρίσατε</h1>
         </div>
         <div class="px-32 pt-24 pb-32">
             <div class="flex mb-16">
@@ -30,49 +34,37 @@
                 </div>
             </div>
             <div>
-                <ul class="flex items-center justify-between">
-                    <li class="link">
-                        <div>
-
-                            <h2 class="link-head text-1.5xl">Βιογραφικό Σημείωμα</h2>
-                            <img th:src="@{/img/bg3.jpg}" alt="βιογραφικό σημείωμα" class="link-pic">
-                            <p class="link-body">
-                                Ψυχολόγος και τραυματοθεραπευτής με βάση την προσωποκεντρική προσέγγιση.
-                            </p>
-                        </div>
+                <ul class="flex space-x-20">
+                    <li class="flex-1 flex flex-col items-center card">
+                        <h2 class="text-center content-center text-1.5xl mb-4">Βιογραφικό Σημείωμα</h2>
+                        <img th:src="@{/img/bg3.jpg}" alt="βιογραφικό σημείωμα" class="w-full aspect-[2/1] object-cover mb-4">
+                        <p class="text-center mb-4">
+                            Ψυχολόγος και τραυματοθεραπευτής με βάση την προσωποκεντρική προσέγγιση.
+                        </p>
                         <a th:href="@{'/cv'}" class="btn">Περισσότερα</a>
                     </li>
-                    <li class="link">
-                        <div>
-
-                            <h2 class="link-head text-1.5xl">Η Προσέγγιση Μου</h2>
-                            <img th:src="@{/img/bg1.jpg}" alt="η προσέγγιση μου" class="link-pic">
-                            <p class="link-body">
-                                Προσωποκεντρική Συμβουλευτική και τραυματοθεραπεία, με σεβασμό στην προσωπική σας ιστορία.
-                            </p>
-                        </div>
+                    <li class="flex-1 flex flex-col items-center card">
+                        <h2 class="text-center content-center text-1.5xl mb-4">Η Προσέγγιση Μου</h2>
+                        <img th:src="@{/img/bg1.jpg}" alt="η προσέγγιση μου" class="w-full aspect-[2/1] object-cover mb-4">
+                        <p class="text-center mb-4">
+                            Προσωποκεντρική Συμβουλευτική και τραυματοθεραπεία, με σεβασμό στην προσωπική σας ιστορία.
+                        </p>
                         <a th:href="@{'/approach'}" class="btn">Περισσότερα</a>
                     </li>
-                    <li class="link">
-                        <div>
-
-                            <h2 class="link-head text-1.5xl">Τι Είναι Η Τραυματοθεραπεία</h2>
-                            <img th:src="@{/img/bg2.jpg}" alt="τι είναι η τραυματοθεραπεία" class="link-pic">
-                            <p class="link-body">
-                                Πώς μας επιρρεάζει το άγχος και οι αντιξοότητες — και πώς μπορεί να μας ωφελήσει η θεραπεία.
-                            </p>
-                        </div>
+                    <li class="flex-1 flex flex-col items-center card">
+                        <h2 class="text-center content-center text-1.5xl mb-4">Τραυματοθεραπεία</h2>
+                        <img th:src="@{/img/bg2.jpg}" alt="τι είναι η τραυματοθεραπεία" class="w-full aspect-[2/1] object-cover mb-4">
+                        <p class="text-center mb-4">
+                            Πώς μας επιρρεάζει το άγχος και οι αντιξοότητες — και πώς μπορεί να μας ωφελήσει η θεραπεία.
+                        </p>
                         <a th:href="@{'/trauma_therapy'}" class="btn">Περισσότερα</a>
                     </li>
-                    <li class="link">
-                        <div>
-
-                            <h2 class="link-head text-1.5xl">Επικοινωνία</h2>
-                            <img th:src="@{/img/bg4.jpg}" alt="επικοινωνία" class="link-pic">
-                            <p class="link-body">
-                                Έχετε απορίες ή θέλετε να κλείσετε συνεδρία; Συμπληρώστε την φόρμα ή επικοινωνήστε μαζί μου απευθείας.
-                            </p>
-                        </div>
+                    <li class="flex-1 flex flex-col items-center card">
+                        <h2 class="text-center content-center text-1.5xl mb-4">Επικοινωνία</h2>
+                        <img th:src="@{/img/bg4.jpg}" alt="επικοινωνία" class="w-full aspect-[2/1] object-cover mb-4">
+                        <p class="text-center mb-4">
+                            Έχετε απορίες ή θέλετε να κλείσετε συνεδρία; Συμπληρώστε την φόρμα ή επικοινωνήστε μαζί μου απευθείας.
+                        </p>
                         <a th:href="@{'/contact'}" class="btn">Περισσότερα</a>
                     </li>
                 </ul>

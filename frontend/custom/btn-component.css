@@ -1,0 +1,17 @@
+@layer components {
+    .btn {
+        @apply bg-btn-primary text-neutral-100 px-8 py-2.5 rounded-full;
+    }
+
+    .btn:hover {
+        @apply bg-btn-secondary text-neutral-100;
+    }
+
+    .btn-big {
+        @apply bg-btn-primary text-neutral-100 px-12 py-2.5 rounded-full;
+    }
+
+    .btn-big:hover {
+        @apply bg-btn-secondary text-neutral-100;
+    }
+}
