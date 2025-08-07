@@ -16,9 +16,9 @@ module.exports = {
         ],
       },
       fontSize: {
-        '1.5sm': ['0.9375rem', { lineHeight: '1.375rem' }],
-        '1.5xl': ['1.375rem', { lineHeight: '2rem' }],
-        '3.5xl': ['2rem', { lineHeight: '2.5rem' }],
+        '1.5sm': ['0.9375rem', { lineHeight: '1.375rem' }], // 15px
+        '1.5xl': ['1.375rem', { lineHeight: '2rem' }], // 22px
+        '3.5xl': ['2rem', { lineHeight: '2.5rem' }], // 32px
       },
       colors: {
         "menu-primary": "#D0C9C0",
@@ -27,10 +27,10 @@ module.exports = {
         "btn-secondary": "#9f9977",
       },
       height: {
-        "ribbon": "2.25rem",
+        "ribbon": "3rem",
         "menu": "8rem",
-        "banner": "20rem",
-        "banner-full": "calc(100vh - 2.25rem - 8rem)", // viewport height - ribbon height - menu height 
+        "banner": "calc(80vh - 3rem - 8rem)", // % viewport height - ribbon height - menu height 
+        "banner-full": "calc(100vh - 3rem - 8rem)", // viewport height - ribbon height - menu height 
       }
     },
   },
