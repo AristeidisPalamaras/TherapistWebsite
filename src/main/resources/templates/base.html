@@ -9,15 +9,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="font-sans text-lg text-neutral-900">
-    <header>
-        <div th:insert="~{fragments/ribbon :: ribbon}"></div>
-    </header>
-    <nav class="sticky top-0 z-20">
-        <div th:insert="~{fragments/menu :: menu}"></div>
-    </nav>
+    <header th:insert="~{fragments/ribbon :: ribbon}"></header>
+    <nav th:insert="~{fragments/menu :: menu}" class="sticky top-0 z-20"></nav>
     <main layout:fragment="content"></main>
-    <footer>
-        <div th:insert="~{fragments/footer :: footer}"></div>
-    </footer>
+    <footer th:insert="~{fragments/footer :: footer}"> </footer>
 </body>
 </html>

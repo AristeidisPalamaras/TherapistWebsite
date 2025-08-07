@@ -1,42 +1,45 @@
-<div th:fragment="menu" class="flex items-center justify-between h-menu px-32 bg-menu-primary">
-   <div>
-      <h1 class="text-2xl" 
-         th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></h1>
-      <h1 class="text-base" 
-         th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h1>
-   </div>
-   <div>
-      <ul class="flex">
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
+<div th:fragment="menu" class="bg-menu-primary">
+   <div class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-8 h-menu">
+
+      <div>
+         <h1 class="text-2xl" 
+            th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></h1>
+         <h1 class="text-base" 
+            th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h1>
+      </div>
+      <div>
+         <ul class="flex space-x-5">
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Home' : 'Αρχική'}"
-               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8 px-2.5" 
+               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
                th:classappend="${ currentUrl == '/' ? 'active' : (currentUrl == '/en' ? 'active' : '')}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'About Me' : 'Βιογραφικό'}"
-               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8 px-2.5" 
+               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
                th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'My Approach' : 'Η Προσέγγιση Μου'}"
-               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8 px-2.5" 
+               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
                th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
-               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8 px-2.5" 
+               class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
                th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'active' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
                th:text="${currentUrl.startsWith('/en') ? 'Contact' : 'Επικοινωνία'}"
-               class="btn ml-2.5" 
+               class="btn" 
                th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'active' : ''}"></a>
-         </li>
-      </ul>
+            </li>
+         </ul>
+      </div>
    </div>
 </div>
