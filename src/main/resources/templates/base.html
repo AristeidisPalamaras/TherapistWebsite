@@ -10,7 +10,7 @@
 </head>
 <body class="font-sans text-lg text-neutral-900">
     <header th:insert="~{fragments/ribbon :: ribbon}"></header>
-    <nav th:insert="~{fragments/menu :: menu}" class="sticky top-0 z-20"></nav>
+    <nav th:insert="~{fragments/menu :: menu}" class="relative md:sticky md:top-0 md:z-20"></nav>
     <main layout:fragment="content"></main>
     <footer th:insert="~{fragments/footer :: footer}"> </footer>
 </body>

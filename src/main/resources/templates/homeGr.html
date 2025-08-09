@@ -8,15 +8,20 @@
 </head>
 <body>
     <main layout:fragment="content">
-        <div class="relative w-full h-banner flex flex-col items-center justify-center overflow-hidden">
+        <!-- Hero -->
+        <div class="relative w-full h-banner flex flex-col justify-center overflow-hidden">
             <img src="/img/bg0.jpg" alt=""
                 class="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none z-0"/>
-            <h1 class="relative z-10 text-5xl">Καλώς Oρίσατε</h1>
+            <div class="px-4 sm:px-6 md:px-8">
+                <h1 class="relative z-10 text-center text-2.6xl sm:text-4.2xl md:text-5xl">Καλώς Oρίσατε</h1>
+            </div>
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-24 pb-32">
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-16 sm:pt-20 md:pt-24 pb-32">
+            <!-- Welcome -->
             <div class="flex mb-16">
                 <div class="flex-1">
-                    <h2 class="text-3.5xl">Κώστας Μαυρακάκης</h2>
+                    <h2 class="text-3.3xl">Κώστας Μαυρακάκης</h2>
                 </div>
                 <div class="flex-2">
                     <p>Ονομάζομαι Κώστας Μαυρακάκης και είμαι ψυχολόγος, προσωποκεντρικός σύμβουλος και 
@@ -33,6 +38,7 @@
                         να σας βοηθήσω.</p>
                 </div>
             </div>
+            <!-- Cards -->
             <div>
                 <ul class="flex space-x-20">
                     <li class="flex-1 flex flex-col items-center card">

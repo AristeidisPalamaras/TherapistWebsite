@@ -1,13 +1,15 @@
 <div th:fragment="menu" class="bg-menu-primary">
-   <div class="flex items-center justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 h-menu">
-
+   <div class="flex items-center justify-between space-x-5 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-24 sm:min-h-28 md:min-h-32">
+      <!-- Logo -->
       <div>
-         <h1 class="text-2xl pb-0.5" 
+         <h1 class="text-xl sm:text-1.5xl md:text-2xl" 
             th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></h1>
-         <h1 class="text-base" 
+         <h1 class="text-xs sm:text-sm md:text-base" 
             th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h1>
       </div>
+      <!-- Menu -->
       <div>
+         <!-- Full nenu -->
          <ul class="hidden xl:flex space-x-5">
             <li>
                <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
@@ -40,6 +42,22 @@
                th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'active' : ''}"></a>
             </li>
          </ul>
+         <!-- Hamburger Menu Icon -->
+         <button id="hamburger" class="hamburger xl:hidden">
+            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+         </button>
+
+            
+            <!-- Add language buttons to the hamburger menu when ribbon disappears  -->
+            <!-- <div class="flex xl:hidden">
+               <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
+                  <img th:src="@{/img/el.png}" alt="Ελληνικά" class="w-5 h-5 ml-2 hover:opacity-70">
+               </a>
+               <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
+                  <img th:src="@{/img/en.png}" alt="English" class="w-5 h-5 ml-2 hover:opacity-70">
+               </a>
+            </div> -->
+
       </div>
    </div>
 </div>
