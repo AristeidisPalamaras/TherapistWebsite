@@ -44,20 +44,58 @@
          </ul>
          <!-- Hamburger Menu Icon -->
          <button id="hamburger" class="hamburger xl:hidden">
-            <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+            <span id="bars">
+               <i class="fa fa-bars fa-lg" aria-hidden="true"></i>
+            </span>
+            <span id="close" class="hidden">
+               <i class="fa fa-times fa-lg" aria-hidden="true"></i>
+            </span>
          </button>
-
-            
-            <!-- Add language buttons to the hamburger menu when ribbon disappears  -->
-            <!-- <div class="flex xl:hidden">
-               <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
-                  <img th:src="@{/img/el.png}" alt="Ελληνικά" class="w-5 h-5 ml-2 hover:opacity-70">
-               </a>
-               <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
-                  <img th:src="@{/img/en.png}" alt="English" class="w-5 h-5 ml-2 hover:opacity-70">
-               </a>
-            </div> -->
-
       </div>
+   </div>
+
+
+
+   <!-- Hamburger menu -->
+   <div id="mobile-menu" class="hidden xl:hidden absolute left-0 right-0 top-full z-20 bg-white">
+      <ul class="flex flex-col divide-y divide-menu-primary w-full">
+         <li>
+            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
+            th:text="${currentUrl.startsWith('/en') ? 'Home' : 'Αρχική'}"
+            class="block w-full text-center py-1"
+            th:classappend="${ currentUrl == '/' ? 'active' : (currentUrl == '/en' ? 'active' : '')}"></a>
+         </li>
+         <li>
+            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
+            th:text="${currentUrl.startsWith('/en') ? 'About Me' : 'Βιογραφικό'}"
+            class="block w-full text-center py-1"
+            th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'active' : ''}"></a>
+         </li>
+         <li>
+            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
+            th:text="${currentUrl.startsWith('/en') ? 'My Approach' : 'Η Προσέγγιση Μου'}"
+            class="block w-full text-center py-1"
+            th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'active' : ''}"></a>
+         </li>
+         <li>
+            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
+            th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
+            class="block w-full text-center py-1"
+            th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'active' : ''}"></a>
+         </li>
+         <li>
+            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
+            th:text="${currentUrl.startsWith('/en') ? 'Contact' : 'Επικοινωνία'}"
+            class="block w-full text-center py-1"
+            th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'active' : ''}"></a>
+         </li>
+         <li class="flex justify-center py-2">
+            <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
+               <img th:src="@{/img/el.png}" alt="Ελληνικά" class="w-5 h-5 ml-2 hover:opacity-70"> </a>
+            <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
+               <img th:src="@{/img/en.png}" alt="English" class="w-5 h-5 ml-2 hover:opacity-70"> </a>
+         </li>
+      </ul>
+      <div class="border-b border-menu-primary"></div>
    </div>
 </div>
