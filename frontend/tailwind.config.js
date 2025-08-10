@@ -20,13 +20,11 @@ module.exports = {
         
         '1.5xl': ['1.375rem', { lineHeight: '1.875rem' }], // 22px
 
-        '2.3xl': ['1.625rem', { lineHeight: '2.125rem' }], // 26px
+        // '2.3xl': ['1.625rem', { lineHeight: '2.125rem' }], // 26px
         '2.6xl': ['1.75rem', { lineHeight: '2.125rem' }], // 28px
 
         '3.3xl': ['2rem', { lineHeight: '2.375rem' }], // 32px
-        '3.6xl': ['2.125rem', { lineHeight: '2.375rem' }], // 34px
-
-        '4.2xl': ['2.375rem', { lineHeight: '2.625rem' }], // 38px
+        // '3.6xl': ['2.125rem', { lineHeight: '2.375rem' }], // 34px
       },
       colors: {
         "menu-primary": "#D0C9C0",
