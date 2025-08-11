@@ -501,7 +501,7 @@ video {
 }
     /* Apply margin bottom 16px to all paragraphs */
     p {
-  margin-bottom: 1rem;
+  padding-bottom: 1rem;
 }
     
     /* Smooth scrolling... This is not currently used in my ui */
@@ -609,26 +609,8 @@ video {
   margin-left: auto;
   margin-right: auto;
 }
-.mb-1 {
-  margin-bottom: 0.25rem;
-}
-.mb-16 {
-  margin-bottom: 4rem;
-}
-.mb-2\.5 {
-  margin-bottom: 0.625rem;
-}
-.mb-4 {
-  margin-bottom: 1rem;
-}
 .mb-5 {
   margin-bottom: 1.25rem;
-}
-.mb-8 {
-  margin-bottom: 2rem;
-}
-.ml-2 {
-  margin-left: 0.5rem;
 }
 .mr-2 {
   margin-right: 0.5rem;
@@ -708,6 +690,11 @@ video {
 .justify-between {
   justify-content: space-between;
 }
+.space-x-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-x-reverse: 0;
+  margin-right: calc(0.5rem * var(--tw-space-x-reverse));
+  margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
+}
 .space-x-5 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-x-reverse: 0;
   margin-right: calc(1.25rem * var(--tw-space-x-reverse));
@@ -785,14 +772,20 @@ video {
 .pb-1 {
   padding-bottom: 0.25rem;
 }
+.pb-16 {
+  padding-bottom: 4rem;
+}
 .pb-2\.5 {
   padding-bottom: 0.625rem;
 }
-.pb-32 {
-  padding-bottom: 8rem;
+.pb-4 {
+  padding-bottom: 1rem;
 }
-.pt-16 {
-  padding-top: 4rem;
+.pb-8 {
+  padding-bottom: 2rem;
+}
+.pt-8 {
+  padding-top: 2rem;
 }
 .text-center {
   text-align: center;
@@ -816,17 +809,9 @@ video {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-3\.3xl {
-  font-size: 2rem;
-  line-height: 2.375rem;
-}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-}
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
 }
 .text-xl {
   font-size: 1.25rem;
@@ -835,6 +820,9 @@ video {
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.tracking-wide {
+  letter-spacing: 0.025em;
 }
 .text-neutral-900 {
   --tw-text-opacity: 1;
@@ -895,8 +883,8 @@ video {
     padding-bottom: 0.5rem;
   }
 
-  .sm\:pt-20 {
-    padding-top: 5rem;
+  .sm\:pt-12 {
+    padding-top: 3rem;
   }
 
   .sm\:text-1\.5xl {
@@ -952,6 +940,14 @@ video {
     padding-right: 2rem;
   }
 
+  .md\:pb-16 {
+    padding-bottom: 4rem;
+  }
+
+  .md\:pb-32 {
+    padding-bottom: 8rem;
+  }
+
   .md\:pb-4 {
     padding-bottom: 1rem;
   }
@@ -960,12 +956,21 @@ video {
     padding-left: 8rem;
   }
 
+  .md\:pr-12 {
+    padding-right: 3rem;
+  }
+
   .md\:pr-32 {
     padding-right: 8rem;
   }
 
   .md\:pt-24 {
     padding-top: 6rem;
+  }
+
+  .md\:text-1\.5xl {
+    font-size: 1.375rem;
+    line-height: 1.875rem;
   }
 
   .md\:text-2xl {
@@ -986,6 +991,11 @@ video {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }
 @media (min-width: 1024px) {

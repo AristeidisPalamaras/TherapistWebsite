@@ -5,12 +5,12 @@
         <span class="text-base">+30 1234567890</span>
     </div>
     <!-- Language buttons -->
-    <div class="flex">
+    <div class="flex space-x-2">
         <a th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
-            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="w-5 h-5 ml-2 hover:opacity-70">
+            <img th:src="@{/img/el.png}" alt="Ελληνικά" class="w-5 h-5 hover:opacity-70">
         </a>
         <a th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
-            <img th:src="@{/img/en.png}" alt="English" class="w-5 h-5 ml-2 hover:opacity-70">
+            <img th:src="@{/img/en.png}" alt="English" class="w-5 h-5 hover:opacity-70">
         </a>
 
         <!-- <a class="font-small"

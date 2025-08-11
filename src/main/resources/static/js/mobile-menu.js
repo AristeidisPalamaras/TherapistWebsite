@@ -1,10 +1,10 @@
-const btn = document.getElementById("hamburger");
+const btn = document.getElementById("mobile-menu-btn");
 const menu = document.getElementById("mobile-menu");
-const bars = document.getElementById("bars");
-const close = document.getElementById("close");
+const hamburger = document.getElementById("hamburger-icon");
+const close = document.getElementById("close-icon");
 
 btn.addEventListener("click", () => {
     menu.classList.toggle("hidden");
-    bars.classList.toggle("hidden");
+    hamburger.classList.toggle("hidden");
     close.classList.toggle("hidden");
 })
