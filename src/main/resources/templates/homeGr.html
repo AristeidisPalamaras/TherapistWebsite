@@ -8,20 +8,14 @@
 </head>
 <body>
     <main layout:fragment="content">
-        <!-- Hero -->
-        <div class="relative w-full h-banner flex flex-col justify-center overflow-hidden">
-            <img src="/img/bg0.jpg" alt=""
-                class="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none z-0"/>
-            <div class="px-4 sm:px-6 md:px-8">
-                <h1 class="relative z-10 text-center text-2.6xl sm:text-4xl md:text-5xl">Καλώς Oρίσατε</h1>
-            </div>
-        </div>
+        <!-- Banner -->
+        <div th:replace="~{fragments/banner :: banner('/img/bg0.jpg', 'Καλώς Oρίσατε', null)}"></div>
         <!-- Content -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-12 md:pt-24 pb-16 md:pb-32">
             <!-- Welcome -->
             <div class="flex flex-col md:flex-row pb-16">
                 <div class="flex-1">
-                    <h2 class="text-xl md:text-1.5xl tracking-wide pb-4 md:pr-12">Κώστας Μαυρακάκης</h2>
+                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-4 md:pr-12">Κώστας Μαυρακάκης</h2>
                 </div>
                 <div class="flex-2">
                     <p>Ονομάζομαι Κώστας Μαυρακάκης και είμαι ψυχολόγος, προσωποκεντρικός σύμβουλος και 

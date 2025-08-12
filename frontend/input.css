@@ -2,6 +2,7 @@
 @import "./custom/btn-component.css";
 @import "./custom/selected-path-utility.css";
 @import "./custom/flex-utility.css";
+@import "./custom/shadow-utility.css";
 
 @tailwind base;
 @tailwind components;
