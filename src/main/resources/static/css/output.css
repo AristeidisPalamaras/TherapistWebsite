@@ -643,6 +643,10 @@ html {
 .overflow-hidden {
     overflow: hidden;
 }
+.hyphens-manual {
+    -webkit-hyphens: manual;
+            hyphens: manual;
+}
 .border {
     border-width: 1px;
 }
