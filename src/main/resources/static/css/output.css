@@ -564,14 +564,14 @@ html {
 .h-36 {
     height: 9rem;
 }
-.h-4\/5 {
-    height: 80%;
-}
 .h-5 {
     height: 1.25rem;
 }
 .h-80 {
     height: 20rem;
+}
+.h-auto {
+    height: auto;
 }
 .h-banner {
     height: calc(80vh - 3rem - 8rem);
@@ -612,6 +612,9 @@ html {
 .content-center {
     align-content: center;
 }
+.items-start {
+    align-items: flex-start;
+}
 .items-center {
     align-items: center;
 }
@@ -642,10 +645,6 @@ html {
 }
 .overflow-hidden {
     overflow: hidden;
-}
-.hyphens-manual {
-    -webkit-hyphens: manual;
-            hyphens: manual;
 }
 .border {
     border-width: 1px;
@@ -678,6 +677,10 @@ html {
 }
 .bg-white\/20 {
     background-color: rgb(255 255 255 / 0.2);
+}
+.object-contain {
+    -o-object-fit: contain;
+       object-fit: contain;
 }
 .object-cover {
     -o-object-fit: cover;
@@ -775,10 +778,6 @@ html {
     --tw-text-opacity: 1;
     color: rgb(23 23 23 / var(--tw-text-opacity, 1));
 }
-.text-neutral-950 {
-    --tw-text-opacity: 1;
-    color: rgb(10 10 10 / var(--tw-text-opacity, 1));
-}
 .text-orange-400 {
     --tw-text-opacity: 1;
     color: rgb(251 146 60 / var(--tw-text-opacity, 1));
@@ -860,8 +859,17 @@ html {
     .md\:min-h-32 {
         min-height: 8rem;
     }
+    .md\:min-w-60 {
+        min-width: 15rem;
+    }
+    .md\:max-w-80 {
+        max-width: 20rem;
+    }
     .md\:flex-row {
         flex-direction: row;
+    }
+    .md\:justify-start {
+        justify-content: flex-start;
     }
     .md\:space-x-5 > :not([hidden]) ~ :not([hidden]) {
         --tw-space-x-reverse: 0;
@@ -872,23 +880,26 @@ html {
         padding-left: 2rem;
         padding-right: 2rem;
     }
-    .md\:pb-16 {
-        padding-bottom: 4rem;
+    .md\:pb-12 {
+        padding-bottom: 3rem;
     }
-    .md\:pb-32 {
-        padding-bottom: 8rem;
+    .md\:pb-24 {
+        padding-bottom: 6rem;
     }
     .md\:pl-32 {
         padding-left: 8rem;
     }
-    .md\:pr-12 {
-        padding-right: 3rem;
+    .md\:pl-6 {
+        padding-left: 1.5rem;
     }
     .md\:pr-32 {
         padding-right: 8rem;
     }
-    .md\:pt-24 {
-        padding-top: 6rem;
+    .md\:pr-6 {
+        padding-right: 1.5rem;
+    }
+    .md\:pt-20 {
+        padding-top: 5rem;
     }
     .md\:pt-4 {
         padding-top: 1rem;
