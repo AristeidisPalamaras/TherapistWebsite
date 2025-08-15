@@ -9,20 +9,20 @@
         <!-- Banner -->
         <div th:replace="~{fragments/banner :: banner('/img/bg3.jpg', 'Curriculum Vitae', 'Kostas Mavrakakis')}"></div>
         <!-- Content -->
-        <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-12 md:pt-20 pb-16 md:pb-24">
+        <div class="flex flex-col-reverse md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 sm:pb-[3.75rem] md:pb-24">
             <!-- Pic -->
-            <div class="flex-1 flex justify-center md:justify-start items-start md:pr-6">
-                <div class="md:min-w-60">
+            <div class="flex-1 flex flex-col md:pr-6">
+                <div class="self-center md:self-start md:min-w-60 px-4 pt-6 pb-4 sm:pb-6 md:p-0">
                     <img th:src="@{/img/KostasMavrakakis1.jpg}" alt="Kostas Mavrakakis" 
-                        class="w-full h-auto object-contain
-                                md:max-w-80">
+                        class="w-full h-auto object-contain max-w-80 max-h-full">
+                    <div class="md:hidden h-px bg-gradient-to-r from-transparent via-btn-primary to-transparent mx-[-1.5rem] my-6"></div>
                 </div>
+                <a th:href="@{'/contact'}" class="self-center md:hidden btn-big text-xl md:text-2xl">Book A Session</a>
             </div>
             <!-- CV -->
             <div class="flex-2 md:pl-6">
-                <div class="pb-8 md:pb-12">
-                    <h2 class="text-2xl">Curriculum Vitae</h2>
-                    <div class="border-b border-neutral-500 mt-4 mb-5"></div>
+                <div class="txt md:pb-16">
+                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Curriculum Vitae</h2>
                     <p>I am a psychologist, person-centred counsellor, as well as an EMDR and IFS-informed trauma 
                         therapist.</p>
                     <p>Before entering the field of mental health, I earned a bachelor's and a master's degree in 
@@ -39,7 +39,7 @@
                         creative writing with the therapeutic process. </p>
                     <p>I have also written three book of fiction, which have been published by Kedros Publications.</p>
                 </div>
-                <div class="flex justify-center">
+                <div class="hidden md:flex flex-col items-center">
                     <a th:href="@{'/contact'}" class="btn-big text-xl md:text-2xl">Book A Session</a>
                 </div>
             </div>

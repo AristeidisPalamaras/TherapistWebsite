@@ -1,9 +1,4 @@
-@layer base {
-    /* Apply margin bottom 16px to all paragraphs */
-    p {
-        @apply pb-4;
-    }
-    
+@layer base { 
     /* Smooth scrolling... This is not currently used in my ui */
     html {
         scroll-behavior: smooth;

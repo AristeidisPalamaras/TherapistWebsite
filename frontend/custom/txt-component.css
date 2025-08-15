@@ -1,0 +1,10 @@
+@layer components {
+    /* Apply margin bottom 12px to all paragraphs but the last */
+    .txt p {
+        @apply pb-3;
+    }
+
+    .txt p:last-of-type {
+        @apply pb-0;
+    }
+}

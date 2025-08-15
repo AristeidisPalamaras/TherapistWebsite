@@ -13,7 +13,7 @@
         <!-- Banner -->
         <div th:replace="~{fragments/banner :: banner('/img/bg4.jpg', 'Contact', null)}"></div>
         <!-- Content -->
-        <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-12 md:pt-20 pb-16 md:pb-24">
+        <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 sm:pb-[3.75rem] md:pb-24">
             <!-- Contact Info -->
             <div class="flex-1 md:pr-32">
                 <h2 class="text-2xl pb-8">Contact Information</h2>
@@ -23,7 +23,7 @@
                 <p class="pb-8">
                     <i class="fa fa-info text-center w-4 mr-2" aria-hidden="true"></i>
                     Individual sessions in person or online.</p> 
-                <ul class="contact-details pb-8">
+                <ul class="pb-8">
                     <li class="pb-1">
                         <i class="fa fa-phone text-center w-4 mr-2" aria-hidden="true"></i>
                         Telephone: <span class="text-orange-400">+30 1234567890</span></li>
@@ -53,8 +53,7 @@
                         <textarea class="h-36 mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
                             id="message"></textarea>
                     </div>
-                    <div class="flex justify-center">
-                        <!-- <input type="submit" class="btn"> -->
+                    <div class="flex flex-col items-center">
                         <button type="submit" class="btn">Submit</button>
                      </div>
                 </form>

@@ -33,8 +33,7 @@ module.exports = {
         "btn-secondary": "#9f9977",
       },
       height: {
-        "banner": "calc(80vh - 3rem - 8rem)", // % viewport height - ribbon height (min 3rem) - menu height (min 8rem)
-        "banner-full": "calc(100vh - 3rem - 8rem)", // viewport height - ribbon height (min 3rem) - menu height (min 8rem)
+        "banner": "calc(80vh - 3rem - 8rem)", // 80% viewport height - ribbon height (min 3rem) - menu height (min 8rem)
       }
     },
   },

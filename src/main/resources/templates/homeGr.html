@@ -11,15 +11,15 @@
         <!-- Banner -->
         <div th:replace="~{fragments/banner :: banner('/img/bg0.jpg', 'Καλώς Oρίσατε', null)}"></div>
         <!-- Content -->
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-12 md:pt-20 pb-16 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 sm:pb-[3.75rem] md:pb-24">
             <!-- Welcome -->
             <div class="flex flex-col md:flex-row pb-16">
                 <div class="flex-1 md:pr-6">
                     <div class="md:min-w-60">
-                        <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-4">Κώστας Μαυρακάκης</h2>
+                        <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Κώστας Μαυρακάκης</h2>
                     </div>
                 </div>
-                <div class="flex-2 md:pl-6">
+                <div class="txt flex-2 md:pl-6">
                     <p>Ονομάζομαι Κώστας Μαυρακάκης και είμαι ψυχολόγος, προσωποκεντρικός σύμβουλος και 
                         τραυματοθεραπευτής εκπαιδευμένος στο EMDR και το IFS (Pre-Level One).</p>
                     <p>Το γραφείο μου βρίσκεται στο κέντρο της Αθήνας στα σύνορα Μετς και Νέου Κόσμου (κοντά στο σταθμό 
@@ -37,37 +37,37 @@
             <!-- Cards -->
             <div>
                 <ul class="flex flex-col md:flex-row md:space-x-5 lg:space-x-10 xl:space-x-20">
-                    <li class="flex-1 flex flex-col items-center card">
+                    <li class="flex-1 flex flex-col card">
                         <h2 class="text-center content-center text-1.5xl pb-4">Βιογραφικό Σημείωμα</h2>
                         <img th:src="@{/img/bg3.jpg}" alt="βιογραφικό σημείωμα" class="w-full aspect-[2/1] object-cover pb-4">
                         <p class="text-center pb-4">
                             Ψυχολόγος και τραυματοθεραπευτής με βάση την προσωποκεντρική προσέγγιση.
                         </p>
-                        <a th:href="@{'/cv'}" class="btn">Περισσότερα</a>
+                        <a th:href="@{'/cv'}" class="self-center btn">Περισσότερα</a>
                     </li>
-                    <li class="flex-1 flex flex-col items-center card">
+                    <li class="flex-1 flex flex-col card">
                         <h2 class="text-center content-center text-1.5xl pb-4">Η Προσέγγιση Μου</h2>
                         <img th:src="@{/img/bg1.jpg}" alt="η προσέγγιση μου" class="w-full aspect-[2/1] object-cover pb-4">
                         <p class="text-center pb-4">
                             Προσωποκεντρική Συμβουλευτική και τραυματοθεραπεία, με σεβασμό στην προσωπική σας ιστορία.
                         </p>
-                        <a th:href="@{'/approach'}" class="btn">Περισσότερα</a>
+                        <a th:href="@{'/approach'}" class="self-center btn">Περισσότερα</a>
                     </li>
-                    <li class="flex-1 flex flex-col items-center card">
+                    <li class="flex-1 flex flex-col card">
                         <h2 class="text-center content-center text-1.5xl pb-4">Τραυματοθεραπεία</h2>
                         <img th:src="@{/img/bg2.jpg}" alt="τι είναι η τραυματοθεραπεία" class="w-full aspect-[2/1] object-cover pb-4">
                         <p class="text-center pb-4">
                             Πώς μας επιρρεάζει το άγχος και οι αντιξοότητες — και πώς μπορεί να μας ωφελήσει η θεραπεία.
                         </p>
-                        <a th:href="@{'/trauma_therapy'}" class="btn">Περισσότερα</a>
+                        <a th:href="@{'/trauma_therapy'}" class="self-center btn">Περισσότερα</a>
                     </li>
-                    <li class="flex-1 flex flex-col items-center card">
+                    <li class="flex-1 flex flex-col card">
                         <h2 class="text-center content-center text-1.5xl pb-4">Επικοινωνία</h2>
                         <img th:src="@{/img/bg4.jpg}" alt="επικοινωνία" class="w-full aspect-[2/1] object-cover pb-4">
                         <p class="text-center pb-4">
                             Έχετε απορίες ή θέλετε να κλείσετε συνεδρία; Συμπληρώστε την φόρμα ή επικοινωνήστε μαζί μου απευθείας.
                         </p>
-                        <a th:href="@{'/contact'}" class="btn">Περισσότερα</a>
+                        <a th:href="@{'/contact'}" class="self-center btn">Περισσότερα</a>
                     </li>
                 </ul>
             </div>
