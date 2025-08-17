@@ -16,8 +16,6 @@ module.exports = {
         ],
       },
       fontSize: {
-        '1.5sm': ['0.9375rem', { lineHeight: '1.375rem' }], // 15px -- footer
-        
         '1.5xl': ['1.375rem', { lineHeight: '1.875rem' }], // 22px
 
         // '2.3xl': ['1.625rem', { lineHeight: '2.125rem' }], // 26px
@@ -27,10 +25,10 @@ module.exports = {
         // '3.6xl': ['2.125rem', { lineHeight: '2.375rem' }], // 34px
       },
       colors: {
-        "menu-primary": "#D0C9C0",
-        "footer-primary": "#beb4a7",
+        "menu-primary": "#d4cdc4",
         "btn-primary": "#817C5F",
         "btn-secondary": "#9f9977",
+        "footer-primary": "#dfdad3",
       },
       height: {
         "banner": "calc(80vh - 3rem - 8rem)", // 80% viewport height - ribbon height (min 3rem) - menu height (min 8rem)
