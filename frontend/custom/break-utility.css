@@ -1,0 +1,11 @@
+@layer utilities {
+   @media (max-width: 480px) {
+        .part {
+            display: block;
+        }
+
+        .separator {
+            display: none;
+        }
+    }
+}
