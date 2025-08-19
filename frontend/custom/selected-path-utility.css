@@ -1,5 +1,0 @@
-@layer utilities {
-    .active {
-        @apply font-bold;
-    }
-}
