@@ -599,6 +599,9 @@ video {
 .mb-5 {
   margin-bottom: 1.25rem;
 }
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
 .mr-1 {
   margin-right: 0.25rem;
 }
@@ -741,6 +744,9 @@ video {
 .border-l {
   border-left-width: 1px;
 }
+.border-r {
+  border-right-width: 1px;
+}
 .border-menu-primary {
   --tw-border-opacity: 1;
   border-color: rgb(212 205 196 / var(--tw-border-opacity, 1));
@@ -830,6 +836,9 @@ video {
 .pb-16 {
   padding-bottom: 4rem;
 }
+.pb-2 {
+  padding-bottom: 0.5rem;
+}
 .pb-2\.5 {
   padding-bottom: 0.625rem;
 }
@@ -838,6 +847,9 @@ video {
 }
 .pb-4 {
   padding-bottom: 1rem;
+}
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 .pb-8 {
   padding-bottom: 2rem;
@@ -1138,10 +1150,26 @@ video {
 }
 @media (min-width: 1024px) {
 
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
   .lg\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(2.5rem * var(--tw-space-x-reverse));
     margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
+  }
+
+  .lg\:pb-0 {
+    padding-bottom: 0px;
+  }
+
+  .lg\:pl-10 {
+    padding-left: 2.5rem;
+  }
+
+  .lg\:pr-10 {
+    padding-right: 2.5rem;
   }
 }
 @media (min-width: 1280px) {
