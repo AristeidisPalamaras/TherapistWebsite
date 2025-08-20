@@ -1,4 +1,5 @@
 @layer components {
+    /* Button styling for the menu */
     .btn {
         @apply bg-btn-primary text-neutral-100 px-8 py-2.5 rounded-full;
     }
@@ -7,6 +8,7 @@
         @apply bg-btn-secondary text-neutral-100;
     }
 
+    /* Button styling */
     .btn-big {
         @apply bg-btn-primary text-neutral-100 px-12 py-2.5 rounded-full;
     }

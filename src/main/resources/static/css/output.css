@@ -503,6 +503,7 @@ video {
     html {
         scroll-behavior: smooth;
     }
+/* Button styling for the menu */
 .btn {
   border-radius: 9999px;
   --tw-bg-opacity: 1;
@@ -520,6 +521,7 @@ video {
   --tw-text-opacity: 1;
   color: rgb(245 245 245 / var(--tw-text-opacity, 1));
 }
+/* Button styling */
 .btn-big {
   border-radius: 9999px;
   --tw-bg-opacity: 1;
@@ -544,6 +546,7 @@ video {
 .txt p:last-of-type {
   padding-bottom: 0px;
 }
+/* Make Leaflet's attribution legend fully opaque */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -929,14 +932,17 @@ video {
   --tw-grayscale: grayscale(100%);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
+/* The larger column in a two column layout with 1:2 column ratio */
 .flex-2 {
         flex-grow: 2;
         flex-shrink: 1;
         flex-basis: 0px;
     }
+/* Shadow for headers inside the banner */
 .text-shadow {
         text-shadow: 0 1px 2px rgba(255,255,255,0.4);
     }
+/* Shadow for the profile image */
 .img-shadow {
         box-shadow: 0 3px 6px -2px rgba(0, 0, 0, 0.12);
     }

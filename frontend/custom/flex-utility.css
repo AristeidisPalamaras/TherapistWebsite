@@ -1,4 +1,5 @@
 @layer utilities {
+    /* The larger column in a two column layout with 1:2 column ratio */
     .flex-2 {
         flex-grow: 2;
         flex-shrink: 1;

@@ -1,0 +1,6 @@
+@layer components {
+    /* Make Leaflet's attribution legend fully opaque */
+    .leaflet-control-attribution {
+        background: #fff !important;
+    }
+}
