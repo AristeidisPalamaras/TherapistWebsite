@@ -5,6 +5,7 @@ module.exports = {
     extend: {
       screens: {
         'xs': '480px',
+        'md-plus': '896px',
       },
       fontFamily: {
         sans: [ 

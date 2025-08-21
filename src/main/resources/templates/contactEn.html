@@ -13,22 +13,26 @@
         <!-- Banner -->
         <div th:replace="~{fragments/banner :: banner('/img/bg4.jpg', 'Contact', null)}"></div>
         <!-- Content -->
-        <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
+        <div class="grid 
+                    grid-cols-1
+                    md-plus:grid-cols-2
+                    max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
             <!-- Contact Info -->
-            <div class="flex-1 md:pr-32">
-                <h2 class="text-2xl pb-8">Contact Information</h2>
-                <p class="pb-8">
-                    For more information or to book a session, you can fill in the contact form on the right or contact me 
+            <div class="md-plus:col-start-1 md:row-start-1
+                        md-plus:pr-10 pb-6 md:pb-10 md-plus:pb-8">
+                <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Contact Information</h2>
+                <p class="pb-3 md:pb-4">
+                    For more information or to book a session, you can fill in the contact form or contact me 
                     directly</p>
-                <ul class="pb-8">
-                    <li class="pb-8">
+                <ul>
+                    <li class="pb-3 md:pb-4">
                         <svg class="inline w-5 h-5 md:w-[22px] md:h-[22px] fill-current text-neutral-900 mr-1 align-text-top"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
                             <path d="M272 112C272 85.5 293.5 64 320 64C346.5 64 368 85.5 368 112C368 138.5 346.5 160 320 160C293.5 160 272 138.5 272 112zM224 256C224 238.3 238.3 224 256 224L320 224C337.7 224 352 238.3 352 256L352 512L384 512C401.7 512 416 526.3 416 544C416 561.7 401.7 576 384 576L256 576C238.3 576 224 561.7 224 544C224 526.3 238.3 512 256 512L288 512L288 288L256 288C238.3 288 224 273.7 224 256z"/></svg>
                         Individual sessions in person or online.
                     </li> 
-                    <li class="pb-1">
+                    <li>
                         <svg class="inline w-5 h-5 md:w-[22px] md:h-[22px] fill-current text-neutral-900 mr-1 align-text-bottom"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                             <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -43,32 +47,34 @@
                         E-mail: <span class="text-orange-400">abcdefg@gmail.com</span>
                     </li>
                 </ul>
-                <div id="map" class="relative z-0 h-80"></div>
             </div>
-            <!-- Seperator -->
-            <div class="border-l border-neutral-500"></div>
             <!-- Contact Form -->
-            <div class="flex-1 md:pl-32">
+            <div class="md-plus:col-start-2 md-plus:row-start-1 md-plus:row-span-2
+                        md-plus:border-l border-neutral-500 md-plus:pl-10 pb-10 md:pb-14 md-plus:pb-0">
                 <form>
-                    <div class="flex flex-col pb-8">
-                        <h2 class="text-2xl pb-8">Contact Form</h2>
-                        <label class="pb-2.5" for="name">Name<span class="text-red-600">*</span></label>
-                        <input class="mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                    <div class="flex flex-col pb-6">
+                        <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Contact Form</h2>
+                        <label class="pb-1" for="name">Name<span class="text-red-600">*</span></label>
+                        <input class="mb-3 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
                             type="text" id="name">
-                        <label class="pb-2.5" for="email">E-mail<span class="text-red-600">*</span></label>
-                        <input class="mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                        <label class="pb-1" for="email">E-mail<span class="text-red-600">*</span></label>
+                        <input class="mb-3 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
                             type="text" id="email">
-                        <label class="pb-2.5" for="telephone">Telephone</label>
-                        <input class="mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                        <label class="pb-1" for="telephone">Telephone</label>
+                        <input class="mb-3 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
                             type="text" id="telephone">
-                        <label class="pb-2.5" for="message">Your message<span class="text-red-600">*</span></label>
-                        <textarea class="h-36 mb-5 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
+                        <label class="pb-1" for="message">Your message<span class="text-red-600">*</span></label>
+                        <textarea class="h-48 px-3 py-1.5 resize-none grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
                             id="message"></textarea>
                     </div>
                     <div class="flex flex-col items-center">
-                        <button type="submit" class="btn">Submit</button>
+                        <button type="submit" class="btn">Send</button>
                      </div>
                 </form>
+            </div>
+            <div class="md-plus:col-start-1 md-plus:row-start-2
+                        md-plus:pr-10">
+                <div id="map" class="relative z-0 h-80"></div>
             </div>
         </div>
     </main>
