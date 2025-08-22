@@ -698,9 +698,6 @@ video {
 .flex-col {
   flex-direction: column;
 }
-.flex-col-reverse {
-  flex-direction: column-reverse;
-}
 .content-center {
   align-content: center;
 }
@@ -836,9 +833,6 @@ video {
 .pb-12 {
   padding-bottom: 3rem;
 }
-.pb-16 {
-  padding-bottom: 4rem;
-}
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -856,9 +850,6 @@ video {
 }
 .pt-1 {
   padding-top: 0.25rem;
-}
-.pt-6 {
-  padding-top: 1.5rem;
 }
 .pt-8 {
   padding-top: 2rem;
@@ -938,11 +929,6 @@ video {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 /* The larger column in a two column layout with 1:2 column ratio */
-.flex-2 {
-        flex-grow: 2;
-        flex-shrink: 1;
-        flex-basis: 0px;
-    }
 /* Shadow for headers inside the banner */
 .text-shadow {
         text-shadow: 0 1px 2px rgba(255,255,255,0.4);
@@ -1027,16 +1013,32 @@ video {
 }
 @media (min-width: 768px) {
 
+  .md\:col-start-1 {
+    grid-column-start: 1;
+  }
+
+  .md\:col-start-2 {
+    grid-column-start: 2;
+  }
+
+  .md\:row-span-2 {
+    grid-row: span 2 / span 2;
+  }
+
+  .md\:row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+
   .md\:row-start-1 {
     grid-row-start: 1;
   }
 
-  .md\:flex {
-    display: flex;
+  .md\:row-start-2 {
+    grid-row-start: 2;
   }
 
-  .md\:hidden {
-    display: none;
+  .md\:row-start-3 {
+    grid-row-start: 3;
   }
 
   .md\:h-\[22px\] {
@@ -1051,26 +1053,22 @@ video {
     width: 22px;
   }
 
-  .md\:min-w-60 {
-    min-width: 15rem;
+  .md\:grid-cols-\[minmax\(264px\2c 1fr\)_2fr\] {
+    grid-template-columns: minmax(264px,1fr) 2fr;
   }
 
   .md\:flex-row {
     flex-direction: row;
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
   .md\:space-x-5 > :not([hidden]) ~ :not([hidden]) {
     --tw-space-x-reverse: 0;
     margin-right: calc(1.25rem * var(--tw-space-x-reverse));
     margin-left: calc(1.25rem * calc(1 - var(--tw-space-x-reverse)));
-  }
-
-  .md\:self-start {
-    align-self: flex-start;
-  }
-
-  .md\:p-0 {
-    padding: 0px;
   }
 
   .md\:px-8 {
@@ -1081,6 +1079,10 @@ video {
   .md\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+  }
+
+  .md\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .md\:pb-10 {
@@ -1101,6 +1103,10 @@ video {
 
   .md\:pb-4 {
     padding-bottom: 1rem;
+  }
+
+  .md\:pl-0 {
+    padding-left: 0px;
   }
 
   .md\:pl-6 {

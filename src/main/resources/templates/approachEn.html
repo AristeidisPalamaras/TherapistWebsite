@@ -9,40 +9,42 @@
         <!-- Banner -->
         <div th:replace="~{fragments/banner :: banner('/img/bg1.jpg', 'My Approach', null)}"></div>
         <!-- Content -->
-        <div class="flex flex-col md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
-            <!-- Title -->
-            <div class="flex-1 md:pr-6">
-                <div class="md:min-w-60">
-                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">My Approach</h2>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
+            <div class="grid grid-cols-1 md:grid-cols-[minmax(264px,1fr)_2fr]">
+                <!-- Title -->
+                <div class="md:col-start-1 md:row-start-1 md:row-span-2 md:pr-6 pb-3">
+                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold">My Approach</h2>
                 </div>
-            </div>
-            <!-- Approach -->
-            <div class="flex-2 md:pl-6">
-                <div class="txt pb-8 md:pb-16">
-                    <p>My approach is rooted in Person-Centered Counseling, as I believe in the innate tendency of 
-                        humans toward growth and adaptation. In other words, I believe that, under the right conditions, 
-                        every person has the inherent ability to realize their potential. Furthermore, through my 
-                        therapeutic practice, I have found that the therapeutic relationship itself can serve as a 
-                        developmental experience. My primary concern, therefore, is to provide the therapeutic 
-                        conditions of empathy, acceptance, and authenticity, and to support the individuals I work with.</p>
-                    <p>Additionally, I have been trained in trauma therapy, including EMDR and IFS (Pre-Level One 
-                        Training). I deeply believe in the value of trauma therapy and have integrated its tools into my 
-                        work, as I have personally seen their usefulness in practice. Trauma therapy is not only for 
-                        those who have experienced major traumatic events but is relevant to all of us, as we all go 
-                        through difficult or stressful situations in life. EMDR can also be helpful for a wide range of 
-                        conditions such as phobias, panic attacks, and anxiety disorders. As for IFS, it is an 
-                        innovative approach that can help us connect with all the parts of ourselves, enabling us to 
-                        achieve inner harmony.</p>
-                    <p>As a psychologist and a writer, I deeply believe that each person’s story is important and 
-                        deserves to be heard. I am here to listen to your story, to help you process your thoughts and 
-                        emotions, and to support you in discovering your own path toward a more fulfilling life.</p>
+                <!-- Text -->
+                <div class="md:col-start-2 md:row-start-1 md:pl-6 pb-8 md:pb-16">
+                    <div class="txt">
+                        <p>My approach is rooted in Person-Centered Counseling, as I believe in the innate tendency of 
+                            humans toward growth and adaptation. In other words, I believe that, under the right conditions, 
+                            every person has the inherent ability to realize their potential. Furthermore, through my 
+                            therapeutic practice, I have found that the therapeutic relationship itself can serve as a 
+                            developmental experience. My primary concern, therefore, is to provide the therapeutic 
+                            conditions of empathy, acceptance, and authenticity, and to support the individuals I work with.</p>
+                        <p>Additionally, I have been trained in trauma therapy, including EMDR and IFS (Pre-Level One 
+                            Training). I deeply believe in the value of trauma therapy and have integrated its tools into my 
+                            work, as I have personally seen their usefulness in practice. Trauma therapy is not only for 
+                            those who have experienced major traumatic events but is relevant to all of us, as we all go 
+                            through difficult or stressful situations in life. EMDR can also be helpful for a wide range of 
+                            conditions such as phobias, panic attacks, and anxiety disorders. As for IFS, it is an 
+                            innovative approach that can help us connect with all the parts of ourselves, enabling us to 
+                            achieve inner harmony.</p>
+                        <p>As a psychologist and a writer, I deeply believe that each person’s story is important and 
+                            deserves to be heard. I am here to listen to your story, to help you process your thoughts and 
+                            emotions, and to support you in discovering your own path toward a more fulfilling life.</p>
+                    </div>
                 </div>
-                <div class="flex flex-col items-center">
-                    <a th:href="@{'/contact'}" class="btn-big text-xl md:text-2xl">Book A Session</a>
+                <!-- Button -->
+                <div class="md:col-start-2 md:row-start-2 md:pl-6">
+                     <div class="flex flex-col items-center">
+                         <a th:href="@{'/contact'}" class="btn-big text-xl md:text-2xl">Book A Session</a>
+                    </div>
                 </div>
             </div>
         </div>
-
     </main>
 </body>
 </html>

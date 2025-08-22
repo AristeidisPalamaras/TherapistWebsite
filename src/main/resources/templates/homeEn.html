@@ -12,25 +12,28 @@
         <div th:replace="~{fragments/banner :: banner('/img/bg0.jpg', 'Welcome', null)}"></div>
         <!-- Content -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
-            <!-- Welcome -->
-            <div class="flex flex-col md:flex-row pb-16">
-                <div class="flex-1 md:pr-6">
-                    <div class="md:min-w-60">
-                        <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Kostas Mavrakakis</h2>
-                    </div>
+            <!-- Content -->
+            <div class="grid grid-cols-1 md:grid-cols-[minmax(264px,1fr)_2fr] 
+                        pb-8 md:pb-16">
+                <!-- Title -->
+                <div class="md:col-start-1 md:row-start-1 md:pr-6 pb-3">
+                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold">Kostas Mavrakakis</h2>
                 </div>
-                <div class="txt flex-2 md:pl-6">
-                    <p>My name is Kostas Mavrakakis and I am a psychologist, person-centred counsellor, and trauma 
-                        therapist trained in EMDR and IFS (Pre-Level One).</p>
-                    <p>My office is located in the center of Athens (near the Acropolis metro station), and I offer 
-                        individual sessions both in person and online.</p>
-                    <p>You may be considering starting sessions due to a specific difficulty or challenge you are 
-                        facing, or due to a general feeling that things in your life aren't quite how you would like 
-                        them to be.</p>
-                    <p>In any case, my role is to support and assist you in exploring your thoughts and emotions in 
-                        order to build a more fulfilling life.</p>
-                    <p>I offer a ten-minute phone call where I can answer your questions, as well as a free first 
-                        session for you to see whether my approach suits you - and for me to see if I can help you.</p>
+                <!-- Text -->
+                <div class="md:col-start-2 md:row-start-1 md:pl-6">
+                    <div class="txt">
+                        <p>My name is Kostas Mavrakakis and I am a psychologist, person-centred counsellor, and trauma 
+                            therapist trained in EMDR and IFS (Pre-Level One).</p>
+                        <p>My office is located in the center of Athens (near the Acropolis metro station), and I offer 
+                            individual sessions both in person and online.</p>
+                        <p>You may be considering starting sessions due to a specific difficulty or challenge you are 
+                            facing, or due to a general feeling that things in your life aren't quite how you would like 
+                            them to be.</p>
+                        <p>In any case, my role is to support and assist you in exploring your thoughts and emotions in 
+                            order to build a more fulfilling life.</p>
+                        <p>I offer a ten-minute phone call where I can answer your questions, as well as a free first 
+                            session for you to see whether my approach suits you - and for me to see if I can help you.</p>
+                    </div>
                 </div>
             </div>
             <!-- Cards -->

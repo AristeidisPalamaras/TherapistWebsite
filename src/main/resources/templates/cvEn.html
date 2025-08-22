@@ -9,37 +9,44 @@
         <!-- Banner -->
         <div th:replace="~{fragments/banner :: banner('/img/bg3.jpg', 'Curriculum Vitae', 'Kostas Mavrakakis')}"></div>
         <!-- Content -->
-        <div class="flex flex-col-reverse md:flex-row max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
-            <!-- Pic -->
-            <div class="flex-1 flex flex-col md:pr-6">
-                <div class="self-center md:self-start md:min-w-60 px-4 pt-6 pb-[2.875rem] md:p-0">
-                    <img th:src="@{/img/KostasMavrakakis1.jpg}" alt="Kostas Mavrakakis" 
-                        class="w-full h-auto object-contain max-w-80 max-h-full img-shadow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
+            <div class="grid grid-cols-1 md:grid-cols-[minmax(264px,1fr)_2fr]">
+                <!-- Title -->
+                <div class="md:col-start-2 md:row-start-1 md:pl-6 pb-3">
+                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold">Curriculum Vitae</h2>
                 </div>
-                <a th:href="@{'/contact'}" class="self-center md:hidden btn-big text-xl md:text-2xl">Book A Session</a>
-            </div>
-            <!-- CV -->
-            <div class="flex-2 md:pl-6">
-                <div class="txt md:pb-16">
-                    <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Curriculum Vitae</h2>
-                    <p>I am a psychologist, person-centred counsellor, as well as an EMDR and IFS-informed trauma 
-                        therapist.</p>
-                    <p>Before entering the field of mental health, I earned a bachelor's and a master's degree in 
-                        maritime studies and spent several years working in the shipping industry. </p>
-                    <p>In 2009, however, my personal journey of self-discovery led me down a new path. Thus, I went on 
-                        to complete a bachelor’s degree in Psychology (BSc in Psychology, Open University) and a 
-                        master's degree in Person-Centred Counselling (MSc in Person-Centred Counselling, University of 
-                        Strathclyde).</p>
-                    <p>Additionally, I have trained in trauma therapy methods, including EMDR training from the Trauma 
-                        Therapy Institute of Greece and Pre-Level One training in IFS by Dr. Alexia Rothman and 
-                        Trauma2therapy.</p>
-                    <p>I offer individual therapy sessions and I have facilitated personal development groups, support 
-                        groups for adults with ADHD (in cooperation with ADHD Hellas), as well as groups that combine 
-                        creative writing with the therapeutic process. </p>
-                    <p>I have also written three book of fiction, which have been published by Kedros Publications.</p>
+                <!-- Text -->
+                <div class="md:col-start-2 md:row-start-2 md:pl-6 pb-6 md:pb-16">
+                    <div class="txt">
+                        <p>I am a psychologist, person-centred counsellor, as well as an EMDR and IFS-informed trauma 
+                            therapist.</p>
+                        <p>Before entering the field of mental health, I earned a bachelor's and a master's degree in 
+                            maritime studies and spent several years working in the shipping industry. </p>
+                        <p>In 2009, however, my personal journey of self-discovery led me down a new path. Thus, I went on 
+                            to complete a bachelor’s degree in Psychology (BSc in Psychology, Open University) and a 
+                            master's degree in Person-Centred Counselling (MSc in Person-Centred Counselling, University of 
+                            Strathclyde).</p>
+                        <p>Additionally, I have trained in trauma therapy methods, including EMDR training from the Trauma 
+                            Therapy Institute of Greece and Pre-Level One training in IFS by Dr. Alexia Rothman and 
+                            Trauma2therapy.</p>
+                        <p>I offer individual therapy sessions and I have facilitated personal development groups, support 
+                            groups for adults with ADHD (in cooperation with ADHD Hellas), as well as groups that combine 
+                            creative writing with the therapeutic process. </p>
+                        <p>I have also written three book of fiction, which have been published by Kedros Publications.</p>
+                    </div>
                 </div>
-                <div class="hidden md:flex flex-col items-center">
-                    <a th:href="@{'/contact'}" class="btn-big text-xl md:text-2xl">Book A Session</a>
+                <!-- Pic -->
+                <div class="md:col-start-1 md:row-start-1 md:row-span-3 px-4 md:pl-0 md:pr-6 pb-[2.875rem] md:pb-0">
+                    <div class="flex flex-col items-center md:items-start">
+                        <img th:src="@{/img/KostasMavrakakis1.jpg}" alt="Kostas Mavrakakis" 
+                            class="w-full h-auto object-contain max-w-80 max-h-full img-shadow">
+                    </div>
+                </div>
+                <!-- Button -->
+                <div class="md:col-start-2 md:row-start-3 md:pl-6">
+                    <div class="flex flex-col items-center">
+                        <a th:href="@{'/contact'}" class="btn-big text-xl md:text-2xl">Book A Session</a>
+                    </div>
                 </div>
             </div>
         </div>
