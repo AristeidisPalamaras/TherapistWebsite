@@ -4,8 +4,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'xs': '480px',
-        'md-plus': '896px',
+        'xs': '512px',
+        'ml': '896px',
       },
       fontFamily: {
         sans: [ 
