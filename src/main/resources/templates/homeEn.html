@@ -12,9 +12,8 @@
         <div th:replace="~{fragments/banner :: banner('/img/bg0.jpg', 'Welcome', null)}"></div>
         <!-- Content -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
-            <!-- Content -->
-            <div class="grid grid-cols-1 md:grid-cols-[minmax(264px,1fr)_2fr] 
-                        pb-8 md:pb-16">
+            <!-- Main content -->
+            <div class="grid grid-cols-1 md:grid-cols-[minmax(264px,1fr)_2fr] pb-6 md:pb-20">
                 <!-- Title -->
                 <div class="md:col-start-1 md:row-start-1 md:pr-6 pb-3">
                     <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold">Kostas Mavrakakis</h2>
@@ -37,41 +36,49 @@
                 </div>
             </div>
             <!-- Cards -->
-            <div>
-                <ul class="flex flex-col md:flex-row md:space-x-5 lg:space-x-10 xl:space-x-20">
-                    <li class="flex-1 flex flex-col card">
-                        <h2 class="text-center content-center text-1.5xl pb-4">About Me</h2>
-                        <img th:src="@{/img/bg3.jpg}" alt="about me" class="w-full aspect-[2/1] object-cover pb-4">
-                        <p class="text-center pb-4">
-                            Psychologist and trauma therapist grounded in the person-centred approach.
-                        </p>
-                        <a th:href="@{'/cv'}" class="self-center btn">Read More</a>
-                    </li>
-                    <li class="flex-1 flex flex-col card">
-                        <h2 class="text-center content-center text-1.5xl pb-4">My Approch</h2>
-                        <img th:src="@{/img/bg1.jpg}" alt="my approach" class="w-full aspect-[2/1] object-cover pb-4">
-                        <p class="text-center pb-4">
-                            Supportive, trauma-informed therapy rooted in the belief that growth begins with being heard.
-                        </p>
-                        <a th:href="@{'/approach'}" class="self-center btn">Read More</a>
-                    </li>
-                    <li class="flex-1 flex flex-col card">
-                        <h2 class="text-center content-center text-1.5xl pb-4">Trauma Therapy</h2>
-                        <img th:src="@{/img/bg2.jpg}" alt="about trauma therapy" class="w-full aspect-[2/1] object-cover pb-4">
-                        <p class="text-center pb-4">
-                            How stress and adversity shape us — and how therapy can support resilience and growth.
-                        </p>
-                        <a th:href="@{'/trauma_therapy'}" class="self-center btn">Read More </a>
-                    </li>
-                    <li class="flex-1 flex flex-col card">
-                        <h2 class="text-center content-center text-1.5xl pb-4">Contact</h2>
-                        <img th:src="@{/img/bg4.jpg}" alt="contact" class="w-full aspect-[2/1] object-cover pb-4">
-                        <p class="text-center pb-4">
-                            Have questions or want to book a session? Use the form or contact me directly.
-                        </p>
-                        <a th:href="@{'/contact'}" class="self-center btn">Read More</a>
-                    </li>
-                </ul>
+            <div class="grid justify-center">
+                <div class="grid grid-cols-1 sm:grid-cols-2 ml:grid-cols-3 xl:grid-cols-4 sm:gap-x-6 md:gap-x-8 px-6 sm:px-0 gap-y-7 md:gap-y-16">
+                    <div class="flex flex-col justify-between max-w-80">
+                        <div>
+                            <h2 class="text-center text-xl md:text-1.5xl tracking-wide font-semibold pb-1.5">About Me</h2>
+                            <img th:src="@{/img/bg3.jpg}" alt="" class="w-full aspect-[5/3] object-cover mb-1.5">
+                            <p class="text-center pb-2.5">
+                                Psychologist and trauma therapist grounded in the person-centred approach.
+                            </p>
+                        </div>
+                        <a th:href="@{'/en/cv'}" class="self-center btn">Read More</a>
+                    </div>
+                    <div class="flex flex-col justify-between max-w-80">
+                        <div>
+                            <h2 class="text-center text-xl md:text-1.5xl tracking-wide font-semibold pb-1.5">My Approach</h2>
+                            <img th:src="@{/img/bg1.jpg}" alt="" class="w-full aspect-[5/3] object-cover mb-1.5">
+                            <p class="text-center pb-2.5">
+                                Supportive, trauma-informed therapy rooted in the belief that growth begins with being heard.
+                            </p>
+                        </div>
+                        <a th:href="@{'/en/approach'}" class="self-center btn">Read More</a>
+                    </div>
+                    <div class="flex flex-col justify-between max-w-80">
+                        <div>
+                            <h2 class="text-center text-xl md:text-1.5xl tracking-wide font-semibold pb-1.5">Trauma Therapy</h2>
+                            <img th:src="@{/img/bg2.jpg}" alt="" class="w-full aspect-[5/3] object-cover mb-1.5">
+                            <p class="text-center pb-2.5">
+                                How stress and adversity shape us — and how therapy can support resilience and growth.
+                            </p>
+                        </div>
+                        <a th:href="@{'/en/trauma_therapy'}" class="self-center btn">Read More</a>
+                    </div>
+                    <div class="ml:col-start-2 xl:col-start-4 flex flex-col justify-between max-w-80">
+                        <div>
+                            <h2 class="text-center text-xl md:text-1.5xl tracking-wide font-semibold pb-1.5">Contact</h2>
+                            <img th:src="@{/img/bg4.jpg}" alt="" class="w-full aspect-[5/3] object-cover mb-1.5">
+                            <p class="text-center pb-2.5">
+                                Have questions or want to book a session? Use the form or contact me directly.
+                            </p>
+                        </div>
+                        <a th:href="@{'/en/contact'}" class="self-center btn">Read More</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
