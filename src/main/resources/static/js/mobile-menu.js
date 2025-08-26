@@ -1,10 +1,19 @@
-const btn = document.getElementById("mobile-menu-btn");
+const open = document.getElementById("open-mobile-menu-btn");
+const close = document.getElementById("close-mobile-menu-btn");
 const menu = document.getElementById("mobile-menu");
-const hamburger = document.getElementById("hamburger-icon");
-const close = document.getElementById("close-icon");
+const overlay = document.getElementById('overlay');
 
-btn.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-    hamburger.classList.toggle("hidden");
-    close.classList.toggle("hidden");
-})
+
+function openMenu() {
+    menu.classList.remove('translate-x-full');
+    overlay.classList.remove('hidden');
+}
+
+  function closeMenu() {
+    menu.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+}
+
+open.addEventListener('click', openMenu);
+close.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
