@@ -3,10 +3,12 @@
       <div class="flex items-center justify-between space-x-5 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 min-h-24 sm:min-h-28 md:min-h-32">
          <!-- Logo -->
          <div>
-            <h1 class="text-xl sm:text-1.5xl md:text-2xl tracking-wide font-medium" 
-               th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></h1>
-            <h1 class="text-xs sm:text-sm md:text-base font-medium" 
-               th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></h1>
+            <a href="/">
+               <span class="block text-xl sm:text-1.5xl md:text-2xl tracking-wide font-medium" 
+                  th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}"></span>
+               <span class="block text-xs sm:text-sm md:text-base font-medium" 
+                  th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR Practicioner - IFS Informed' : 'Ψυχολόγος - EMDR Practicioner - IFS Informed'}"></span>
+            </a>
          </div>
          <!-- Menu -->
          <div>
@@ -109,7 +111,8 @@
                 th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
                 <span class="fi fi-gb fis !w-5 !h-5 rounded-full"></span>
                 <span class="sr-only">English</span>
-            </a>         </li>
+            </a>         
+         </li>
       </ul>
       <div class="border-b border-menu-primary"></div>
    </div>
