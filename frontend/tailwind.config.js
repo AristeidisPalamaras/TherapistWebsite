@@ -29,7 +29,9 @@ module.exports = {
         // '3.6xl': ['2.125rem', { lineHeight: '2.375rem' }], // 34px
       },
       colors: {
+        "highlight": "#585541",
         "menu-primary": "#d4cdc4",
+        "menu-secondary": "#e4e0da",
         "btn-primary": "#817C5F",
         "btn-secondary": "#9f9977",
         "footer-primary": "#dfdad3",

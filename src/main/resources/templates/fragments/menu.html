@@ -17,25 +17,25 @@
                <li>
                   <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
                   th:text="${currentUrl.startsWith('/en') ? 'Home' : 'Αρχική'}"
-                  class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
+                  class="hover:text-highlight" 
                   th:classappend="${ currentUrl == '/' ? 'font-bold' : (currentUrl == '/en' ? 'font-bold' : '')}"></a>
                </li>
                <li>
                   <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
                   th:text="${currentUrl.startsWith('/en') ? 'About Me' : 'Βιογραφικό'}"
-                  class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
+                  class="hover:text-highlight" 
                   th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'font-bold' : ''}"></a>
                </li>
                <li>
                   <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
                   th:text="${currentUrl.startsWith('/en') ? 'My Approach' : 'Η Προσέγγιση Μου'}"
-                  class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
+                  class="hover:text-highlight" 
                   th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'font-bold' : ''}"></a>
                </li>
                <li>
                   <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
                   th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
-                  class="hover:underline hover:decoration-neutral-900 hover:underline-offset-8" 
+                  class="hover:text-highlight" 
                   th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'font-bold' : ''}"></a>
                </li>
                <li>
@@ -47,7 +47,7 @@
             </ul>
             <!-- Hamburger Menu Icon -->
             <button id="open-mobile-menu-btn" class="flex xl:hidden">
-               <svg class="w-8 h-8 fill-current text-neutral-900"
+               <svg class="w-8 h-8 fill-current text-neutral-900 hover:text-highlight"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
                   <!--!Font Awesome Pro v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2025 Fonticons, Inc.-->
                   <path d="M96 160C96 142.3 110.3 128 128 128L512 128C529.7 128 544 142.3 544 160C544 177.7 529.7 192 512 192L128 192C110.3 192 96 177.7 96 160zM96 320C96 302.3 110.3 288 128 288L512 288C529.7 288 544 302.3 544 320C544 337.7 529.7 352 512 352L128 352C110.3 352 96 337.7 96 320zM544 480C544 497.7 529.7 512 512 512L128 512C110.3 512 96 497.7 96 480C96 462.3 110.3 448 128 448L512 448C529.7 448 544 462.3 544 480z"/></svg>
@@ -58,61 +58,62 @@
    <!-- Hamburger menu -->
    <div id="overlay" class="fixed inset-0 z-20 bg-black/60 hidden xl:hidden" aria-hidden="true"></div>
    
-   <div id="mobile-menu" class="fixed top-0 right-0 
-                     w-80 
-                     h-full z-20 bg-white transform translate-x-full transition-transform duration-300 xl:hidden">
-      <button id="close-mobile-menu-btn" class="flex flex-col items-end w-full">
-         <svg class="w-8 h-8 fill-current text-neutral-900"
-            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
-            <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
-            <path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
-      </button>
-      <ul class="flex flex-col divide-y divide-menu-primary w-full">
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
-            th:text="${currentUrl.startsWith('/en') ? 'Home' : 'Αρχική'}"
-            class="block w-full text-center py-1"
-            th:classappend="${ currentUrl == '/' ? 'font-bold' : (currentUrl == '/en' ? 'font-bold' : '')}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
-            th:text="${currentUrl.startsWith('/en') ? 'About Me' : 'Βιογραφικό'}"
-            class="block w-full text-center py-1"
-            th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'font-bold' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
-            th:text="${currentUrl.startsWith('/en') ? 'My Approach' : 'Η Προσέγγιση Μου'}"
-            class="block w-full text-center py-1"
-            th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'font-bold' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
-            th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
-            class="block w-full text-center py-1"
-            th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'font-bold' : ''}"></a>
-         </li>
-         <li>
-            <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
-            th:text="${currentUrl.startsWith('/en') ? 'Contact' : 'Επικοινωνία'}"
-            class="block w-full text-center py-1"
-            th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'font-bold' : ''}"></a>
-         </li>
-         <li class="flex justify-center space-x-2 py-2">
-            <a class="hover:opacity-100 hover:grayscale-0"
-                th:classappend="${ !currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
-                th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
-                <span class="fi fi-gr fis !w-5 !h-5 rounded-full"></span>
-                <span class="sr-only">Ελληνικά</span>
-            </a>
-            <a class="hover:opacity-100 hover:grayscale-0"
-                th:classappend="${ currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
-                th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
-                <span class="fi fi-gb fis !w-5 !h-5 rounded-full"></span>
-                <span class="sr-only">English</span>
-            </a>         
-         </li>
-      </ul>
-      <div class="border-b border-menu-primary"></div>
+   <div id="mobile-menu" class="fixed top-0 right-0 z-20 w-72 h-full bg-menu-secondary transform translate-x-full transition-transform duration-300 xl:hidden">
+      <div class="px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-12">
+         <div class="flex flex-col pb-4">
+            <button id="close-mobile-menu-btn" class="self-end">
+               <svg class="w-8 h-8 fill-current text-neutral-900 hover:text-highlight"
+                  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640">
+                  <!--!Font Awesome Free v7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
+                  <path d="M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z"/></svg>
+            </button>
+         </div>
+         <ul class="flex flex-col gap-y-4">
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en' : '/'} }" 
+               th:text="${currentUrl.startsWith('/en') ? 'Home' : 'Αρχική'}"
+               class="block text-right hover:text-highlight" 
+               th:classappend="${ currentUrl == '/' ? 'font-bold' : (currentUrl == '/en' ? 'font-bold' : '')}"></a>
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/cv' : '/cv'} }" 
+               th:text="${currentUrl.startsWith('/en') ? 'About Me' : 'Βιογραφικό'}"
+               class="block text-right hover:text-highlight" 
+               th:classappend="${ #strings.contains(currentUrl, '/cv') ? 'font-bold' : ''}"></a>
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/approach' : '/approach'} }" 
+               th:text="${currentUrl.startsWith('/en') ? 'My Approach' : 'Η Προσέγγιση Μου'}"
+               class="block text-right hover:text-highlight" 
+               th:classappend="${ #strings.contains(currentUrl, '/approach') ? 'font-bold' : ''}"></a>
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/trauma_therapy' : '/trauma_therapy'} }" 
+               th:text="${currentUrl.startsWith('/en') ? 'Trauma Therapy' : 'Τραυματοθεραπεία'}"
+               class="block text-right hover:text-highlight" 
+               th:classappend="${ #strings.contains(currentUrl, '/trauma_therapy') ? 'font-bold' : ''}"></a>
+            </li>
+            <li>
+               <a th:href="@{ ${currentUrl.startsWith('/en') ? '/en/contact' : '/contact'} }" 
+               th:text="${currentUrl.startsWith('/en') ? 'Contact' : 'Επικοινωνία'}"
+               class="block text-right hover:text-highlight" 
+               th:classappend="${ #strings.contains(currentUrl, '/contact') ? 'font-bold' : ''}"></a>
+            </li>
+            <li class="self-end flex space-x-2">
+               <a class="hover:opacity-100 hover:grayscale-0"
+                  th:classappend="${ !currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
+                  th:href="@{ ${ !currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3)) } }">
+                  <span class="fi fi-gr fis !w-5 !h-5 rounded-full"></span>
+                  <span class="sr-only">Ελληνικά</span>
+               </a>
+               <a class="hover:opacity-100 hover:grayscale-0"
+                  th:classappend="${ currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
+                  th:href="@{ ${ currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl) } }">
+                  <span class="fi fi-gb fis !w-5 !h-5 rounded-full"></span>
+                  <span class="sr-only">English</span>
+               </a>         
+            </li>
+         </ul>
+      </div>
    </div>
 </th:block>
