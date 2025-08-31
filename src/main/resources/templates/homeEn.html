@@ -7,7 +7,7 @@
 <body>
     <main layout:fragment="content">
         <!-- Banner -->
-        <div th:replace="~{fragments/banner :: banner('/img/bg0.jpg', 'Welcome', null)}"></div>
+        <div th:replace="~{fragments/banner :: banner(@{/img/bg0.jpg}, 'Welcome', null)}"></div>
         <!-- Content -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
             <!-- Main content -->
