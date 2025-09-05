@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" defer></script>
     <script th:src="@{/js/map.js}" defer></script>
+    <script th:src="@{/js/validation.js}" defer></script>
 </head>
 <body>
     <main layout:fragment="content">
@@ -48,28 +49,53 @@
                 </div>
                 <!-- Contact form -->
                 <div class="ml:col-start-2 ml:row-start-1 ml:row-span-3 ml:border-l border-neutral-500 ml:pl-10 pb-10 md:pb-14 ml:pb-0">
-                    <form th:action="@{/contact}" th:object="${messageDTO}" method="post">
+                    <form th:action="@{/contact}" th:object="${messageDTO}" method="post" id="contactForm" novalidate>
+                        <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Φόρμα Επικοινωνίας</h2>
+
+                        <!-- <div id="warning" th:text="${#fields.hasErrors()} ? 'Fill in all the required fields' : ''"
+                            class="empty:hidden my-3 px-3 py-1 bg-menu-secondary rounded text-sm md:text-base"></div> -->
+                        <div th:if="${#fields.hasGlobalErrors()}" th:text="${#fields.globalErrors()[0]}"
+                            class="mb-3 p-3 bg-menu-secondary rounded text-sm md:text-base"></div>
+                        <div id="warning" 
+                            class="empty:hidden mb-3 p-3 bg-menu-secondary rounded text-sm md:text-base"></div>
+
+                        <div class="flex flex-col pb-3">
+                            <label for="name" class="pb-1">Όνομα<span class="text-red-500">*</span></label>
+                            <input type="text" id="name" th:field="*{name}" 
+                                class="px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none">
+                            <!-- <div id="nameError" th:text="${#fields.hasErrors('name')} ? ${#fields.errors('name')[0]} : ''" 
+                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div> -->
+                            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+                                class="error-message text-sm md:text-base text-red-500 mt-1"></div>
+                            <div id="nameError" 
+                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div>
+                        </div>
+                        <div class="flex flex-col pb-3">
+                            <label for="email" class="pb-1">E-mail<span class="text-red-500">*</span></label>
+                            <input type="email" id="email" th:field="*{email}"
+                                class="px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none">
+                            <!-- <div id="emailError" th:text="${#fields.hasErrors('email')} ? ${#fields.errors('email')[0]} : ''"
+                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div> -->
+                            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
+                                class="error-message text-sm md:text-base text-red-500 mt-1"></div>
+                            <div id="emailError" 
+                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div>
+                        </div>
+                        <div class="flex flex-col pb-3">
+                            <label for="telephone" class="pb-1">Τηλέφωνο</label>
+                            <input type="text" id="telephone" th:field="*{telephone}" 
+                                class="px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none">
+                        </div>
                         <div class="flex flex-col pb-6">
-                            <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Φόρμα Επικοινωνίας</h2>
-                            <label class="pb-1" for="name">Όνομα<span class="text-red-600">*</span></label>
-                            <input class="mb-3 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
-                                type="text" id="name" th:field="*{name}" required>
-                            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="text-red-600 pb-3"></div>
-
-                            <label class="pb-1" for="email">E-mail<span class="text-red-600">*</span></label>
-                            <input class="mb-3 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
-                                type="email" id="email" th:field="*{email}" required>
-                            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="text-red-600 pb-3"></div>
-
-                            <label class="pb-1" for="telephone">Τηλέφωνο</label>
-                            <input class="mb-3 px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
-                                type="text" id="telephone" th:field="*{telephone}">
-
-                            <label class="pb-1" for="message">Το μήνυμα σας<span class="text-red-600">*</span></label>
-                            <textarea class="h-48 px-3 py-1.5 resize-none grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none" 
-                                id="message" th:field="*{message}" required></textarea>
-                            <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}" class="text-red-600 pb-3"></div>
-                                
+                            <label for="message" class="pb-1">Το μήνυμα σας<span class="text-red-500">*</span></label>
+                            <textarea id="message" th:field="*{message}"
+                                class="h-48 px-3 py-1.5 resize-none grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none"></textarea>
+                            <!-- <div id="messageError" th:text="${#fields.hasErrors('message')} ? ${#fields.errors('message')[0]} : ''"
+                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div> -->
+                            <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}"
+                                class="error-message text-sm md:text-base text-red-500 mt-1"></div>
+                            <div id="messageError" 
+                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div>
                         </div>
                         <div class="flex flex-col items-center">
                             <button type="submit" class="btn">Αποστολή</button>

@@ -5,15 +5,14 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
 
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import gr.kostasmavrakakis.website.service.EmailService;
 import gr.kostasmavrakakis.website.dto.MessageDTO;
-
 
 @Controller
 public class AppController {
@@ -88,14 +87,20 @@ public class AppController {
 
     @PostMapping("/contact")
     public String submitContactFormGr(
-        @Valid @ModelAttribute("MessageDTO") MessageDTO messageDTO,
+        @Valid @ModelAttribute("messageDTO") MessageDTO messageDTO,
         BindingResult bindingResult,
         HttpServletRequest request,
         Model model
     ) {
         model.addAttribute("currentUrl", request.getRequestURI());
 
-         if (bindingResult.hasErrors()) {
+        if (bindingResult.hasErrors()) {
+            bindingResult.addError(new ObjectError(
+                "messageDTO",
+                new String[]{"form.warning"},
+                null,
+                ""
+            ));
             return "contactGr";
         }
 
@@ -104,7 +109,6 @@ public class AppController {
             model.addAttribute("success", true);
             model.addAttribute("messageDTO", new MessageDTO());
         } catch (Exception e) {
-            e.printStackTrace();
             model.addAttribute("error", "There was a problem sending your message. Please try again later.");
             model.addAttribute("messageDTO", messageDTO);
         }
@@ -114,7 +118,7 @@ public class AppController {
 
     @PostMapping("/en/contact")
     public String submitContactFormEn(
-        @Valid @ModelAttribute("MessageDTO") MessageDTO messageDTO,
+        @Valid @ModelAttribute("messageDTO") MessageDTO messageDTO,
         BindingResult bindingResult,
         HttpServletRequest request,
         Model model
@@ -122,6 +126,12 @@ public class AppController {
         model.addAttribute("currentUrl", request.getRequestURI());
 
         if (bindingResult.hasErrors()) {
+            bindingResult.addError(new ObjectError(
+                "messageDTO",
+                new String[]{"form.warning"},
+                null,
+                ""
+            ));
             return "contactEn";
         }
 

@@ -24,7 +24,7 @@ public class EmailServiceImpl implements EmailService {
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(recipient);
         mail.setFrom(messageDTO.getEmail());
-        mail.setSubject("New contact form submission from " + messageDTO.getName() + " | Tel: " + messageDTO.getTelephone());
+        mail.setSubject("New contact form submission from " + messageDTO.getName() + " | Email " + messageDTO.getEmail() + " | Tel: " + messageDTO.getTelephone());
         mail.setText(messageDTO.getMessage());
 
         mailSender.send(mail);

@@ -14,15 +14,15 @@ import jakarta.validation.constraints.Email;
 @Setter
 public class MessageDTO {
 
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "{field.required}")
     private String name;
     
-    @NotBlank(message = "Email is required")
-    @Email(message = "Please provide a valid email")
+    @NotBlank(message = "{field.required}")
+    @Email(message = "{field.invalid.email}")
     private String email;
 
     private String telephone;
 
-    @NotBlank(message = "Message is required")
+    @NotBlank(message = "{field.required}")
     private String message;
 }
