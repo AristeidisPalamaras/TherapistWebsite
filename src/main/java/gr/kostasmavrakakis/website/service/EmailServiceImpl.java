@@ -21,6 +21,10 @@ public class EmailServiceImpl implements EmailService {
 
     @Override
     public void sendMessage(MessageDTO messageDTO) {
+
+        // TEST
+        // if ("tost".equals(messageDTO.getName())) { throw new IllegalStateException("Forced error for testing"); }
+
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(recipient);
         mail.setFrom(messageDTO.getEmail());

@@ -54,7 +54,7 @@
 
                         <!-- <div id="warning" th:text="${#fields.hasErrors()} ? 'Fill in all the required fields' : ''"
                             class="empty:hidden my-3 px-3 py-1 bg-menu-secondary rounded text-sm md:text-base"></div> -->
-                        <div th:if="${#fields.hasGlobalErrors()}" th:text="${#fields.globalErrors()[0]}"
+                        <div th:if="${warning}" th:text="${warning}"
                             class="mb-3 p-3 bg-menu-secondary rounded text-sm md:text-base"></div>
                         <div id="warning" 
                             class="empty:hidden mb-3 p-3 bg-menu-secondary rounded text-sm md:text-base"></div>
@@ -101,7 +101,7 @@
                             <button type="submit" class="btn">Αποστολή</button>
                         </div>
 
-                        <p th:if="${success}" class="text-green-500 mt-4">Your message has been sent successfully!</p>
+                        <p th:if="${success}" class="text-green-500 mt-4" th:text="${success}"></p>
                         <p th:if="${error}" class="text-red-500 mt-4" th:text="${error}"></p>
                     </form>
                 </div>

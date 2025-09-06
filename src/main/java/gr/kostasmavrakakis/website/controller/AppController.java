@@ -1,15 +1,20 @@
 package gr.kostasmavrakakis.website.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import org.springframework.mail.MailException;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
+
+import org.springframework.context.MessageSource;
+import java.util.Locale;
 
 import gr.kostasmavrakakis.website.service.EmailService;
 import gr.kostasmavrakakis.website.dto.MessageDTO;
@@ -18,9 +23,11 @@ import gr.kostasmavrakakis.website.dto.MessageDTO;
 public class AppController {
 
     private final EmailService emailService;
+    private final MessageSource messageSource;
 
-    public AppController(EmailService emailService) {
+    public AppController(EmailService emailService, MessageSource messageSource) {
         this.emailService = emailService;
+        this.messageSource = messageSource;
     }
 
     @GetMapping("/")
@@ -74,14 +81,18 @@ public class AppController {
     @GetMapping("/contact")
     public String contactGr(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
-        model.addAttribute("messageDTO", new MessageDTO());
+        if (!model.containsAttribute("messageDTO")) {
+            model.addAttribute("messageDTO", new MessageDTO());
+        }
         return "contactGr";
     }
 
     @GetMapping("/en/contact")
     public String contactEn(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
-        model.addAttribute("messageDTO", new MessageDTO());
+        if (!model.containsAttribute("messageDTO")) {
+            model.addAttribute("messageDTO", new MessageDTO());
+        }
         return "contactEn";
     }
 
@@ -90,30 +101,29 @@ public class AppController {
         @Valid @ModelAttribute("messageDTO") MessageDTO messageDTO,
         BindingResult bindingResult,
         HttpServletRequest request,
+        RedirectAttributes redirectAttributes,
         Model model
     ) {
         model.addAttribute("currentUrl", request.getRequestURI());
 
         if (bindingResult.hasErrors()) {
-            bindingResult.addError(new ObjectError(
-                "messageDTO",
-                new String[]{"form.warning"},
-                null,
-                ""
-            ));
+            model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, new Locale("el")));
             return "contactGr";
         }
 
         try {
             emailService.sendMessage(messageDTO);
-            model.addAttribute("success", true);
-            model.addAttribute("messageDTO", new MessageDTO());
+            System.out.println("Success: " + messageDTO.getName() + " | " + messageDTO.getEmail());
+            redirectAttributes.addFlashAttribute("success", messageSource.getMessage("submit.success", null, new Locale("el")));
+            return "redirect:/contact";
+        } catch (MailException e) {
+            System.out.println("Mail error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
         } catch (Exception e) {
-            model.addAttribute("error", "There was a problem sending your message. Please try again later.");
-            model.addAttribute("messageDTO", messageDTO);
+            System.out.println("System error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
         }
-
-        return "contactGr";
+        redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.error", null, new Locale("el")));
+        redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
+        return "redirect:/contact";
     }
 
     @PostMapping("/en/contact")
@@ -121,29 +131,28 @@ public class AppController {
         @Valid @ModelAttribute("messageDTO") MessageDTO messageDTO,
         BindingResult bindingResult,
         HttpServletRequest request,
+        RedirectAttributes redirectAttributes,
         Model model
     ) {
         model.addAttribute("currentUrl", request.getRequestURI());
 
         if (bindingResult.hasErrors()) {
-            bindingResult.addError(new ObjectError(
-                "messageDTO",
-                new String[]{"form.warning"},
-                null,
-                ""
-            ));
+            model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, Locale.ENGLISH));
             return "contactEn";
         }
 
         try {
             emailService.sendMessage(messageDTO);
-            model.addAttribute("success", true);
-            model.addAttribute("messageDTO", new MessageDTO());
+            System.out.println("Success: " + messageDTO.getName() + " | " + messageDTO.getEmail());
+            redirectAttributes.addFlashAttribute("success", messageSource.getMessage("submit.success", null, Locale.ENGLISH));
+            return "redirect:/en/contact";
+        } catch (MailException e) {
+            System.out.println("Mail error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
         } catch (Exception e) {
-            model.addAttribute("error", "There was a problem sending your message. Please try again later.");
-            model.addAttribute("messageDTO", messageDTO);
+            System.out.println("System error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
         }
-
-        return "contactEn";
+        redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.error", null, Locale.ENGLISH));
+        redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
+        return "redirect:/en/contact";
     }
 }
