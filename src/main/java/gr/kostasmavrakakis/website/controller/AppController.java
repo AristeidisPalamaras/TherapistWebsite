@@ -18,16 +18,19 @@ import java.util.Locale;
 
 import gr.kostasmavrakakis.website.service.EmailService;
 import gr.kostasmavrakakis.website.dto.MessageDTO;
+import gr.kostasmavrakakis.website.logger.CsvLogger;
 
 @Controller
 public class AppController {
 
     private final EmailService emailService;
     private final MessageSource messageSource;
+    private final CsvLogger csvLogger;
 
-    public AppController(EmailService emailService, MessageSource messageSource) {
+    public AppController(EmailService emailService, MessageSource messageSource, CsvLogger csvLogger) {
         this.emailService = emailService;
         this.messageSource = messageSource;
+        this.csvLogger = csvLogger;
     }
 
     @GetMapping("/")
@@ -113,13 +116,13 @@ public class AppController {
 
         try {
             emailService.sendMessage(messageDTO);
-            System.out.println("Success: " + messageDTO.getName() + " | " + messageDTO.getEmail());
+            csvLogger.logSuccess(messageDTO.getEmail());
             redirectAttributes.addFlashAttribute("success", messageSource.getMessage("submit.success", null, new Locale("el")));
             return "redirect:/contact";
         } catch (MailException e) {
-            System.out.println("Mail error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
+            csvLogger.logError("MAIL", messageDTO.getEmail(), e);
         } catch (Exception e) {
-            System.out.println("System error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
+            csvLogger.logError("SYSTEM", messageDTO.getEmail(), e);
         }
         redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.error", null, new Locale("el")));
         redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
@@ -143,13 +146,13 @@ public class AppController {
 
         try {
             emailService.sendMessage(messageDTO);
-            System.out.println("Success: " + messageDTO.getName() + " | " + messageDTO.getEmail());
+            csvLogger.logSuccess(messageDTO.getEmail());
             redirectAttributes.addFlashAttribute("success", messageSource.getMessage("submit.success", null, Locale.ENGLISH));
             return "redirect:/en/contact";
         } catch (MailException e) {
-            System.out.println("Mail error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
+            csvLogger.logError("MAIL", messageDTO.getEmail(), e);
         } catch (Exception e) {
-            System.out.println("System error: " + messageDTO.getName() + " | " + messageDTO.getEmail() + " | " + e);
+            csvLogger.logError("SYSTEM", messageDTO.getEmail(), e);
         }
         redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.error", null, Locale.ENGLISH));
         redirectAttributes.addFlashAttribute("messageDTO", messageDTO);

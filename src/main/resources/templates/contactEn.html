@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" defer></script>
     <script th:src="@{/js/map.js}" defer></script>
-    <script th:src="@{/js/validation.js}" defer></script>
+    <script th:src="@{/js/form.js}" defer></script>
 </head>
 <body>
     <main layout:fragment="content">
@@ -22,7 +22,7 @@
                     <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Contact Information</h2>
                     <p class="pb-3 md:pb-4">
                         For more information or to book a session, you can fill in the contact form or contact me 
-                        directly</p>
+                        directly.</p>
                     <ul>
                         <li class="pb-3 md:pb-4">
                             <svg class="inline w-5 h-5 md:w-[22px] md:h-[22px] fill-current text-neutral-900 mr-1 align-text-top"
@@ -51,58 +51,62 @@
                 <div class="ml:col-start-2 ml:row-start-1 ml:row-span-3 ml:border-l border-neutral-500 ml:pl-10 pb-10 md:pb-14 ml:pb-0">
                     <form th:action="@{/en/contact}" th:object="${messageDTO}" method="post" id="contactForm" novalidate>
                         <h2 class="text-xl md:text-1.5xl tracking-wide font-semibold pb-3">Contact Form</h2>
-                        
-                        <!-- <div id="warning" th:text="${#fields.hasErrors()} ? 'Fill in all the required fields' : ''"
-                            class="empty:hidden my-3 px-3 py-1 bg-menu-secondary rounded text-sm md:text-base"></div> -->
-                        <div th:if="${warning}" th:text="${warning}"
-                            class="mb-3 p-3 bg-menu-secondary rounded text-sm md:text-base"></div>
-                        <div id="warning" 
-                            class="empty:hidden mb-3 p-3 bg-menu-secondary rounded text-sm md:text-base"></div>
-                        
+                        <div id="summary">
+                            <div th:classappend="${success} ? 'block' : 'hidden'" th:text="${success}"
+                                class="msg backend-msg mb-3 px-3 py-2 border-l-4 border-btn-secondary text-sm md:text-base"></div>
+                            <div th:classappend="${error} ? 'block' : 'hidden'" th:text="${error}"
+                                class="msg backend-msg mb-3 px-3 py-2 border-l-4 border-red-400 text-sm md:text-base"></div>
+                            <div th:classappend="${warning} ? 'block' : 'hidden'" th:text="${warning}"
+                                class="msg backend-msg mb-3 px-3 py-2 border-l-4 border-red-400 text-sm md:text-base"></div>
+                            <div id="warning" 
+                                class="hidden msg mb-3 px-3 py-2 border-l-4 border-red-400 text-sm md:text-base"></div>
+                        </div>
                         <div class="flex flex-col pb-3">
                             <label for="name" class="pb-1">Name<span class="text-red-500">*</span></label>
                             <input type="text" id="name" th:field="*{name}" 
                                 class="px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none">
-                            <!-- <div id="nameError" th:text="${#fields.hasErrors('name')} ? ${#fields.errors('name')[0]} : ''" 
-                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div> -->
-                            <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
-                                class="error-message text-sm md:text-base text-red-500 mt-1"></div>
+                            <div th:classappend="${#fields.hasErrors('name')} ? 'block' : 'hidden'" 
+                                th:text="${#fields.hasErrors('name')} ? ${#fields.errors('name')[0]} : ''"
+                                class="msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                             <div id="nameError" 
-                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div>
+                                class="hidden msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                         </div>
                         <div class="flex flex-col pb-3">
                             <label for="email" class="pb-1">E-mail<span class="text-red-500">*</span></label>
                             <input type="email" id="email" th:field="*{email}"
                                 class="px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none">
-                            <!-- <div id="emailError" th:text="${#fields.hasErrors('email')} ? ${#fields.errors('email')[0]} : ''"
-                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div> -->
-                            <div th:if="${#fields.hasErrors('email')}" th:errors="*{email}"
-                                class="error-message text-sm md:text-base text-red-500 mt-1"></div>
+                            <div th:classappend="${#fields.hasErrors('email')} ? 'block' : 'hidden'" 
+                                th:text="${#fields.hasErrors('email')} ? ${#fields.errors('email')[0]} : ''"
+                                class="msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                             <div id="emailError" 
-                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div>
+                                class="hidden msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                         </div>
                         <div class="flex flex-col pb-3">
                             <label for="telephone" class="pb-1">Telephone</label>
-                            <input type="text" id="telephone" th:field="*{telephone}" 
+                            <input type="tel" id="telephone" th:field="*{telephone}" 
                                 class="px-3 py-1.5 grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none">
+                            <div th:classappend="${#fields.hasErrors('telephone')} ? 'block' : 'hidden'" 
+                                th:text="${#fields.hasErrors('telephone')} ? ${#fields.errors('telephone')[0]} : ''"
+                                class="msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
+                            <div id="telephoneError" 
+                                class="hidden msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                         </div>
                         <div class="flex flex-col pb-6">
                             <label for="message" class="pb-1">Your message<span class="text-red-500">*</span></label>
                             <textarea id="message" th:field="*{message}"
                                 class="h-48 px-3 py-1.5 resize-none grow border border-neutral-500 focus:ring-1 focus:ring-neutral-600 focus:outline-none"></textarea>
-                            <!-- <div id="messageError" th:text="${#fields.hasErrors('message')} ? ${#fields.errors('message')[0]} : ''"
-                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div> -->
-                            <div th:if="${#fields.hasErrors('message')}" th:errors="*{message}"
-                                class="error-message text-sm md:text-base text-red-500 mt-1"></div>
+                            <div th:classappend="${#fields.hasErrors('message')} ? 'block' : 'hidden'" 
+                                th:text="${#fields.hasErrors('message')} ? ${#fields.errors('message')[0]} : ''"
+                                class="msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                             <div id="messageError" 
-                                class="empty:hidden error-message text-sm md:text-base text-red-500 mt-1"></div>
+                                class="hidden msg mt-2 px-3 py-px border-l-4 border-red-400 text-sm md:text-base"></div>
                         </div>
                         <div class="flex flex-col items-center">
-                            <button type="submit" class="btn">Send</button>
+                            <button type="submit" class="btn">
+                                <span>Send</span>
+                                <span id="spinner" class="spn hidden"></span>
+                            </button>
                         </div>
-
-                        <p th:if="${success}" class="text-green-500 mt-4" th:text="${success}"></p>
-                        <p th:if="${error}" class="text-red-500 mt-4" th:text="${error}"></p>
                     </form>
                 </div>
                 <div class="ml:col-start-1 ml:row-start-2 ml:pr-10">

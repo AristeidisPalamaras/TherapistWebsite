@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.Pattern;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,6 +22,7 @@ public class MessageDTO {
     @Email(message = "{validation.email.invalid}")
     private String email;
 
+    @Pattern(regexp = "^[0-9+\\-()\\s]*$", message = "{validation.telephone.invalid}")
     private String telephone;
 
     @NotBlank(message = "{validation.field.required}")
