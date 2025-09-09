@@ -11,6 +11,9 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.nio.file.attribute.PosixFilePermission;
+import java.nio.file.attribute.PosixFilePermissions;
+import java.util.Set;
 
 import com.opencsv.CSVWriter;
 
@@ -21,13 +24,22 @@ public class CsvLogger {
     private static final DateTimeFormatter YEAR_FORMATTER = DateTimeFormatter.ofPattern("yyyy");
 
     public CsvLogger() {
-        try {
-            Path logsPath = Paths.get("logs");
-            if (!Files.exists(logsPath)) {
+        Path logsPath = Paths.get("logs");
+        if (!Files.exists(logsPath)) {
+            try {
                 Files.createDirectories(logsPath);
+
+                // Set directory permissions (for Linux/OS only)
+                Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwx------");
+                try {
+                    Files.setPosixFilePermissions(logsPath, perms);
+                } catch (UnsupportedOperationException e) {
+                    System.out.println("Warning: Could not set POSIX permissions on logs directory.");
+                }
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -36,6 +48,15 @@ public class CsvLogger {
         if (!Files.exists(filePath)) {
             try (CSVWriter writer = new CSVWriter(new FileWriter(path, true))) {
                 writer.writeNext(header);
+
+                // Set file permissions (for Linux/OS only)
+                Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rw-------");
+                try {
+                    Files.setPosixFilePermissions(filePath, perms);
+                } catch (UnsupportedOperationException e) {
+                    System.out.println("Warning: Could not set POSIX file permissions on " + filePath);
+                }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
