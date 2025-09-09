@@ -132,7 +132,7 @@ public class AppController {
 
         Bucket bucket = rateLimiterService.resolveBucket(request);
         if (!bucket.tryConsume(1)) {
-            redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.ratelimit", null, new Locale("el")));
+            redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.rateLimit", null, new Locale("el")));
             redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
             return "redirect:/contact";
         }
@@ -174,7 +174,7 @@ public class AppController {
 
         Bucket bucket = rateLimiterService.resolveBucket(request);
         if (!bucket.tryConsume(1)) {
-            redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.ratelimit", null, Locale.ENGLISH));
+            redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.rateLimit", null, Locale.ENGLISH));
             redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
             return "redirect:/en/contact";
         }

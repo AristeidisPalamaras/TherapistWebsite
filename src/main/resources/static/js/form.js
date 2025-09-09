@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", function () {
       en: "This field is required.",
       gr: "Αυτό το πεδίο είναι υποχρεωτικό."
     },
+    tooLong: {
+      en: "This field must not exceed {max} characters.",
+      gr: "Αυτό το πεδίο δεν πρέπει να ξεπερνά τους {max} χαρακτήρες."
+    },
     invalidEmail: {
       en: "Please enter a valid email address.",
       gr: "Παρακαλώ δώστε μια έγγυρη διεύθυνση email."
@@ -53,10 +57,14 @@ document.addEventListener("DOMContentLoaded", function () {
     if (nameInput.value.trim() === "SKIP") return;
 
     validateRequired(nameInput, nameError);
+    validateLength(nameInput, nameError, 100);
     validateRequired(emailInput, emailError);
     validateEmail(emailInput, emailError);
+    validateLength(emailInput, emailError, 200);
     validateTelephone(telephoneInput, telephoneError);
+    validateLength(telephoneInput, telephoneError, 40);
     validateRequired(messageInput, messageError);
+    validateLength(messageInput, messageError, 4000);
 
     if (!valid) {
       e.preventDefault(); 
@@ -91,6 +99,14 @@ document.addEventListener("DOMContentLoaded", function () {
       const phoneRegex = /^[0-9+\-()\s]*$/;
       if (input.value.trim() && !phoneRegex.test(input.value)) {
         error.textContent = text.invalidTelephone[lang];
+        error.style.display = "block";
+        valid = false;
+      }
+    }
+
+    function validateLength(input, error, maxLength) {
+      if (input.value.length > maxLength) {
+        error.textContent = text.tooLong[lang].replace("{max}", maxLength);
         error.style.display = "block";
         valid = false;
       }
