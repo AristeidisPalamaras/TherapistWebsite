@@ -16,9 +16,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.context.MessageSource;
 import java.util.Locale;
 
+import io.github.bucket4j.Bucket;
+
 import gr.kostasmavrakakis.website.service.EmailService;
 import gr.kostasmavrakakis.website.dto.MessageDTO;
 import gr.kostasmavrakakis.website.logger.CsvLogger;
+import gr.kostasmavrakakis.website.service.RateLimiterService;
 
 
 @Controller
@@ -27,11 +30,18 @@ public class AppController {
     private final EmailService emailService;
     private final MessageSource messageSource;
     private final CsvLogger csvLogger;
+    private final RateLimiterService rateLimiterService;
 
-    public AppController(EmailService emailService, MessageSource messageSource, CsvLogger csvLogger) {
+    public AppController(
+        EmailService emailService, 
+        MessageSource messageSource, 
+        CsvLogger csvLogger,
+        RateLimiterService rateLimiterService
+    ) {
         this.emailService = emailService;
         this.messageSource = messageSource;
         this.csvLogger = csvLogger;
+        this.rateLimiterService = rateLimiterService;
     }
 
     @GetMapping("/")
@@ -109,15 +119,22 @@ public class AppController {
         RedirectAttributes redirectAttributes,
         Model model
     ) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("currentUrl", request.getRequestURI());
+            model.addAttribute("error", messageSource.getMessage("validation.form.warning", null, new Locale("el")));
+            return "contactGr";
+        }
+
         if (info != null && !info.isBlank()) {
             csvLogger.logError("SPAM", messageDTO.getEmail(), new Exception("Honeypot caught Winnie the Pooh!"));
             return "redirect:/contact";
         }
 
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("currentUrl", request.getRequestURI());
-            model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, new Locale("el")));
-            return "contactGr";
+        Bucket bucket = rateLimiterService.resolveBucket(request);
+        if (!bucket.tryConsume(1)) {
+            redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.ratelimit", null, new Locale("el")));
+            redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
+            return "redirect:/contact";
         }
 
         try {
@@ -144,15 +161,22 @@ public class AppController {
         RedirectAttributes redirectAttributes,
         Model model
     ) {
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("currentUrl", request.getRequestURI());
+            model.addAttribute("error", messageSource.getMessage("validation.form.warning", null, Locale.ENGLISH));
+            return "contactEn";
+        }
+
         if (info != null && !info.isBlank()) {
             csvLogger.logError("SPAM", messageDTO.getEmail(), new Exception("Honeypot caught Winnie the Pooh!"));
             return "redirect:/contact";
         }
 
-        if (bindingResult.hasErrors()) {
-            model.addAttribute("currentUrl", request.getRequestURI());
-            model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, Locale.ENGLISH));
-            return "contactEn";
+        Bucket bucket = rateLimiterService.resolveBucket(request);
+        if (!bucket.tryConsume(1)) {
+            redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.ratelimit", null, Locale.ENGLISH));
+            redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
+            return "redirect:/en/contact";
         }
 
         try {
