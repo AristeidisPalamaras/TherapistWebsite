@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.mail.MailException;
 import jakarta.validation.Valid;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
 import org.springframework.context.MessageSource;
@@ -19,6 +18,7 @@ import java.util.Locale;
 import gr.kostasmavrakakis.website.service.EmailService;
 import gr.kostasmavrakakis.website.dto.MessageDTO;
 import gr.kostasmavrakakis.website.logger.CsvLogger;
+
 
 @Controller
 public class AppController {
@@ -107,9 +107,8 @@ public class AppController {
         RedirectAttributes redirectAttributes,
         Model model
     ) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-
         if (bindingResult.hasErrors()) {
+            model.addAttribute("currentUrl", request.getRequestURI());
             model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, new Locale("el")));
             return "contactGr";
         }
@@ -137,9 +136,8 @@ public class AppController {
         RedirectAttributes redirectAttributes,
         Model model
     ) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-
         if (bindingResult.hasErrors()) {
+            model.addAttribute("currentUrl", request.getRequestURI());
             model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, Locale.ENGLISH));
             return "contactEn";
         }

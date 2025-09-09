@@ -49,8 +49,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let valid = true;
 
-    // TEST
-    if (nameInput.value.trim() === "SKIP") {startSpinner(); return};
+    // TEST BACKEND VALIDATION
+    if (nameInput.value.trim() === "SKIP") return;
 
     validateRequired(nameInput, nameError);
     validateRequired(emailInput, emailError);
