@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import org.springframework.mail.MailException;
 import jakarta.validation.Valid;
@@ -103,10 +104,16 @@ public class AppController {
     public String submitContactFormGr(
         @Valid @ModelAttribute("messageDTO") MessageDTO messageDTO,
         BindingResult bindingResult,
+        @RequestParam(value = "info", required = false) String info,
         HttpServletRequest request,
         RedirectAttributes redirectAttributes,
         Model model
     ) {
+        if (info != null && !info.isBlank()) {
+            csvLogger.logError("SPAM", messageDTO.getEmail(), new Exception("Honeypot caught Winnie the Pooh!"));
+            return "redirect:/contact";
+        }
+
         if (bindingResult.hasErrors()) {
             model.addAttribute("currentUrl", request.getRequestURI());
             model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, new Locale("el")));
@@ -132,10 +139,16 @@ public class AppController {
     public String submitContactFormEn(
         @Valid @ModelAttribute("messageDTO") MessageDTO messageDTO,
         BindingResult bindingResult,
+        @RequestParam(value = "info", required = false) String info,
         HttpServletRequest request,
         RedirectAttributes redirectAttributes,
         Model model
     ) {
+        if (info != null && !info.isBlank()) {
+            csvLogger.logError("SPAM", messageDTO.getEmail(), new Exception("Honeypot caught Winnie the Pooh!"));
+            return "redirect:/contact";
+        }
+
         if (bindingResult.hasErrors()) {
             model.addAttribute("currentUrl", request.getRequestURI());
             model.addAttribute("warning", messageSource.getMessage("validation.form.warning", null, Locale.ENGLISH));
