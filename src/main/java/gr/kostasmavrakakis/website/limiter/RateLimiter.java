@@ -1,4 +1,4 @@
-package gr.kostasmavrakakis.website.service;
+package gr.kostasmavrakakis.website.limiter;
 
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 @Component
-public class RateLimiterService {
+public class RateLimiter {
 
     private final Map<String, Bucket> cache = new ConcurrentHashMap<>();
 
@@ -22,7 +22,7 @@ public class RateLimiterService {
     }
 
     private Bucket newBucket() {
-        Refill refill = Refill.greedy(5, Duration.ofMinutes(10)); // Allow 5 submissions per 10 minutes
+        Refill refill = Refill.greedy(5, Duration.ofMinutes(5)); // Allow 5 submissions per 5 minutes
         Bandwidth limit = Bandwidth.classic(5, refill);
         return Bucket.builder().addLimit(limit).build();
     }

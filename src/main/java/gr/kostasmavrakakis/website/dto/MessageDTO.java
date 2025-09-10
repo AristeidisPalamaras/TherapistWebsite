@@ -21,7 +21,7 @@ public class MessageDTO {
     private String name;
     
     @NotBlank(message = "{validation.field.required}")
-    @Email(message = "{validation.email.invalid}")
+    @Email(regexp = "^[^@\\s]+@[^@\\s]+\\.[^@\\s]+$", message = "{validation.email.invalid}")
     @Size(max = 200, message = "{validation.field.tooLong}")
     private String email;
 

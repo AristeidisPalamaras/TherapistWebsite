@@ -1,12 +1,12 @@
 package gr.kostasmavrakakis.website.controller;
 
-import jakarta.servlet.http.HttpServletRequest;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import jakarta.servlet.http.HttpServletRequest;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.ui.Model;
 
 import org.springframework.mail.MailException;
 import jakarta.validation.Valid;
@@ -21,75 +21,27 @@ import io.github.bucket4j.Bucket;
 import gr.kostasmavrakakis.website.service.EmailService;
 import gr.kostasmavrakakis.website.dto.MessageDTO;
 import gr.kostasmavrakakis.website.logger.CsvLogger;
-import gr.kostasmavrakakis.website.service.RateLimiterService;
+import gr.kostasmavrakakis.website.limiter.RateLimiter;
 
 
 @Controller
-public class AppController {
+public class FormController {
 
     private final EmailService emailService;
     private final MessageSource messageSource;
+    private final RateLimiter rateLimiter;
     private final CsvLogger csvLogger;
-    private final RateLimiterService rateLimiterService;
 
-    public AppController(
+    public FormController(
         EmailService emailService, 
         MessageSource messageSource, 
-        CsvLogger csvLogger,
-        RateLimiterService rateLimiterService
+        RateLimiter rateLimiter,
+        CsvLogger csvLogger
     ) {
         this.emailService = emailService;
         this.messageSource = messageSource;
+        this.rateLimiter = rateLimiter;
         this.csvLogger = csvLogger;
-        this.rateLimiterService = rateLimiterService;
-    }
-
-    @GetMapping("/")
-    public String homeGr(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "homeGr";
-    }
-
-    @GetMapping("/en")
-    public String homeEn(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "homeEn";
-    }
-
-    @GetMapping("/approach")
-    public String approachGr(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "approachGr";
-    }
-
-    @GetMapping("/en/approach")
-    public String approachEn(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "approachEn";
-    }
-
-    @GetMapping("/trauma_therapy")
-    public String traumaTherapyGr(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "traumaTherapyGr";
-    }
-
-    @GetMapping("/en/trauma_therapy")
-    public String traumaTherapyEn(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "traumaTherapyEn";
-    }
-
-    @GetMapping("/cv")
-    public String aboutMeGr(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "cvGr";
-    }
-
-    @GetMapping("/en/cv")
-    public String aboutMeEn(HttpServletRequest request, Model model) {
-        model.addAttribute("currentUrl", request.getRequestURI());
-        return "cvEn";
     }
 
     @GetMapping("/contact")
@@ -130,7 +82,7 @@ public class AppController {
             return "redirect:/contact";
         }
 
-        Bucket bucket = rateLimiterService.resolveBucket(request);
+        Bucket bucket = rateLimiter.resolveBucket(request);
         if (!bucket.tryConsume(1)) {
             redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.rateLimit", null, new Locale("el")));
             redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
@@ -172,7 +124,7 @@ public class AppController {
             return "redirect:/contact";
         }
 
-        Bucket bucket = rateLimiterService.resolveBucket(request);
+        Bucket bucket = rateLimiter.resolveBucket(request);
         if (!bucket.tryConsume(1)) {
             redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.rateLimit", null, Locale.ENGLISH));
             redirectAttributes.addFlashAttribute("messageDTO", messageDTO);
