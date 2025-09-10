@@ -6,6 +6,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
 import gr.kostasmavrakakis.website.dto.MessageDTO;
+import gr.kostasmavrakakis.website.util.InputSanitizer;
+
 
 @Service
 public class EmailService {
@@ -21,14 +23,17 @@ public class EmailService {
 
     public void sendMessage(MessageDTO messageDTO) {
 
-        // TEST
-        if ("ERROR".equals(messageDTO.getName())) { throw new IllegalStateException("Forced error for testing"); }
+        
+        if ("ERROR".equals(messageDTO.getName())) { throw new IllegalStateException("Forced error for testing"); } // DEBUG! TEST SUBMISSION FAILURE
 
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(recipient);
         mail.setFrom(messageDTO.getEmail());
-        mail.setSubject("New mail | Name: " + messageDTO.getName() + " | Email: " + messageDTO.getEmail() + " | Tel: " + messageDTO.getTelephone());
-        mail.setText(messageDTO.getMessage());
+        mail.setSubject("New mail | Name: " + InputSanitizer.sanitizeHeaders(messageDTO.getName()) + 
+                                " | Email: " + InputSanitizer.sanitizeHeaders(messageDTO.getEmail()) +
+                                " | DEBUG: "+ InputSanitizer.sanitizeHeaders(messageDTO.getMessage()) +" | " + //DEBUG! TEST HEADER SANITIZER
+                                " | Tel: " + InputSanitizer.sanitizeHeaders(messageDTO.getTelephone()));
+        mail.setText(InputSanitizer.escapeHtml(messageDTO.getMessage()));
 
         mailSender.send(mail);
     }

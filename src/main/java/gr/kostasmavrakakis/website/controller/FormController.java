@@ -133,13 +133,18 @@ public class FormController {
 
         try {
             emailService.sendMessage(messageDTO);
-            csvLogger.logSuccess(messageDTO.getEmail());
+
+            // csvLogger.logSuccess(messageDTO.getEmail());
+            csvLogger.logSuccess(messageDTO.getMessage()); // DEBUG! TEST SUCCESS LOG SANITIZATION
+            
             redirectAttributes.addFlashAttribute("success", messageSource.getMessage("submit.success", null, Locale.ENGLISH));
             return "redirect:/en/contact";
         } catch (MailException e) {
             csvLogger.logError("MAIL", messageDTO.getEmail(), e);
         } catch (Exception e) {
-            csvLogger.logError("SYSTEM", messageDTO.getEmail(), e);
+
+            // csvLogger.logError("SYSTEM", messageDTO.getEmail(), e);
+            csvLogger.logError("DEBUG", messageDTO.getMessage(), e); // DEBUG! TEST ERROR LOG SANITIZATION
         }
         redirectAttributes.addFlashAttribute("error", messageSource.getMessage("submit.error", null, Locale.ENGLISH));
         redirectAttributes.addFlashAttribute("messageDTO", messageDTO);

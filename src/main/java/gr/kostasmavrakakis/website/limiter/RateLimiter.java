@@ -1,14 +1,13 @@
 package gr.kostasmavrakakis.website.limiter;
 
+import org.springframework.stereotype.Component;
 import io.github.bucket4j.Bandwidth;
 import io.github.bucket4j.Bucket;
-import io.github.bucket4j.Refill;
-import org.springframework.stereotype.Component;
 
 import jakarta.servlet.http.HttpServletRequest;
-import java.time.Duration;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.time.Duration;
 
 @Component
 public class RateLimiter {
@@ -22,8 +21,11 @@ public class RateLimiter {
     }
 
     private Bucket newBucket() {
-        Refill refill = Refill.greedy(5, Duration.ofMinutes(5)); // Allow 5 submissions per 5 minutes
-        Bandwidth limit = Bandwidth.classic(5, refill);
+        // Allow 5 submissions per 5 minutes
+        Bandwidth limit = Bandwidth.builder()
+                .capacity(5)
+                .refillIntervally(5, Duration.ofMinutes(5))
+                .build();
         return Bucket.builder().addLimit(limit).build();
     }
 

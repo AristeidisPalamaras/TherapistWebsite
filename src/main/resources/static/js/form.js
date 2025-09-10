@@ -53,8 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let valid = true;
 
-    // TEST BACKEND VALIDATION
-    if (nameInput.value.trim() === "SKIP") return;
+    if (nameInput.value.trim() === "SKIP") return;  // DEBUG! TEST BACKEND VALIDATION
 
     validateRequired(nameInput, nameError);
     validateLength(nameInput, nameError, 100);
