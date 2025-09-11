@@ -24,7 +24,7 @@ public class EmailService {
 
     public void sendMessage(MessageDTO messageDTO) {
 
-        if ("ERROR".equals(messageDTO.getName())) { throw new IllegalStateException("Forced error for testing"); } // DEBUG! TEST SUBMISSION FAILURE
+        // if ("ERROR".equals(messageDTO.getName())) { throw new IllegalStateException("Forced error for testing"); } // DEBUG! TEST SUBMISSION FAILURE
 
         SimpleMailMessage mail = new SimpleMailMessage();
         mail.setTo(owner);
@@ -35,17 +35,16 @@ public class EmailService {
                         InputSanitizer.sanitizeHeaders(messageDTO.getEmail()));
 
         StringBuilder sb = new StringBuilder();
-        sb.append(InputSanitizer.escapeHtml(messageDTO.getName())).append("\n");
-        sb.append(InputSanitizer.escapeHtml(messageDTO.getEmail())).append("\n");
+        sb.append(messageDTO.getName()).append("\n");
+        sb.append(messageDTO.getEmail()).append("\n");
         if (!"".equals(messageDTO.getTelephone())) {
-            sb.append(InputSanitizer.escapeHtml(messageDTO.getTelephone())).append("\n");
+            sb.append(messageDTO.getTelephone()).append("\n");
         }
         sb.append("\n");
-        sb.append(InputSanitizer.escapeHtml(messageDTO.getMessage()));
+        sb.append(messageDTO.getMessage());
 
-        sb.append("\n").append("DEBUG sanitize header: ").append(InputSanitizer.sanitizeHeaders(messageDTO.getMessage())); //DEBUG! TEST HEADER SANITIZER
-        sb.append("\n").append("DEBUG sanitize log: ").append(InputSanitizer.sanitizeLogs(messageDTO.getMessage())); //DEBUG! TEST LOG SANITIZER
-        sb.append("\n").append("DEBUG escape html: ").append(InputSanitizer.escapeHtml(messageDTO.getMessage())); //DEBUG! TEST HTML SANITIZER
+        // sb.append("\n").append("DEBUG sanitize header: ").append(InputSanitizer.sanitizeHeaders(messageDTO.getMessage())); //DEBUG! TEST HEADER SANITIZER
+        // sb.append("\n").append("DEBUG sanitize log: ").append(InputSanitizer.sanitizeLogs(messageDTO.getMessage())); //DEBUG! TEST LOG SANITIZER
 
         mail.setText(sb.toString());
 

@@ -121,7 +121,7 @@ public class FormController {
 
         if (info != null && !info.isBlank()) {
             csvLogger.logError("SPAM", messageDTO.getEmail(), new Exception("Honeypot caught Winnie the Pooh!"));
-            return "redirect:/contact";
+            return "redirect:/en/contact";
         }
 
         Bucket bucket = rateLimiter.resolveBucket(request);

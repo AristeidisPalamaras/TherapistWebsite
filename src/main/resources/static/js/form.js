@@ -24,11 +24,11 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     invalidEmail: {
       en: "Please enter a valid email address.",
-      gr: "Παρακαλώ δώστε μια έγγυρη διεύθυνση email."
+      gr: "Παρακαλώ δώστε μια έγkυρη διεύθυνση email."
     },
     invalidTelephone: {
       en: "Please enter a valid telephone number.",
-      gr: "Παρακαλώ δώστε έναν έγγυρο αριθμό τηλεφώνου."
+      gr: "Παρακαλώ δώστε έναν έγkυρο αριθμό τηλεφώνου."
     },
     warning: {
       en: "One or more fields have an error. Please check and try again.",
@@ -53,7 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let valid = true;
 
-    if (nameInput.value.trim() === "SKIP") return;  // DEBUG! TEST BACKEND VALIDATION
+    // if (nameInput.value.trim() === "SKIP") return;  // DEBUG! TEST BACKEND VALIDATION
 
     validateRequired(nameInput, nameError);
     validateLength(nameInput, nameError, 100);
