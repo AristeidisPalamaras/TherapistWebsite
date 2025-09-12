@@ -54,7 +54,7 @@ public class CsvLogger {
     public void logError(String errorType, String email, Exception e) {
         String timestamp = LocalDateTime.now().format(FORMATTER);
         String safeEmail = InputSanitizer.sanitizeLogs(email);
-        String safeStacktrace = buildMessage(e);
+        String safeStacktrace = InputSanitizer.sanitizeLogs(buildMessage(e));
 
         writeLine(getErrorLogPath(), new String[]{errorType, timestamp, safeEmail, safeStacktrace});
     }
