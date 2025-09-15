@@ -15,7 +15,7 @@ public class EmailService {
 
     private final JavaMailSender mailSender;
 
-    @Value("${contactform.recipient}")
+    @Value("${site.owner.email}")
     private String owner; 
 
     public EmailService(JavaMailSender mailSender) {

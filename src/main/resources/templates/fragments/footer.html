@@ -10,11 +10,15 @@
                 th:text="${currentUrl.startsWith('/en') ? 'Therapist - EMDR practitioner - IFS Informed' : 'Ψυχολόγος - EMDR practitioner - IFS Informed'}"></span>
             </p>
             <p> 
-                <span class="block xs:inline"
-                    th:text="${currentUrl.startsWith('/en') ? 'Telephone: +30 1234567890' : 'Τηλέφωνο: +30 1234567890'}"></span>
+                <span class="block xs:inline">
+                    <span th:text="${currentUrl.startsWith('/en') ? 'Telephone: ' : 'Τηλέφωνο: '}"></span>
+                    <span th:text="${@environment.getProperty('site.owner.telephone')}"></span>
+                </span>
                 <span class="hidden xs:inline">•</span>
-                <span class="block xs:inline"
-                    th:text="${'E-mail: abcdefghi@gmail.com'}"></span>
+                <span class="block xs:inline">
+                    <span>Email: </span>
+                    <span th:text="${@environment.getProperty('site.owner.email')}"></span>
+                </span>
             </p>
             <div class="w-16 h-px bg-neutral-600 mx-auto my-3"></div>
             <p th:text="${currentUrl.startsWith('/en') ? '© Copyright 2025 Kostas Mavrakakis' : '© Copyright 2025 Κώστας Μαυρακάκης'}"></p>

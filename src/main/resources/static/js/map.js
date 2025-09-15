@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const centerCoords = [37.9838, 23.7275];
+  const mapElement = document.getElementById("map");
+
+  const centerCoords = [parseFloat(mapElement.dataset.lat), parseFloat(mapElement.dataset.lon)];
   const zoomLevel = 16;
   const radius = 150;
 
