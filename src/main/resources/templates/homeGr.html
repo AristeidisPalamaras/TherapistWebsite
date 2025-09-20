@@ -3,7 +3,20 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{base}">
 <head>
-    <title>Αρχική</title>
+    <title>Αρχική | Κώστας Μαυρακάκης</title>
+
+    <meta name="description" content="Something">
+
+    <meta property="og:site_name" content="Κώστας Μαυρακάκης | Ψυχολόγος - EMDR Practicioner - IFS Informed">
+    <meta property="og:title" content="Αρχική | Κώστας Μαυρακάκης">
+    <meta property="og:description" content="The same something">
+    <meta property="og:url" th:content="${@environment.getProperty('site.base.url')} + ${(currentUrl == '/' ? '' : currentUrl)}">
+    <meta property="og:locale" th:content="${currentUrl.startsWith('/en') ? 'en_US' : 'el_GR'}">
+    <meta property="og:type" th:content="${currentUrl == '/' || currentUrl =='/en' ? 'website' : 'article'}">
+    <!-- Find pic -->
+    <!-- <meta property="og:image" content="absolute path to profile">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630"> -->
 </head>
 <body>
     <main layout:fragment="content">
@@ -30,7 +43,7 @@
                         <p>Σε κάθε περίπτωση, ο ρόλος μου είναι να σας υποστηρίξω και να σας διευκολύνω στην εξερεύνηση των 
                             σκέψεων και των συναισθημάτων σας ώστε να χτίσετε μια πιο ικανοποιητική ζωή.</p>
                         <p>Προσφέρω μια δεκάλεπτη τηλεφωνική συνομιλία που μπορώ να απαντήσω στις ερωτήσεις σας και μια 
-                            δωρεάν πρώτη συνεδρία για να δείτε αν σας ταιριάζει η προσέγγιση μου και να δω και εγώ αν μπορώ 
+                            δωρεάν πρώτη συνάντηση για να δείτε αν σας ταιριάζει η προσέγγιση μου και να δω και εγώ αν μπορώ 
                             να σας βοηθήσω.</p>
                     </div>
                 </div>

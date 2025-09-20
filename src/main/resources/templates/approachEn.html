@@ -3,7 +3,16 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{base}">
 <head>
-    <title>My Approach</title>
+    <title>My Approach | Kostas Mavrakakis</title>
+
+    <meta name="description" content="Something">
+
+    <meta property="og:site_name" content="Kostas Mavrakakis | Therapist - EMDR Practicioner - IFS Informed">
+    <meta property="og:title" content="My Approach | Kostas Mavrakakis">
+    <meta property="og:description" content="The same something">
+    <meta property="og:url" th:content="${@environment.getProperty('site.base.url')} + ${(currentUrl == '/' ? '' : currentUrl)}">
+    <meta property="og:locale" th:content="${currentUrl.startsWith('/en') ? 'en_US' : 'el_GR'}">
+    <meta property="og:type" th:content="${currentUrl == '/' || currentUrl =='/en' ? 'website' : 'article'}">
 </head>
 <body>
     <main layout:fragment="content">

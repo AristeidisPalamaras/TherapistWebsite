@@ -3,7 +3,16 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{base}">
 <head>
-    <title>Βιογραφικό</title>
+    <title>Βιογραφικό | Κώστας Μαυρακάκης</title>
+
+    <meta name="description" content="Something">
+
+    <meta property="og:site_name" content="Κώστας Μαυρακάκης | Ψυχολόγος - EMDR Practicioner - IFS Informed">
+    <meta property="og:title" content="Βιογραφικό | Κώστας Μαυρακάκης">
+    <meta property="og:description" content="The same something">
+    <meta property="og:url" th:content="${@environment.getProperty('site.base.url')} + ${(currentUrl == '/' ? '' : currentUrl)}">
+    <meta property="og:locale" th:content="${currentUrl.startsWith('/en') ? 'en_US' : 'el_GR'}">
+    <meta property="og:type" th:content="${currentUrl == '/' || currentUrl =='/en' ? 'website' : 'article'}">
 </head>
 <body>
     <main layout:fragment="content">
@@ -31,7 +40,7 @@
                         <p>Πραγματοποιώ ατομικές συνεδρίες και έχω συντονίσει ομάδες προσωπικής ανάπτυξης, ομάδες στήριξης 
                             για ενήλικες με ΔΕΠΥ (σε συνεργασία με το σωματείο ADHD Hellas) καθώς και ομάδες που συνδυάζουν 
                             τη δημιουργική γραφή με τη θεραπευτική διαδικασία.</p>
-                        <p>Έχω συγγράψει τρία βιβλία μυθοπλασίας που κυκλοφορούν από τις εκδόσεις Κέδρος.</p>
+                        <p>Έχω συγγράψει τρία βιβλία που κυκλοφορούν από τις εκδόσεις Κέδρος.</p>
                     </div>
                 </div>
                 <!-- Pic -->

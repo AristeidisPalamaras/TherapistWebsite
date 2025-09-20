@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-    th:lang="${ currentUrl.startsWith('/en') ? 'en' : 'el'}">
+    th:lang="${currentUrl.startsWith('/en') ? 'en' : 'el'}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title 
-        layout:title-pattern="$CONTENT_TITLE | $LAYOUT_TITLE"
+        layout:title-pattern="$CONTENT_TITLE"
         th:text="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis' : 'Κώστας Μαυρακάκης'}">
     </title>
 
     <link rel="stylesheet" th:href="@{/css/output.css}">
-
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
+
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <link rel="canonical" th:href="${@environment.getProperty('site.base.url')} + ${(currentUrl == '/' ? '' : currentUrl)}">
+    <link rel="alternate" hreflang="el" th:href="${@environment.getProperty('site.base.url')} + ${currentUrl.startsWith('/en') ? (currentUrl == '/en' ? '' : currentUrl.substring(3)) : (currentUrl == '/' ? '' : currentUrl) }" />
+    <link rel="alternate" hreflang="en" th:href="${@environment.getProperty('site.base.url')} + ${currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl)}" />
 </head>
 <body class="font-sans text-base md:text-lg text-neutral-900">
     <div th:insert="~{fragments/ribbon :: ribbon}" aria-label="Language selector"></div>
