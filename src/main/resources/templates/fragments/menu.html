@@ -100,15 +100,15 @@
                th:classappend="${#strings.contains(currentUrl, '/contact') ? 'font-bold' : ''}"></a>
             </li>
             <li class="self-end flex space-x-2">
-               <a class="hover:opacity-100 hover:grayscale-0"
-                  th:classappend="${!currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
-                  th:href="@{${!currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3))}}">
+               <a th:href="@{${!currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/en' ? '/' : currentUrl.substring(3))}}"
+                  class="hover:opacity-100 hover:grayscale-0"
+                  th:classappend="${!currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}">
                   <span class="fi fi-gr fis !w-5 !h-5 rounded-full"></span>
                   <span class="sr-only">Ελληνικά</span>
                </a>
-               <a class="hover:opacity-100 hover:grayscale-0"
-                  th:classappend="${currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
-                  th:href="@{${currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl)}}">
+               <a th:href="@{${currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl)}}"
+                  class="hover:opacity-100 hover:grayscale-0"
+                  th:classappend="${currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}">
                   <span class="fi fi-gb fis !w-5 !h-5 rounded-full"></span>
                   <span class="sr-only">English</span>
                </a>         

@@ -47,6 +47,8 @@ public class FormController {
     @GetMapping("/contact")
     public String contactGr(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
+        model.addAttribute("title", messageSource.getMessage("page.title.contact", null, new Locale("el")));
+        model.addAttribute("description", messageSource.getMessage("page.description.contact", null, new Locale("el")));
         if (!model.containsAttribute("messageDTO")) {
             model.addAttribute("messageDTO", new MessageDTO());
         }
@@ -56,6 +58,8 @@ public class FormController {
     @GetMapping("/en/contact")
     public String contactEn(HttpServletRequest request, Model model) {
         model.addAttribute("currentUrl", request.getRequestURI());
+        model.addAttribute("title", messageSource.getMessage("page.title.contact", null, Locale.ENGLISH));
+        model.addAttribute("description", messageSource.getMessage("page.description.contact", null, Locale.ENGLISH));
         if (!model.containsAttribute("messageDTO")) {
             model.addAttribute("messageDTO", new MessageDTO());
         }
@@ -73,6 +77,8 @@ public class FormController {
     ) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("currentUrl", request.getRequestURI());
+            model.addAttribute("title", messageSource.getMessage("page.title.contact", null, new Locale("el")));
+            model.addAttribute("description", messageSource.getMessage("page.description.contact", null, new Locale("el")));
             model.addAttribute("error", messageSource.getMessage("validation.form.warning", null, new Locale("el")));
             return "contactGr";
         }
@@ -115,6 +121,8 @@ public class FormController {
     ) {
         if (bindingResult.hasErrors()) {
             model.addAttribute("currentUrl", request.getRequestURI());
+            model.addAttribute("title", messageSource.getMessage("page.title.contact", null, Locale.ENGLISH));
+            model.addAttribute("description", messageSource.getMessage("page.description.contact", null, Locale.ENGLISH));
             model.addAttribute("error", messageSource.getMessage("validation.form.warning", null, Locale.ENGLISH));
             return "contactEn";
         }
