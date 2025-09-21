@@ -104,15 +104,13 @@
                   class="hover:opacity-100 hover:grayscale-0"
                   th:classappend="${!currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
                   aria-label="Ελληνικά">
-                  <span class="fi fi-gr fis !w-5 !h-5 rounded-full"></span>
-                  <span class="sr-only">Ελληνικά</span>
+                  <span class="fi fi-gr fis !w-5 !h-5 rounded-full" aria-hidden="true"></span>
                </a>
                <a th:href="@{${currentUrl.startsWith('/en') ? currentUrl : (currentUrl == '/' ? '/en' : '/en' + currentUrl)}}"
                   class="hover:opacity-100 hover:grayscale-0"
                   th:classappend="${currentUrl.startsWith('/en') ? 'opacity-100' : 'opacity-75 grayscale'}"
                   aria-label="English">
-                  <span class="fi fi-gb fis !w-5 !h-5 rounded-full"></span>
-                  <span class="sr-only">English</span>
+                  <span class="fi fi-gb fis !w-5 !h-5 rounded-full" aria-hidden="true"></span>
                </a>         
             </li>
          </ul>

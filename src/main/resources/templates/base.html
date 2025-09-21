@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css">
 
-    <!-- <meta property="og:site_name" content="Κώστας Μαυρακάκης | Ψυχολόγος - EMDR Practicioner - IFS Informed"> -->
+    <meta property="og:site_name" th:content="${currentUrl.startsWith('/en') ? 'Kostas Mavrakakis - Therapist' : 'Κώστας Μαυρακάκης - Ψυχολόγος'}">
     <meta property="og:title" th:content="${title}">
     <meta property="og:description" th:content="${description}">
     <meta property="og:url" th:content="${@environment.getProperty('site.base.url')} + ${(currentUrl == '/' ? '' : currentUrl)}">
@@ -31,7 +31,7 @@
     <meta property="og:image:height" content="628"> -->
 </head>
 <body class="font-sans text-base md:text-lg text-neutral-900">
-    <div th:insert="~{fragments/ribbon :: ribbon}" aria-label="Language selector"></div>
+    <div th:insert="~{fragments/ribbon :: ribbon}" role="toolbar" aria-label="Language selection"></div>
     <nav th:insert="~{fragments/menu :: menu}" class="relative xl:sticky xl:top-0 xl:z-20"></nav>
     <main layout:fragment="content"></main>
     <footer th:insert="~{fragments/footer :: footer}"> </footer>
