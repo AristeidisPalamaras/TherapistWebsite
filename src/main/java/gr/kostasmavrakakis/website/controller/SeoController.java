@@ -21,7 +21,6 @@ public class SeoController {
 
     @GetMapping(value = "/robots.txt", produces = "text/plain")
     public ResponseEntity<String> getRobotsTxt() {
-
         String content = """
                User-agent: *
                Disallow:
@@ -75,5 +74,3 @@ public class SeoController {
                 .body(content);
     }
 }
-
-// submit sitemap.xml to google search console?
