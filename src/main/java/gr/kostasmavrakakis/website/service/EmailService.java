@@ -18,17 +18,28 @@ public class EmailService {
     @Value("${site.owner.email}")
     private String owner; 
 
+    @Value("${spring.mail.username}")
+    private String admin; 
+
+    @Value("${test.on:false}")
+    private boolean testOn;
+
+    @Value("${test.keyword}")
+    private String testKeyword;
+
     public EmailService(JavaMailSender mailSender) {
         this.mailSender = mailSender;
     }
 
     public void sendMessage(MessageDTO messageDTO) {
 
+        String recipient = (testOn && testKeyword.trim().equals(messageDTO.getName().trim())) ? admin : owner;
+
         // if ("ERROR".equals(messageDTO.getName())) { throw new IllegalStateException("Forced error for testing"); } // DEBUG! TEST SUBMISSION FAILURE
 
         SimpleMailMessage mail = new SimpleMailMessage();
-        mail.setTo(owner);
-        mail.setFrom(owner);
+        mail.setTo(recipient);
+        mail.setFrom(admin);
         mail.setReplyTo(InputSanitizer.sanitizeHeaders(messageDTO.getEmail()));
         mail.setSubject("Νέο μήνυμα από: " + 
                         InputSanitizer.sanitizeHeaders(messageDTO.getName()) + " | " + 
