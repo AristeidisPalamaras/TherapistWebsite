@@ -1,6 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["../src/**/*.{html,js}"],
+  safelist: [
+    'block',
+    'hidden',
+    'font-bold',
+    'opacity-100',
+    'opacity-75',
+    'grayscale',
+  ],
   theme: {
     extend: {
       screens: {

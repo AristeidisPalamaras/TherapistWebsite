@@ -3,6 +3,7 @@
         xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
         layout:decorate="~{base}">
 <head>
+    <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" defer></script>
     <script th:src="@{/js/map.js}" defer></script>
@@ -11,7 +12,7 @@
 <body>
     <main layout:fragment="content">
         <!-- Banner -->
-        <div th:replace="~{fragments/banner :: banner(@{/img/bg4.jpg}, 'Contact', null)}"></div>
+        <div th:replace="~{fragments/banner :: banner('bg4', 'Contact', null)}"></div>
         <!-- Content -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-8 sm:pt-10 md:pt-20 pb-12 md:pb-24">
             <div class="grid grid-cols-1 ml:grid-cols-2 ml:grid-rows-[auto,auto,1fr]">

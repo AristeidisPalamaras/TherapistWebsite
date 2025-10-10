@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "postcss input.css -o ../src/main/resources/static/css/output.css"
+    "build:dev": "postcss input.css -o ../src/main/resources/static/css/output.css",
+    "build:prod": "NODE_ENV=production tailwindcss -i ./input.css -o ../src/main/resources/static/css/output.css --minify"
   },
   "keywords": [],
   "author": "",
