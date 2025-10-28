@@ -30,7 +30,7 @@ public class CsvLogger {
             try {
                 Files.createDirectories(logsPath);
 
-                // Set directory permissions (for Linux/OS only)
+                // Set directory permissions (for Linux)
                 Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rwx------");
                 try {
                     Files.setPosixFilePermissions(logsPath, perms);
@@ -54,7 +54,7 @@ public class CsvLogger {
     public void logError(String errorType, String email, Exception e) {
         String timestamp = LocalDateTime.now().format(FORMATTER);
         String safeEmail = InputSanitizer.sanitizeLogs(email);
-        String safeStacktrace = InputSanitizer.sanitizeLogs(buildMessage(e));
+        String safeStacktrace = buildMessage(e);
 
         writeLine(getErrorLogPath(), new String[]{errorType, timestamp, safeEmail, safeStacktrace});
     }
@@ -81,7 +81,7 @@ public class CsvLogger {
             try (CSVWriter writer = new CSVWriter(new FileWriter(path, true))) {
                 writer.writeNext(header);
 
-                // Set file permissions (for Linux/OS only)
+                // Set file permissions (for Linux)
                 Set<PosixFilePermission> perms = PosixFilePermissions.fromString("rw-------");
                 try {
                     Files.setPosixFilePermissions(filePath, perms);
@@ -110,9 +110,16 @@ public class CsvLogger {
         while (current != null) {
             sb.append(current.getClass().getSimpleName());
 
-            if (current.getMessage() != null) {
-                String msg = sanitize(current.getMessage());
+            String msg = redactSensitiveInfo(current.getMessage());
+            if (msg != null && !msg.isBlank()) {
                 sb.append(": ").append(msg);
+            }
+
+            StackTraceElement[] trace = current.getStackTrace();
+            if (trace.length > 0) {
+                sb.append(" at ").append(trace[0].getClassName())
+                .append(".").append(trace[0].getMethodName())
+                .append(":").append(trace[0].getLineNumber());
             }
 
             current = current.getCause();
@@ -123,12 +130,25 @@ public class CsvLogger {
         return sb.toString();
     }
 
-    private String sanitize(String msg) {
-        if (msg != null) {
-            msg = msg.replaceAll("(?i)password=[^\\s&]+", "password=***");
-            msg = msg.replaceAll("(?i)authorization:.*", "authorization:***");
-            msg = msg.replaceAll("(?i)secret=[^\\s&]+", "secret=***");
-        }
+    private static String redactSensitiveInfo(String msg) {
+        if (msg == null) return null;
+
+        msg = msg.replaceAll("[\r\n\t]", " ");
+
+        // secrets in JSON-like structures
+        msg = msg.replaceAll("(?i)\"(password|secret|token|key|apikey|access[_-]?token|auth[_-]?token)\"\\s*:\\s*\"[^\"]*\"", "\"$1\":\"***\"");
+        // credentials in URLs (user:pass@host)
+        msg = msg.replaceAll("(?i)([a-z][a-z0-9+.-]*://)[^\\s/@:]+(:[^\\s/@]+)?@([^\\s]+)", "$1***:***@$3");
+        // authorization headers
+        msg = msg.replaceAll("(?i)authorization[:=]\\s*(bearer\\s+)?[^\\s]+", "authorization:***");
+        // common credential parameters
+        msg = msg.replaceAll("(?i)(password|passwd|pwd|pass|secret|token|key|apikey|api_key|access[_-]?token|auth[_-]?token|session[_-]?id|jwt|credential|authcode|refresh[_-]?token)=([^\\s&;]+)", "$1=***");
+        // email addresses
+        msg = msg.replaceAll("(?i)([\\w.%+-]+)@([\\w.-]+)", "***@***");
+
+        msg = msg.replaceAll("\\*{3,}", "***");
+        msg = msg.trim();
+
         return msg;
     }
 }
